@@ -1,4 +1,4 @@
-## Building DigitalNote
+## Building Bitcedi
 
 ### On *nix:
 
