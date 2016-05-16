@@ -42,8 +42,8 @@ static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDO
 const uint64_t DEPOSIT_MIN_AMOUNT                            = 150 * COIN;
 const uint32_t DEPOSIT_MIN_TERM                              = 11000;
 const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 11000;
-const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 55000;
-const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 110;
+const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 77000;
+const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 107;
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
 static_assert(DEPOSIT_MIN_TERM <= DEPOSIT_MAX_TERM, "Bad DEPOSIT_MAX_TERM");
 static_assert(DEPOSIT_MIN_TERM * DEPOSIT_MAX_TOTAL_RATE > DEPOSIT_MIN_TOTAL_RATE_FACTOR, "Bad DEPOSIT_MIN_TOTAL_RATE_FACTOR or DEPOSIT_MAX_TOTAL_RATE");
@@ -84,7 +84,7 @@ const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(5) * pa
 const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(66000));
 
 const char     CRYPTONOTE_NAME[]                             = "bitcedi";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010601ff00002101a0461648c4d5311715cae030d153da9bbbaad62dd13ad43dd8e489661b527aa3";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010601ff000180a0d9e61d029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121019e2d1a633f2a54ff1a415e0051d5a699461d9c95479f67c8568446581c2e3782";
 const uint32_t GENESIS_NONCE                                 = 70;
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
