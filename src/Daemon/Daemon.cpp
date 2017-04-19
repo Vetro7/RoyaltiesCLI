@@ -48,7 +48,7 @@ namespace
   const command_line::arg_descriptor<bool>        arg_testnet_on  = {"testnet", "Used to deploy test nets. Checkpoints and hardcoded seeds are ignored, "
     "network id is changed. Use it with --data-dir flag. The wallet must be launched with --testnet flag.", false};
   const command_line::arg_descriptor<bool>        arg_print_genesis_tx = { "print-genesis-tx", "Prints genesis' block tx hex to insert it to config and exits" };
-//  const command_line::arg_descriptor<std::vector<std::string>> arg_genesis_block_reward_address = {"genesis-block-reward-address", ""};
+  const command_line::arg_descriptor<std::vector<std::string>> arg_genesis_block_reward_address = {"genesis-block-reward-address", ""};
 }
 
 bool command_line_preprocessor(const boost::program_options::variables_map& vm, LoggerRef& logger);
@@ -65,48 +65,48 @@ void print_genesis_tx_hex() {
   return;
 }
 
-// void print_genesis_tx_hex(const po::variables_map& vm) {
-//   std::vector<CryptoNote::AccountPublicAddress> targets;
-//   auto genesis_block_reward_addresses = command_line::get_arg(vm, arg_genesis_block_reward_address);  
+ void print_genesis_tx_hex(const po::variables_map& vm) {
+   std::vector<CryptoNote::AccountPublicAddress> targets;
+   auto genesis_block_reward_addresses = command_line::get_arg(vm, arg_genesis_block_reward_address);  
   
-//   Logging::ConsoleLogger logger;
-//   CryptoNote::CurrencyBuilder currencyBuilder(logger);
+   Logging::ConsoleLogger logger;
+   CryptoNote::CurrencyBuilder currencyBuilder(logger);
 
-//   CryptoNote::Currency currency = currencyBuilder.currency();
+   CryptoNote::Currency currency = currencyBuilder.currency();
     
-//   for (const auto& address_string : genesis_block_reward_addresses) {
-//      CryptoNote::AccountPublicAddress address;
-//     if (!currency.parseAccountAddressString(address_string, address)) {
-//       std::cout << "Failed to parse address: " << address_string << std::endl;
-//       return;
-//     }
-// 	//Print GENESIS_BLOCK_REWARD Mined Address
-// 	std::cout << "Your SDN Pre-mined Address String is:  " << address_string << std::endl;
-//     targets.emplace_back(std::move(address));
-//   }
+   for (const auto& address_string : genesis_block_reward_addresses) {
+      CryptoNote::AccountPublicAddress address;
+     if (!currency.parseAccountAddressString(address_string, address)) {
+       std::cout << "Failed to parse address: " << address_string << std::endl;
+       return;
+     }
+ 	//Print GENESIS_BLOCK_REWARD Mined Address
+ 	std::cout << "Your SDN Pre-mined Address String is:  " << address_string << std::endl;
+     targets.emplace_back(std::move(address));
+   }
 
-//   if (targets.empty()) {
-//     if (CryptoNote::parameters::GENESIS_BLOCK_REWARD > 0) {
-//       std::cout << "Error: genesis block reward addresses are not defined" << std::endl;
-//     } else {
+   if (targets.empty()) {
+     if (CryptoNote::parameters::GENESIS_BLOCK_REWARD > 0) {
+       std::cout << "Error: genesis block reward addresses are not defined" << std::endl;
+     } else {
   
-// 	  CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logger).generateGenesisTransaction();
-// 	  CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
-// 	  std::string tx_hex = Common::toHex(txb);
+ 	  CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logger).generateGenesisTransaction();
+ 	  CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
+ 	  std::string tx_hex = Common::toHex(txb);
 
-// 	  std::cout << "Insert this line into your coin configuration file as is: " << std::endl;
-// 	  std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
-// 	}
-//   } else {
-// 	CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logger).generateGenesisTransaction(targets);
-// 	CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
-// 	std::string tx_hex = Common::toHex(txb);
+ 	  std::cout << "Insert this line into your coin configuration file as is: " << std::endl;
+ 	  std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
+ 	}
+   } else {
+ 	CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logger).generateGenesisTransaction(targets);
+ 	CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
+ 	std::string tx_hex = Common::toHex(txb);
 
-// 	std::cout << "Modify this line into your Bitcedi configuration file as is:  " << std::endl;
-// 	std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
-//   }
-//   return;
-// }
+ 	std::cout << "Modify this line into your Bitcedi configuration file as is:  " << std::endl;
+ 	std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
+   }
+   return;
+ }
 
 JsonValue buildLoggerConfiguration(Level level, const std::string& logfile) {
   JsonValue loggerConfiguration(JsonValue::OBJECT);
