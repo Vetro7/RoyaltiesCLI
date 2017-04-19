@@ -1,5 +1,6 @@
-// Copyright (c) 2011-2016 The Cryptonote developers
-// Copyright (c) 2014-2016 SDN developers
+// Copyright (c) 2011-2017 The Cryptonote developers
+// Copyright (c) 2014-2017 XDN developers
+// Copyright (c) 2016-2017 BXC developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,34 +15,35 @@ namespace parameters {
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0xd7; // addresses start with "0xc"
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x971b5; // addresses start with "XRY1"
 const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 6;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 30;
 
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(858986905600000000);
+const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1);
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 32000; //size of block (bytes) after which reward for block calculated using block size
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 8;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
 // COIN - number of smallest units in one coin
-const uint64_t COIN                                          = UINT64_C(100000000);  // pow(10, 8)
-const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);     // pow(10, 5)
-const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);     // pow(10, 5)
-//const uint64_t GENESIS_BLOCK_REWARD							 = UINT64_C(0);
+const uint64_t CENT                                          = UINT64_C(10000);       // pow(10, 4)
+const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
+const uint64_t MINIMUM_FEE                                   = UINT64_C(1000);        // pow(10, 3)
+const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000);        // pow(10, 3)
+const uint64_t GENESIS_BLOCK_REWARD	                      = UINT64_C(2000000000000000000);
 
-const uint64_t DIFFICULTY_TARGET                             = 240; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 240; // blocks
 const size_t   DIFFICULTY_CUT                                = 30;  // timestamps to cut after sorting
 const size_t   DIFFICULTY_LAG                                = 15;
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
-const uint64_t DEPOSIT_MIN_AMOUNT                            = 150 * COIN;
-const uint32_t DEPOSIT_MIN_TERM                              = 11000;
-const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 11000;
+const uint64_t DEPOSIT_MIN_AMOUNT                            = 1 * COIN;
+const uint32_t DEPOSIT_MIN_TERM                              = 86400;
+const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 86400;
 const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 77000;
 const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 107;
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
@@ -79,12 +81,12 @@ const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "blockchainindice
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(80) * parameters::COIN);
-const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(5) * parameters::COIN);
-const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(66000));
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(1) * parameters::CENT);
+const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(1) * parameters::CENT);
+const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(888));
 
-const char     CRYPTONOTE_NAME[]                             = "bitcedi";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010601ff000180a0d9e61d029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121019e2d1a633f2a54ff1a415e0051d5a699461d9c95479f67c8568446581c2e3782";
+const char     CRYPTONOTE_NAME[]                             = "Royalties";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001ffffffffffff0f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b80c7f1efcbb655d625d518650b6d91d40b115b06b19d2cd653ae17f83ebee84";
 const uint32_t GENESIS_NONCE                                 = 70;
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
@@ -98,8 +100,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  200;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              = 55008;
-const int      RPC_DEFAULT_PORT                              = 65084;
+const int      P2P_DEFAULT_PORT                              = 55888;
+const int      RPC_DEFAULT_PORT                              = 56888;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -114,11 +116,11 @@ const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000;          //
 const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT           = 2000;          // 2 seconds
 const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutes
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
-const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "85ae8734f90bc1ee295ceb0ec05a49852d4dbbc9d1c27a619b5f4bdf26a0196e";
+const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "0000000000000000000000000000000000000000000000000000000000000000";
 
 const std::initializer_list<const char*> SEED_NODES = {
-   "seed0.bitcedi.org:55008",
-   "seed1.bitcedi.org:55008",
+   "0.0.0.0:55888",
+   "0.0.0.0:58088",
 };
 
 struct CheckpointData {
