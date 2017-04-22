@@ -1,5 +1,7 @@
-// Copyright (c) 2011-2016 The Cryptonote developers
-// Copyright (c) 2014-2016 SDN developers
+// Copyright (c) 2011-2017 The Cryptonote developers
+// Copyright (c) 2014-2017 XDN developers
+// Copyright (c) 2016-2017 BXC developers
+// Copyright (c) 2017 Royalties developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -102,7 +104,7 @@ void print_genesis_tx_hex() {
  	CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
  	std::string tx_hex = Common::toHex(txb);
 
- 	std::cout << "Modify this line into your Bitcedi configuration file as is:  " << std::endl;
+ 	std::cout << "Modify this line into your Royalties configuration file as is:  " << std::endl;
  	std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
    }
    return;
@@ -128,13 +130,13 @@ JsonValue buildLoggerConfiguration(Level level, const std::string& logfile) {
 }
 
 void renameDataDir() {
-  std::string bitcediDir = Tools::getDefaultDataDirectory();
-  boost::filesystem::path bitcediDirPath(bitcediDir);
-  if (boost::filesystem::exists(bitcediDirPath)) {
+  std::string royaltiesDir = Tools::getDefaultDataDirectory();
+  boost::filesystem::path royaltiesDirPath(royaltiesDir);
+  if (boost::filesystem::exists(royaltiesDirPath)) {
     return;
   }
 
-  std::string dataDirPrefix = bitcediDir.substr(0, bitcediDir.size() + 1 - sizeof(CRYPTONOTE_NAME));
+  std::string dataDirPrefix = royaltiesDir.substr(0, royaltiesDir.size() + 1 - sizeof(CRYPTONOTE_NAME));
 
   boost::filesystem::path cediDirPath(dataDirPrefix + "BXC");
   if (boost::filesystem::exists(cediDirPath)) {
