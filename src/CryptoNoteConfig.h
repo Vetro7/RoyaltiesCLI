@@ -31,8 +31,8 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
 // COIN - number of smallest units in one coin
 const uint64_t CENT                                          = UINT64_C(10000);       // pow(10, 4)
 const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
-const uint64_t MINIMUM_FEE                                   = UINT64_C(1000);        // pow(10, 3)
-const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000);        // pow(10, 3)
+const uint64_t MINIMUM_FEE                                   = UINT64_C(100);         // pow(10, 2)
+const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);         // pow(10, 2)
 const uint64_t GENESIS_BLOCK_REWARD	                      = UINT64_C(2000000000000000000);
 
 const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
