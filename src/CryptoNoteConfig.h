@@ -33,7 +33,7 @@ const uint64_t CENT                                          = UINT64_C(10000); 
 const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
 const uint64_t MINIMUM_FEE                                   = UINT64_C(100);         // pow(10, 2)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);         // pow(10, 2)
-const uint64_t GENESIS_BLOCK_REWARD	                      = UINT64_C(1100000000000000000);
+const uint64_t GENESIS_BLOCK_REWARD	                      = UINT64_C(1800000000000000000);
 
 const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
@@ -121,7 +121,7 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "0000000000000000
 
 const std::initializer_list<const char*> SEED_NODES = {
    "0.0.0.0:55888",
-   "0.0.0.0:58088",
+   "0.0.0.0:58888",
 };
 
 struct CheckpointData {
