@@ -57,7 +57,7 @@ bool test_transaction_generation_and_ring_signature()
   std::vector<TransactionSourceEntry> sources;
   sources.resize(sources.size()+1);
   TransactionSourceEntry& src = sources.back();
-  src.amount = 70368744177663;
+  src.amount = 1;
   {
     tx_output_entry oe;
     oe.first = 0;
@@ -91,7 +91,7 @@ bool test_transaction_generation_and_ring_signature()
   //fill outputs entry
   TransactionDestinationEntry td;
   td.addr = rv_acc.getAccountKeys().address;
-  td.amount = 69368744177663;
+  td.amount = 1;
   std::vector<TransactionDestinationEntry> destinations;
   destinations.push_back(td);
 
