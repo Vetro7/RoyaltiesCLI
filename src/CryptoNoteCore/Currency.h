@@ -144,7 +144,7 @@ private:
   uint64_t m_blockFutureTimeLimit;
 
   uint64_t m_moneySupply;
-//  uint64_t m_genesisBlockReward;
+  uint64_t m_genesisBlockReward;
 
   size_t m_rewardBlocksWindow;
   size_t m_blockGrantedFullRewardZone;
