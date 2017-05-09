@@ -140,11 +140,11 @@ void renameDataDir() {
 
   boost::filesystem::path cediDirPath(dataDirPrefix + "BXC");
   if (boost::filesystem::exists(cediDirPath)) {
-    boost::filesystem::rename(cediDirPath, bitcediDirPath);
+    boost::filesystem::rename(cediDirPath, royaltiesDirPath);
   } else {
     boost::filesystem::path BcediDirPath(dataDirPrefix + "Bcedi");
     if (boost::filesystem::exists(boost::filesystem::path(BcediDirPath))) {
-		boost::filesystem::rename(BcediDirPath, bitcediDirPath);
+		boost::filesystem::rename(BcediDirPath, royaltiesDirPath);
     }
   }
 }
