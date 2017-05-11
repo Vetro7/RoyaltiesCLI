@@ -55,17 +55,17 @@ namespace
 
 bool command_line_preprocessor(const boost::program_options::variables_map& vm, LoggerRef& logger);
 
-void print_genesis_tx_hex() {
-  Logging::ConsoleLogger logger;
-  CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logger).generateGenesisTransaction();
-  CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
-  std::string tx_hex = Common::toHex(txb);
+//void print_genesis_tx_hex() {
+ // Logging::ConsoleLogger logger;
+ // CryptoNote::Transaction tx = CryptoNote::CurrencyBuilder(logger).generateGenesisTransaction();
+ // CryptoNote::BinaryArray txb = CryptoNote::toBinaryArray(tx);
+ // std::string tx_hex = Common::toHex(txb);
 
-  std::cout << "Insert this line into your coin configuration file as is: " << std::endl;
-  std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
+ // std::cout << "Insert this line into your coin configuration file as is: " << std::endl;
+ // std::cout << "const char GENESIS_COINBASE_TX_HEX[] = \"" << tx_hex << "\";" << std::endl;
 
-  return;
-}
+ // return;
+//}
 
  void print_genesis_tx_hex(const po::variables_map& vm) {
    std::vector<CryptoNote::AccountPublicAddress> targets;
