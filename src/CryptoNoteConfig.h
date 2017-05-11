@@ -33,7 +33,7 @@ const uint64_t POINT                                         = UINT64_C(1000);  
 const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
 const uint64_t MINIMUM_FEE                                   = UINT64_C(100);         // pow(10, 2)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);         // pow(10, 2)
-const uint64_t GENESIS_BLOCK_REWARD	                      = UINT64_C(1800000000000000000); // 1.8 trillion premine
+const uint64_t GENESIS_BLOCK_REWARD	                      = (UINT64_C(1800000000000)* parameters::COIN); // 1.8 trillion premine
 
 const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
