@@ -1,11 +1,4 @@
 Release notes 0.1.0
 
-- New industrial type wallet for services: walletd
-- multithreading library
-- Improved console logging
-- Multisignatures with API
-- Deposits based on multisignatures
-- Low level API
-- High level API
-- Instant transaction pool notifications
-- Encrypted messages
+- 15% APR
+
