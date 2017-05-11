@@ -217,7 +217,7 @@ public:
     return m_currency;
   }
 
-  Transaction generateGenesisTransaction();
+  //Transaction generateGenesisTransaction();
   Transaction generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets);
 
   CurrencyBuilder& maxBlockNumber(uint64_t val) { m_currency.m_maxBlockHeight = val; return *this; }
