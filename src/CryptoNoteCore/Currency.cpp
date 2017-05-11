@@ -587,13 +587,13 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   testnet(false);
 }
 
-Transaction CurrencyBuilder::generateGenesisTransaction() {
-  CryptoNote::Transaction tx;
-  CryptoNote::AccountPublicAddress ac = boost::value_initialized<CryptoNote::AccountPublicAddress>();
-  m_currency.constructMinerTx(0, 0, 0, 0, 0, ac, tx); // zero fee in genesis
+//Transaction CurrencyBuilder::generateGenesisTransaction() {
+ // CryptoNote::Transaction tx;
+//  CryptoNote::AccountPublicAddress ac = boost::value_initialized<CryptoNote::AccountPublicAddress>();
+ // m_currency.constructMinerTx(0, 0, 0, 0, 0, ac, tx); // zero fee in genesis
 
-  return tx;
-}
+ // return tx;
+//}
 
  Transaction CurrencyBuilder::generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets) {
      assert(!targets.empty());
