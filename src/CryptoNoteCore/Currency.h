@@ -33,7 +33,7 @@ public:
   uint64_t blockFutureTimeLimit() const { return m_blockFutureTimeLimit; }
 
   uint64_t moneySupply() const { return m_moneySupply; }
-  uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
+//  uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
 
   size_t rewardBlocksWindow() const { return m_rewardBlocksWindow; }
   size_t blockGrantedFullRewardZone() const { return m_blockGrantedFullRewardZone; }
@@ -144,7 +144,7 @@ private:
   uint64_t m_blockFutureTimeLimit;
 
   uint64_t m_moneySupply;
-  uint64_t m_genesisBlockReward;
+//  uint64_t m_genesisBlockReward;
 
   size_t m_rewardBlocksWindow;
   size_t m_blockGrantedFullRewardZone;
@@ -217,8 +217,8 @@ public:
     return m_currency;
   }
 
-  //Transaction generateGenesisTransaction();
-  Transaction generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets);
+  Transaction generateGenesisTransaction();
+ // Transaction generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets);
 
   CurrencyBuilder& maxBlockNumber(uint64_t val) { m_currency.m_maxBlockHeight = val; return *this; }
   CurrencyBuilder& maxBlockBlobSize(size_t val) { m_currency.m_maxBlockBlobSize = val; return *this; }
