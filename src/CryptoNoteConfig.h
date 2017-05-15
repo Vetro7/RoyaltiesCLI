@@ -37,9 +37,9 @@ const uint64_t GENESIS_BLOCK_REWARD	                      = (UINT64_C(1800000000
 
 const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
-const size_t   DIFFICULTY_WINDOW                             = 240; // blocks
-const size_t   DIFFICULTY_CUT                                = 30;  // timestamps to cut after sorting
-const size_t   DIFFICULTY_LAG                                = 15;
+const size_t   DIFFICULTY_WINDOW                             = 20; // blocks
+const size_t   DIFFICULTY_CUT                                = 5;  // timestamps to cut after sorting
+const size_t   DIFFICULTY_LAG                                = 1;
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
 const uint64_t DEPOSIT_MIN_AMOUNT                            = 1 * COIN;
@@ -83,11 +83,11 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const uint64_t START_BLOCK_REWARD                            = (UINT64_C(100) * parameters::POINT);
-const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(10000) * parameters::POINT);
+const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(100) * parameters::POINT);
 const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(262800));
 
 const char     CRYPTONOTE_NAME[]                             = "Royalties";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001a08d06029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016d5e009e18550966ff2ca35aeb78da2dee1d43a8b34617dcb972cec75284b033";
 const uint32_t GENESIS_NONCE                                 = 70;
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
