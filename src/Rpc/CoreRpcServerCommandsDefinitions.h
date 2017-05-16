@@ -660,6 +660,21 @@ struct F_COMMAND_RPC_GET_TRANSACTION_DETAILS {
     }
   };
 };
+
+struct F_COMMAND_RPC_GET_POOL {
+    typedef EMPTY_STRUCT request;
+
+    struct response {
+        std::vector<f_transaction_short_response> transactions; //transactions blobs as hex
+        std::string status;
+
+        void serialize(ISerializer &s) {
+            KV_MEMBER(transactions)
+            KV_MEMBER(status)
+        }
+    };
+};
+
 struct F_COMMAND_RPC_GET_BLOCKCHAIN_SETTINGS {
   typedef EMPTY_STRUCT request;
   struct response {
