@@ -33,7 +33,6 @@ const uint64_t POINT                                         = UINT64_C(1000);  
 const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
 const uint64_t MINIMUM_FEE                                   = UINT64_C(100);         // pow(10, 2)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);         // pow(10, 2)
-const uint64_t GENESIS_BLOCK_REWARD	                      = (UINT64_C(1800000000000)* parameters::COIN); // 1.8 trillion premine
 
 const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
@@ -83,6 +82,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const uint64_t START_BLOCK_REWARD                            = (UINT64_C(100) * parameters::POINT);
+const uint64_t PREMINE_BLOCK_REWARD	                       = (UINT64_C(1800000000000) * parameters::COIN); // 1.8 trillion premine
 const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(100) * parameters::POINT);
 const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(262800));
 
