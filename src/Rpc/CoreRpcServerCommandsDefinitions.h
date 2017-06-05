@@ -440,6 +440,7 @@ struct f_transaction_details_response {
 struct f_block_short_response {
   uint64_t timestamp;
   uint32_t height;
+  difficulty_type difficulty;
   std::string hash;
   uint64_t tx_count;
   uint64_t cumul_size;
@@ -447,6 +448,7 @@ struct f_block_short_response {
   void serialize(ISerializer &s) {
     KV_MEMBER(timestamp)
     KV_MEMBER(height)
+    KV_MEMBER(difficulty)
     KV_MEMBER(hash)
     KV_MEMBER(cumul_size)
     KV_MEMBER(tx_count)
