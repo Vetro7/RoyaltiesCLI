@@ -42,10 +42,10 @@ const size_t   DIFFICULTY_LAG                                = 1;
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
 const uint64_t DEPOSIT_MIN_AMOUNT                            = 1 * COIN;
-const uint32_t DEPOSIT_MIN_TERM                              = 22000;
-const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 22000;
-const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 77000;
-const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 107;
+const uint32_t DEPOSIT_MIN_TERM                              = 22000; //~1 month
+const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 22000; //~1 year
+const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; //rate is constant
+const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 15; //percentage rate for DEPOSIT_MAX_TERM
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
 static_assert(DEPOSIT_MIN_TERM <= DEPOSIT_MAX_TERM, "Bad DEPOSIT_MAX_TERM");
 static_assert(DEPOSIT_MIN_TERM * DEPOSIT_MAX_TOTAL_RATE > DEPOSIT_MIN_TOTAL_RATE_FACTOR, "Bad DEPOSIT_MIN_TOTAL_RATE_FACTOR or DEPOSIT_MAX_TOTAL_RATE");
@@ -82,9 +82,9 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const uint64_t START_BLOCK_REWARD                            = (UINT64_C(100) * parameters::POINT);
-const uint64_t PREMINE_BLOCK_REWARD	                       = (UINT64_C(1800000000000) * parameters::COIN); // 1.8 trillion premine
-const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(100) * parameters::POINT);
-const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(262800));
+const uint64_t PREMINE_BLOCK_REWARD	                         = (UINT64_C(1800000000000) * parameters::COIN); // 1.8 trillion premine
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(10) * parameters::COIN);
+const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
 const char     CRYPTONOTE_NAME[]                             = "Royalties";
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001a08d06029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016d5e009e18550966ff2ca35aeb78da2dee1d43a8b34617dcb972cec75284b033";

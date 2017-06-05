@@ -50,49 +50,41 @@ using CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
     ASSERT_TRUE(m_block_not_too_big);
     ASSERT_EQ(m_block_reward, START_BLOCK_REWARD);
 
-    do_test(REWARD_HALVING_INTERVAL - 1);
+    do_test(REWARD_INCREASE_INTERVAL - 1);
     ASSERT_TRUE(m_block_not_too_big);
     ASSERT_EQ(m_block_reward, START_BLOCK_REWARD);
 
-    do_test(REWARD_HALVING_INTERVAL);
+    do_test(REWARD_INCREASE_INTERVAL);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 2);
+    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD * 10);
 
-    do_test(2 * REWARD_HALVING_INTERVAL - 1);
+    do_test(2 * REWARD_INCREASE_INTERVAL - 1);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 2);
+    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD * 10);
 
-    do_test(2 * REWARD_HALVING_INTERVAL);
+    do_test(2 * REWARD_INCREASE_INTERVAL);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 4);
+    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD * 100);
 
-    do_test(2 * REWARD_HALVING_INTERVAL);
+    do_test(3 * REWARD_INCREASE_INTERVAL - 1);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 4);
+    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD * 100);
 
-    do_test(11 * REWARD_HALVING_INTERVAL - 1);
+    do_test(3 * REWARD_INCREASE_INTERVAL);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 1024);
+    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD * 100);
 
-    do_test(11 * REWARD_HALVING_INTERVAL);
+    do_test(4 * REWARD_INCREASE_INTERVAL);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 2048);
+    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD * 100);
 
-    do_test(12 * REWARD_HALVING_INTERVAL - 1);
+    do_test(5 * REWARD_INCREASE_INTERVAL);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD / 2048);
+    ASSERT_EQ(m_block_reward, MAX_BLOCK_REWARD);
 
-    do_test(12 * REWARD_HALVING_INTERVAL);
+    do_test(19 * REWARD_INCREASE_INTERVAL);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, MIN_BLOCK_REWARD);
-
-    do_test(60 * 12 * REWARD_HALVING_INTERVAL);
-    ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, MIN_BLOCK_REWARD);
-
-    do_test(1, parameters::MONEY_SUPPLY - MIN_BLOCK_REWARD * 2 / 3);
-    ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, MIN_BLOCK_REWARD * 2 / 3);
+    ASSERT_EQ(m_block_reward, MAX_BLOCK_REWARD);
   }
   //--------------------------------------------------------------------------------------------------------------------
   class block_reward_and_current_block_size : public ::testing::Test
