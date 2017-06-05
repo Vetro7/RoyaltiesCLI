@@ -125,6 +125,8 @@ bool Currency::generateGenesisBlock() {
 }
 
 uint64_t Currency::baseRewardFunction(uint64_t alreadyGeneratedCoins, uint32_t height) const {
+  if (height == 1) return ICO_REWARD;
+  
   uint64_t incrIntervals = static_cast<uint64_t>(height) / REWARD_INCREASE_INTERVAL;
   assert(incrIntervals < POWERS_OF_TEN.size());
   
