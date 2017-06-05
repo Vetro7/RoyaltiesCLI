@@ -82,7 +82,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const uint64_t START_BLOCK_REWARD                            = (UINT64_C(100) * parameters::POINT);
-const uint64_t PREMINE_BLOCK_REWARD	                         = (UINT64_C(1800000000000) * parameters::COIN); // 1.8 trillion premine
+const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(1500000000000) * parameters::COIN); // 1.5 trillion ICO
 const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(10) * parameters::COIN);
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
