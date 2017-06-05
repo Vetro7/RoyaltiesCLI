@@ -12,6 +12,16 @@ You may download them from:
 
 Alternatively, it may be possible to install them using a package manager.
 
+To build:
+Change to the directory where this file is located and run these commands:
+```
+mkdir build
+cd build
+cmake ..
+cd ..
+make
+```
+
 To build, change to a directory where this file is located, and run `make`. The resulting executables can be found in `build/release/src`.
 
 #### Advanced options:
