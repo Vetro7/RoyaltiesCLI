@@ -31,7 +31,7 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
 // COIN - number of smallest units in one coin
 const uint64_t POINT                                         = UINT64_C(1000);        // pow(10, 3)
 const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
-const uint64_t MINIMUM_FEE                                   = UINT64_C(100);         // pow(10, 2)
+const uint64_t MINIMUM_FEE                                   = UINT64_C(1000);        // pow(10, 3)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100);         // pow(10, 2)
 
 const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
@@ -82,7 +82,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const uint64_t START_BLOCK_REWARD                            = (UINT64_C(100) * parameters::POINT);
-const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(1500000000000) * parameters::COIN); // 1.5 trillion ICO
+const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(18446744073) * parameters::COIN); // 18.4 billion ICO
 const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(10) * parameters::COIN);
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
