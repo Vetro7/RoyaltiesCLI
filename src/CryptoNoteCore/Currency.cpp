@@ -114,7 +114,7 @@ bool Currency::generateGenesisBlock() {
 
   m_genesisBlock.majorVersion = BLOCK_MAJOR_VERSION_1;
   m_genesisBlock.minorVersion = BLOCK_MINOR_VERSION_0;
-  m_genesisBlock.timestamp = 0;
+  m_genesisBlock.timestamp = GENESIS_TIMESTAMP;
   m_genesisBlock.nonce = GENESIS_NONCE;
   if (m_testnet) {
     ++m_genesisBlock.nonce;
