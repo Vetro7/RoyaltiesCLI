@@ -11,6 +11,7 @@
 #include "Common/MemoryInputStream.h"
 #include "Common/StreamTools.h"
 #include "Common/StringTools.h"
+#include "Common/Varint.h"
 #include "CryptoNoteTools.h"
 #include "Serialization/BinaryOutputStreamSerializer.h"
 #include "Serialization/BinaryInputStreamSerializer.h"
@@ -83,6 +84,15 @@ bool parseTransactionExtra(const std::vector<uint8_t> &transactionExtra, std::ve
         transactionExtraFields.push_back(message);
         break;
       }
+
+      case TX_EXTRA_TTL: {
+        uint8_t size;
+        readVarint(iss, size);
+        TransactionExtraTTL ttl;
+        readVarint(iss, ttl.ttl);
+        transactionExtraFields.push_back(ttl);
+        break;
+      }
       }
     }
   } catch (std::exception &) {
@@ -120,6 +130,11 @@ struct ExtraSerializerVisitor : public boost::static_visitor<bool> {
 
   bool operator()(const tx_extra_message& t) {
     return append_message_to_extra(extra, t);
+  }
+
+  bool operator()(const TransactionExtraTTL& t) {
+    appendTTLToExtra(extra, t.ttl);
+    return true;
   }
 };
 
@@ -221,6 +236,16 @@ std::vector<std::string> get_messages_from_extra(const std::vector<uint8_t> &ext
     ++i;
   }
   return result;
+}
+
+void appendTTLToExtra(std::vector<uint8_t>& tx_extra, uint64_t ttl) {
+  std::string ttlData = Tools::get_varint_data(ttl);
+  std::string extraFieldSize = Tools::get_varint_data(ttlData.size());
+
+  tx_extra.reserve(tx_extra.size() + 1 + extraFieldSize.size() + ttlData.size());
+  tx_extra.push_back(TX_EXTRA_TTL);
+  std::copy(extraFieldSize.begin(), extraFieldSize.end(), std::back_inserter(tx_extra));
+  std::copy(ttlData.begin(), ttlData.end(), std::back_inserter(tx_extra));
 }
 
 void setPaymentIdToTransactionExtraNonce(std::vector<uint8_t>& extra_nonce, const Hash& payment_id) {
