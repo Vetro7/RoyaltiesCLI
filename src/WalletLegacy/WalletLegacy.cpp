@@ -467,12 +467,13 @@ TransactionId WalletLegacy::sendTransaction(const WalletLegacyTransfer& transfer
                                             const std::string& extra,
                                             uint64_t mixIn,
                                             uint64_t unlockTimestamp,
-                                            const std::vector<TransactionMessage>& messages) {
+                                            const std::vector<TransactionMessage>& messages,
+                                            uint64_t ttl) {
   std::vector<WalletLegacyTransfer> transfers;
   transfers.push_back(transfer);
   throwIfNotInitialised();
 
-  return sendTransaction(transfers, fee, extra, mixIn, unlockTimestamp, messages);
+  return sendTransaction(transfers, fee, extra, mixIn, unlockTimestamp, messages, ttl);
 }
 
 TransactionId WalletLegacy::sendTransaction(const std::vector<WalletLegacyTransfer>& transfers,
@@ -480,7 +481,8 @@ TransactionId WalletLegacy::sendTransaction(const std::vector<WalletLegacyTransf
                                             const std::string& extra,
                                             uint64_t mixIn,
                                             uint64_t unlockTimestamp,
-                                            const std::vector<TransactionMessage>& messages) {
+                                            const std::vector<TransactionMessage>& messages,
+                                            uint64_t ttl) {
   TransactionId txId = 0;
   std::unique_ptr<WalletRequest> request;
   std::deque<std::unique_ptr<WalletLegacyEvent>> events;
@@ -488,7 +490,7 @@ TransactionId WalletLegacy::sendTransaction(const std::vector<WalletLegacyTransf
 
   {
     std::unique_lock<std::mutex> lock(m_cacheMutex);
-    request = m_sender->makeSendRequest(txId, events, transfers, fee, extra, mixIn, unlockTimestamp, messages);
+    request = m_sender->makeSendRequest(txId, events, transfers, fee, extra, mixIn, unlockTimestamp, messages, ttl);
   }
 
   notifyClients(events);
