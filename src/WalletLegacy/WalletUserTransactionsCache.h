@@ -112,10 +112,11 @@ private:
   void restoreTransactionOutputToDepositIndex();
   std::vector<DepositId> createNewDeposits(TransactionId creatingTransactionId,
                                            const std::vector<TransactionOutputInformation>& depositOutputs,
-                                           const Currency& currency);
+                                           const Currency& currency,
+										   uint32_t height);
   DepositId insertNewDeposit(const TransactionOutputInformation& depositOutput,
                              TransactionId creatingTransactionId,
-                             const Currency& currency);
+                             const Currency& currency, uint32_t height);
   std::vector<DepositId> processSpentDeposits(TransactionId spendingTransactionId, const std::vector<TransactionOutputInformation>& spentDepositOutputs);
   DepositId getDepositId(const Crypto::Hash& creatingTransactionHash, uint32_t outputInTransaction);
 

@@ -131,6 +131,8 @@ private:
   void pushBalanceUpdatedEvents(std::deque<std::unique_ptr<WalletLegacyEvent>>& eventsQueue);
 
   std::vector<TransactionId> deleteOutdatedUnconfirmedTransactions();
+  
+  std::vector<uint32_t> getTransactionHeights(std::vector<TransactionOutputInformation> transfers);
 
   enum WalletState
   {

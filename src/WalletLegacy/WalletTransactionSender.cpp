@@ -401,7 +401,7 @@ std::unique_ptr<WalletRequest> WalletTransactionSender::doSendMultisigTransactio
     deposit.term = context->depositTerm;
     deposit.creatingTransactionId = context->transactionId;
     deposit.spendingTransactionId = WALLET_LEGACY_INVALID_TRANSACTION_ID;
-    deposit.interest = m_currency.calculateInterest(deposit.amount, deposit.term);
+    deposit.interest = m_currency.calculateInterest(deposit.amount, deposit.term, transactionInfo.blockHeight);
     deposit.locked = true;
     DepositId depositId = m_transactionsCache.insertDeposit(deposit, depositIndex, transaction->getTransactionHash());
     transactionInfo.firstDepositId = depositId;

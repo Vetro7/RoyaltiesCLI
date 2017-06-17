@@ -76,9 +76,10 @@ private:
   std::future<std::error_code> future;
 };
 
-uint64_t calculateDepositsAmount(const std::vector<CryptoNote::TransactionOutputInformation>& transfers, const CryptoNote::Currency& currency) {
-  return std::accumulate(transfers.begin(), transfers.end(), static_cast<uint64_t>(0), [&currency] (uint64_t sum, const CryptoNote::TransactionOutputInformation& deposit) {
-    return sum + deposit.amount + currency.calculateInterest(deposit.amount, deposit.term);
+uint64_t calculateDepositsAmount(const std::vector<CryptoNote::TransactionOutputInformation>& transfers, const CryptoNote::Currency& currency, const std::vector<uint32_t> heights) {
+	int index = 0;
+  return std::accumulate(transfers.begin(), transfers.end(), static_cast<uint64_t>(0), [&currency, &index, heights] (uint64_t sum, const CryptoNote::TransactionOutputInformation& deposit) {
+    return sum + deposit.amount + currency.calculateInterest(deposit.amount, deposit.term, heights[index++]);
   });
 }
 
@@ -820,8 +821,20 @@ std::vector<TransactionId> WalletLegacy::deleteOutdatedUnconfirmedTransactions()
 uint64_t WalletLegacy::calculateActualDepositBalance() {
   std::vector<TransactionOutputInformation> transfers;
   m_transferDetails->getOutputs(transfers, ITransfersContainer::IncludeTypeDeposit | ITransfersContainer::IncludeStateUnlocked);
+  std::vector<uint32_t> heights = getTransactionHeights(transfers);
+  return calculateDepositsAmount(transfers, m_currency, heights) - m_transactionsCache.countUnconfirmedSpentDepositsTotalAmount();
+}
 
-  return calculateDepositsAmount(transfers, m_currency) - m_transactionsCache.countUnconfirmedSpentDepositsTotalAmount();
+std::vector<uint32_t> WalletLegacy::getTransactionHeights(const std::vector<TransactionOutputInformation> transfers){
+  std::vector<uint32_t> heights;
+  for (auto transfer : transfers){
+	  Crypto::Hash hash = transfer.transactionHash;
+	  TransactionInformation info;
+	  bool ok = m_transferDetails->getTransactionInformation(hash, info, NULL, NULL);
+	  assert(ok);
+	  heights.push_back(info.blockHeight);
+  }
+  return heights;
 }
 
 uint64_t WalletLegacy::calculatePendingDepositBalance() {
@@ -829,8 +842,8 @@ uint64_t WalletLegacy::calculatePendingDepositBalance() {
   m_transferDetails->getOutputs(transfers, ITransfersContainer::IncludeTypeDeposit
                                 | ITransfersContainer::IncludeStateLocked
                                 | ITransfersContainer::IncludeStateSoftLocked);
-
-  return calculateDepositsAmount(transfers, m_currency) + m_transactionsCache.countUnconfirmedCreatedDepositsSum();
+  std::vector<uint32_t> heights = getTransactionHeights(transfers);
+  return calculateDepositsAmount(transfers, m_currency, heights) + m_transactionsCache.countUnconfirmedCreatedDepositsSum();
 }
 
 uint64_t WalletLegacy::calculateActualBalance() {

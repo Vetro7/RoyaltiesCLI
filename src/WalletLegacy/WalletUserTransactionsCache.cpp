@@ -303,8 +303,7 @@ std::deque<std::unique_ptr<WalletLegacyEvent>> WalletUserTransactionsCache::onTr
     id = insertTransaction(std::move(transaction));
 
     events.push_back(std::unique_ptr<WalletLegacyEvent>(new WalletExternalTransactionCreatedEvent(id)));
-
-    auto updatedDepositIds = createNewDeposits(id, newDepositOutputs, currency);
+    auto updatedDepositIds = createNewDeposits(id, newDepositOutputs, currency, transaction.blockHeight);
     if (!updatedDepositIds.empty()) {
       auto& tx = getTransaction(id);
       tx.firstDepositId = updatedDepositIds[0];
@@ -590,18 +589,18 @@ bool WalletUserTransactionsCache::getDepositInTransactionInfo(DepositId depositI
 }
 
 std::vector<DepositId> WalletUserTransactionsCache::createNewDeposits(TransactionId creatingTransactionId, const std::vector<TransactionOutputInformation>& depositOutputs,
-    const Currency& currency) {
+    const Currency& currency, uint32_t height) {
   std::vector<DepositId> deposits;
 
   for (size_t i = 0; i < depositOutputs.size(); i++) {
-    auto id = insertNewDeposit(depositOutputs[i], creatingTransactionId, currency);
+    auto id = insertNewDeposit(depositOutputs[i], creatingTransactionId, currency, height);
     deposits.push_back(id);
   }
   return deposits;
 }
 
 DepositId WalletUserTransactionsCache::insertNewDeposit(const TransactionOutputInformation& depositOutput, TransactionId creatingTransactionId,
-  const Currency& currency) {
+  const Currency& currency, uint32_t height) {
   assert(depositOutput.type == TransactionTypes::OutputType::Multisignature);
   assert(depositOutput.term != 0);
   assert(m_transactionOutputToDepositIndex.find(std::tie(depositOutput.transactionHash, depositOutput.outputInTransaction)) == m_transactionOutputToDepositIndex.end());
@@ -611,7 +610,7 @@ DepositId WalletUserTransactionsCache::insertNewDeposit(const TransactionOutputI
   deposit.creatingTransactionId = creatingTransactionId;
   deposit.term = depositOutput.term;
   deposit.spendingTransactionId = WALLET_LEGACY_INVALID_TRANSACTION_ID;
-  deposit.interest = currency.calculateInterest(deposit.amount, deposit.term);
+  deposit.interest = currency.calculateInterest(deposit.amount, deposit.term, height);
   deposit.locked = true;
 
   return insertDeposit(deposit, depositOutput.outputInTransaction, depositOutput.transactionHash);
