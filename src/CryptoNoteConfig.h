@@ -7,10 +7,6 @@
 
 #pragma once
 
-//pragma once not working so using belo
-#ifndef CRYPTONOTECONFIG
-#define CRYPTONOTECONFIG
-
 #include <cstdint>
 #include <initializer_list>
 
@@ -153,5 +149,3 @@ const std::initializer_list<CheckpointData> CHECKPOINTS = {
 } // CryptoNote
 
 #define ALLOW_DEBUG_COMMANDS
-
-#endif
