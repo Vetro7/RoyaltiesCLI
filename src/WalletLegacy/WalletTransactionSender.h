@@ -19,11 +19,13 @@
 #include "ITransfersContainer.h"
 
 namespace CryptoNote {
+	
+class INode;
 
 class WalletTransactionSender
 {
 public:
-  WalletTransactionSender(const Currency& currency, WalletUserTransactionsCache& transactionsCache, AccountKeys keys, ITransfersContainer& transfersContainer);
+  WalletTransactionSender(const Currency& currency, WalletUserTransactionsCache& transactionsCache, AccountKeys keys, ITransfersContainer& transfersContainer, INode& node);
 
   void stop();
 
@@ -102,6 +104,8 @@ private:
 
   bool m_isStoping;
   ITransfersContainer& m_transferDetails;
+  
+  INode& m_node; //used solely to get last known block height for calculateInterest
 };
 
 } /* namespace CryptoNote */

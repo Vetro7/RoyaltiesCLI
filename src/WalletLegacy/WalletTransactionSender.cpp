@@ -19,6 +19,7 @@
 #include <Logging/LoggerGroup.h>
 
 #include <random>
+#include "INode.h"
 
 using namespace Crypto;
 
@@ -151,13 +152,14 @@ void countDepositsTotalSumAndInterestSum(const std::vector<DepositId>& depositId
 
 namespace CryptoNote {
 
-WalletTransactionSender::WalletTransactionSender(const Currency& currency, WalletUserTransactionsCache& transactionsCache, AccountKeys keys, ITransfersContainer& transfersContainer) :
+WalletTransactionSender::WalletTransactionSender(const Currency& currency, WalletUserTransactionsCache& transactionsCache, AccountKeys keys, ITransfersContainer& transfersContainer, INode &node) :
   m_currency(currency),
   m_transactionsCache(transactionsCache),
   m_isStoping(false),
   m_keys(keys),
   m_transferDetails(transfersContainer),
-  m_upperTransactionSizeLimit((m_currency.blockGrantedFullRewardZone() * 125) / 100 - m_currency.minerTxBlobReservedSize()) {}
+  m_upperTransactionSizeLimit((m_currency.blockGrantedFullRewardZone() * 125) / 100 - m_currency.minerTxBlobReservedSize()),
+  m_node(node){}
 
 void WalletTransactionSender::stop() {
   m_isStoping = true;
@@ -365,7 +367,6 @@ std::unique_ptr<WalletRequest> WalletTransactionSender::doSendMultisigTransactio
   try {
     //TODO decompose this method
     WalletLegacyTransaction& transactionInfo = m_transactionsCache.getTransaction(context->transactionId);
-
     std::unique_ptr<ITransaction> transaction = createTransaction();
 
     uint64_t totalAmount = std::abs(transactionInfo.totalAmount);
@@ -403,8 +404,13 @@ std::unique_ptr<WalletRequest> WalletTransactionSender::doSendMultisigTransactio
     deposit.term = context->depositTerm;
     deposit.creatingTransactionId = context->transactionId;
     deposit.spendingTransactionId = WALLET_LEGACY_INVALID_TRANSACTION_ID;
-    deposit.interest = m_currency.calculateInterest(deposit.amount, deposit.term, transactionInfo.blockHeight);
-    deposit.locked = true;
+	uint32_t height = transactionInfo.blockHeight;
+	if (height == 4294967295){
+		height = m_node.getLastKnownBlockHeight();
+		if (!height) height = 4294967295;
+	}	
+	deposit.interest = m_currency.calculateInterest(deposit.amount, deposit.term, height, "doSendMultisigTransaction");
+    deposit.locked = true;	
     DepositId depositId = m_transactionsCache.insertDeposit(deposit, depositIndex, transaction->getTransactionHash());
     transactionInfo.firstDepositId = depositId;
     transactionInfo.depositCount = 1;

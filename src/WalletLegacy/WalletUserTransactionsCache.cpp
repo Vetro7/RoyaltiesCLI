@@ -283,7 +283,7 @@ std::deque<std::unique_ptr<WalletLegacyEvent>> WalletUserTransactionsCache::onTr
   bool isCoinbase = txInfo.totalAmountIn == 0;
   uint64_t depositInterest = 0;
   for (const auto& spentDepositOutput : spentDepositOutputs) {
-    depositInterest += currency.calculateInterest(spentDepositOutput.amount, spentDepositOutput.term, txInfo.blockHeight);
+    depositInterest += currency.calculateInterest(spentDepositOutput.amount, spentDepositOutput.term, txInfo.blockHeight, "onTransactionUpdated");
   }
 
   if (id == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
@@ -614,7 +614,7 @@ DepositId WalletUserTransactionsCache::insertNewDeposit(const TransactionOutputI
   deposit.creatingTransactionId = creatingTransactionId;
   deposit.term = depositOutput.term;
   deposit.spendingTransactionId = WALLET_LEGACY_INVALID_TRANSACTION_ID;
-  deposit.interest = currency.calculateInterest(deposit.amount, deposit.term, height);
+  deposit.interest = currency.calculateInterest(deposit.amount, deposit.term, height, "WalletUserTransactionsCache::insertNewDeposit");
   deposit.locked = true;
 
   return insertDeposit(deposit, depositOutput.outputInTransaction, depositOutput.transactionHash);
