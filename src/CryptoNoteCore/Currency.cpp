@@ -157,7 +157,7 @@ bool Currency::getBlockReward(size_t medianSize, size_t currentBlockSize, uint64
   return true;
 }
 
-uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t height, std::string caller="") const {
+uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t height, std::string caller) const {
   assert(m_depositMinTerm <= term && term <= m_depositMaxTerm);
   assert(static_cast<uint64_t>(term)* m_depositMaxTotalRate > m_depositMinTotalRateFactor);
 
