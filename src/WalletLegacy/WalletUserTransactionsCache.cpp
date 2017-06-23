@@ -280,20 +280,24 @@ std::deque<std::unique_ptr<WalletLegacyEvent>> WalletUserTransactionsCache::onTr
     m_unconfirmedTransactions.erase(txInfo.transactionHash);
   }
 
-  bool isCoinbase = txInfo.totalAmountIn == 0;
-  uint64_t depositInterest = 0;
-  for (const auto& spentDepositOutput : spentDepositOutputs) {
-    depositInterest += currency.calculateInterest(spentDepositOutput.amount, spentDepositOutput.term, txInfo.blockHeight, "onTransactionUpdated");
-  }
-
   if (id == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
-    WalletLegacyTransaction transaction;
+	WalletLegacyTransaction transaction;
+	
+	bool isCoinbase = txInfo.totalAmountIn == 0;
+	if (isCoinbase){
+		transaction.fee = 0;
+	} else {
+		if (spentDepositOutputs.size() > 0)
+			transaction.fee = CryptoNote::parameters::MINIMUM_FEE;
+		else
+			transaction.fee = txInfo.totalAmountIn - txInfo.totalAmountOut;
+	}
+    
     transaction.firstTransferId = WALLET_LEGACY_INVALID_TRANSFER_ID;
     transaction.transferCount = 0;
     transaction.firstDepositId = WALLET_LEGACY_INVALID_DEPOSIT_ID;
     transaction.depositCount = 0;
     transaction.totalAmount = txBalance;
-    transaction.fee = isCoinbase ? 0 : txInfo.totalAmountIn + depositInterest - txInfo.totalAmountOut;
     transaction.sentTime = 0;
     transaction.hash = txInfo.transactionHash;
     transaction.blockHeight = txInfo.blockHeight;
