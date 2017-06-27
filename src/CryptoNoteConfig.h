@@ -7,6 +7,10 @@
 
 #pragma once
 
+//pragma once not working so using belo
+#ifndef CRYPTONOTECONFIG
+#define CRYPTONOTECONFIG
+
 #include <cstdint>
 #include <initializer_list>
 
@@ -22,7 +26,7 @@ const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 30;
 
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(18446744098000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(-1);
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
@@ -149,3 +153,5 @@ const std::initializer_list<CheckpointData> CHECKPOINTS = {
 } // CryptoNote
 
 #define ALLOW_DEBUG_COMMANDS
+
+#endif

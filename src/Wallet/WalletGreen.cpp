@@ -1027,7 +1027,7 @@ size_t WalletGreen::insertBlockchainTransaction(const TransactionInformation& in
   if (tx.isBase) {
     tx.fee = 0;
   } else {
-    tx.fee = info.totalAmountIn - info.totalAmountOut;
+    tx.fee = info.totalAmountIn < info.totalAmountOut ? CryptoNote::parameters::MINIMUM_FEE : info.totalAmountIn - info.totalAmountOut;
   }
 
   tx.unlockTime = info.unlockTime;
@@ -1302,7 +1302,7 @@ size_t WalletGreen::validateSaveAndSendTransaction(const ITransactionReader& tra
     throw std::system_error(make_error_code(error::INTERNAL_WALLET_ERROR), "Failed to deserialize created transaction");
   }
 
-  uint64_t fee = transaction.getInputTotalAmount() - transaction.getOutputTotalAmount();
+  uint64_t fee = tranaction.getInputsTotalAmount() < transaction.getOutputTotalAmount() ? CryptoNote::parameters::MINIMUM_FEE : transaction.getInputTotalAmount() - transaction.getOutputTotalAmount();
   size_t transactionId = insertOutgoingTransactionAndPushEvent(transaction.getTransactionHash(), fee, transaction.getExtra(), transaction.getUnlockTime());
   Tools::ScopeExit rollbackTransactionInsertion([this, transactionId] {
     updateTransactionStateAndPushEvent(transactionId, WalletTransactionState::FAILED);

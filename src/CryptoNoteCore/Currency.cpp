@@ -240,10 +240,12 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t & fee, uint32_t
   }
 
   if (amount_in < amount_out) {
-    return false;
+    //return false;
+	fee = CryptoNote::parameters::MINIMUM_FEE;
+	return true;
   }
 
-  fee = amount_in - amount_out;
+  fee = amount_in < amount_out ? CryptoNote::parameters::MINIMUM_FEE : amount_in - amount_out;
   return true;
 }
 
