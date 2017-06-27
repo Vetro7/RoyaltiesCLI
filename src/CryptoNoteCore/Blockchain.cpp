@@ -471,6 +471,8 @@ bool Blockchain::init(const std::string& config_folder, bool load_existing) {
 }
 
 void Blockchain::rebuildCache() {
+  logger(INFO, BRIGHT_WHITE) << "Rebuilding cache";
+  
   std::chrono::steady_clock::time_point timePoint = std::chrono::steady_clock::now();
   m_blockIndex.clear();
   m_transactionMap.clear();
@@ -512,7 +514,7 @@ void Blockchain::rebuildCache() {
         }
       }
 
-      interest += m_currency.calculateTotalTransactionInterest(transaction.tx, block.height);
+      interest += m_currency.calculateTotalTransactionInterest(transaction.tx, b); //block.height); //block.height shows 0 wrongly sometimes apparently
     }
 
     pushToDepositIndex(block, interest);
