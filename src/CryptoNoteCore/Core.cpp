@@ -210,7 +210,7 @@ bool core::handle_incoming_tx(const BinaryArray& tx_blob, tx_verification_contex
   Crypto::Hash blockId;
   uint32_t blockHeight;
   bool ok = getBlockContainingTx(tx_hash, blockId, blockHeight);
-  if (!ok) blockHeight = this->get_current_blockchain_height();
+  if (!ok) blockHeight = this->get_current_blockchain_height(); //this assumption fails for withdrawals
   return handleIncomingTransaction(tx, tx_hash, tx_blob.size(), tvc, keeped_by_block, blockHeight);
 }
 
@@ -224,7 +224,7 @@ bool core::get_stat_info(core_stat_info& st_inf) {
 }
 
 
-bool core::check_tx_semantic(const Transaction& tx, bool keeped_by_block, uint32_t height) {
+bool core::check_tx_semantic(const Transaction& tx, bool keeped_by_block, uint32_t &height) {
   if (!tx.inputs.size()) {
     logger(ERROR) << "tx with empty inputs, rejected for tx id= " << getObjectHash(tx);
     return false;
@@ -248,10 +248,17 @@ bool core::check_tx_semantic(const Transaction& tx, bool keeped_by_block, uint32
 
   uint64_t amount_in = m_currency.getTransactionAllInputsAmount(tx, height);
   uint64_t amount_out = get_outs_money_amount(tx);
-
-  if (amount_in < amount_out) {
-    logger(ERROR) << "tx with wrong amounts: ins " << amount_in << ", outs " << amount_out << ", rejected for tx id= " << getObjectHash(tx);
-    return false;
+  
+  if (amount_in < amount_out){
+	  //correct check for unknown deposit creation height
+	  uint32_t testHeight = height > parameters::END_MULTIPLIER_BLOCK ? 0 : (uint32_t)(-1); //try other mode
+	  amount_in = m_currency.getTransactionAllInputsAmount(tx, testHeight);
+	  if (amount_in < amount_out) {
+		logger(ERROR) << "tx with wrong amounts: ins " << amount_in << ", outs " << amount_out << ", rejected for tx id= " << getObjectHash(tx);
+		return false;
+	  } else {
+		  height = testHeight;
+	  }
   }
 
   //check if tx use different key images

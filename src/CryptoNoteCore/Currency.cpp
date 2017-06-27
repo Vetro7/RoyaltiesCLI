@@ -174,7 +174,7 @@ uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t he
   //early depositor multiplier
   uint64_t interestHi;
   uint64_t interestLo;
-  if (height < CryptoNote::parameters::END_MULTIPLIER_BLOCK){
+  if (height <= CryptoNote::parameters::END_MULTIPLIER_BLOCK){
       interestLo = mul128(cLo, CryptoNote::parameters::MULTIPLIER_FACTOR, &interestHi);
       assert(interestHi == 0);
   } else {
