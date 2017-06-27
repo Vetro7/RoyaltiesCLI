@@ -907,7 +907,7 @@ bool Blockchain::validate_miner_transaction(const Block& b, uint32_t height, siz
     return false;
   } else if (minerReward < reward) {
     logger(ERROR, BRIGHT_RED) << "Coinbase transaction doesn't use full amount of block reward: spent " <<
-      m_currency.formatAmount(minerReward) << ", block reward is " << m_currency.formatAmount(reward);
+      m_currency.formatAmount(minerReward) << ", block reward is " << m_currency.formatAmount(reward) << ", fee is " << fee;
     return false;
   }
 
@@ -1833,7 +1833,9 @@ bool Blockchain::pushBlock(const Block& blockData, const std::vector<Transaction
     block.transactions.resize(block.transactions.size() + 1);
     block.transactions.back().tx = transactions[i];
     size_t blob_size = toBinaryArray(transactions[i]).size();
-    uint64_t fee = m_currency.getTransactionAllInputsAmount(transactions[i], block.height) - getOutputAmount(transactions[i]);
+	uint64_t in_amount = m_currency.getTransactionAllInputsAmount(transactions[i], block.height);
+	uint64_t out_amount = getOutputAmount(transactions[i]);
+    uint64_t fee =  in_amount < out_amount ? CryptoNote::parameters::MINIMUM_FEE : in_amount - out_amount;
 
     bool isTransactionValid = true;
     if (block.bl.majorVersion == BLOCK_MAJOR_VERSION_1 && transactions[i].version > TRANSACTION_VERSION_1) {
