@@ -572,14 +572,14 @@ namespace CryptoNote
 			"arg.node_data.my_port=" << arg.node_data.my_port << ", " <<
 			"arg.node_data.network_id=" << arg.node_data.network_id << ", " <<
 			"arg.node_data.peer_id=" << arg.node_data.peer_id << ", " <<
-			"arg.node_data.version=" << arg.node_data.version << "; " <<
+			"arg.node_data.version=" << static_cast<uint32_t>(arg.node_data.version) << "; " <<
 			"arg.payload_data.current_height=" << arg.payload_data.current_height << ", " <<
 			"arg.payload_data.top_id=" << Common::podToHex(arg.payload_data.top_id) << "; " <<
 			"rsp.node_data.local_time=" << rsp.node_data.local_time << ", " <<
 			"rsp.node_data.my_port=" << rsp.node_data.my_port << ", " <<
 			"rsp.node_data.network_id=" << rsp.node_data.network_id << ", " <<
 			"rsp.node_data.peer_id=" << rsp.node_data.peer_id << ", " <<
-			"rsp.node_data.version=" << rsp.node_data.version << "; " <<
+			"rsp.node_data.version=" << static_cast<uint32_t>(rsp.node_data.version) << "; " <<
 			"rsp.payload_data.current_height=" << rsp.payload_data.current_height << ", " <<
 			"rsp.payload_data.top_id=" << Common::podToHex(rsp.payload_data.top_id) << "; ";
       return false;
