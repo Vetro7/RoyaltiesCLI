@@ -41,6 +41,8 @@
 #include "Serialization/BinaryOutputStreamSerializer.h"
 #include "Serialization/SerializationOverloads.h"
 
+#include "Common/StringTools.h"
+
 using namespace Common;
 using namespace Logging;
 using namespace CryptoNote;
@@ -565,6 +567,21 @@ namespace CryptoNote
 
     if (!proto.invoke(COMMAND_HANDSHAKE::ID, arg, rsp)) {
       logger(Logging::ERROR) << context << "Failed to invoke COMMAND_HANDSHAKE, closing connection.";
+	  logger(Logging::INFO) << "DETAILS " << 
+			"arg.node_data.local_time=" << arg.node_data.local_time << ", " <<
+			"arg.node_data.my_port=" << arg.node_data.my_port << ", " <<
+			"arg.node_data.network_id=" << arg.node_data.network_id << ", " <<
+			"arg.node_data.peer_id=" << arg.node_data.peer_id << ", " <<
+			"arg.node_data.version=" << arg.node_data.version << "; " <<
+			"arg.payload_data.current_height=" << arg.payload_data.current_height << ", " <<
+			"arg.payload_data.top_id=" << Common::podToHex(arg.payload_data.top_id) << "; " <<
+			"rsp.node_data.local_time=" << rsp.node_data.local_time << ", " <<
+			"rsp.node_data.my_port=" << rsp.node_data.my_port << ", " <<
+			"rsp.node_data.network_id=" << rsp.node_data.network_id << ", " <<
+			"rsp.node_data.peer_id=" << rsp.node_data.peer_id << ", " <<
+			"rsp.node_data.version=" << rsp.node_data.version << "; " <<
+			"rsp.payload_data.current_height=" << rsp.payload_data.current_height << ", " <<
+			"rsp.payload_data.top_id=" << Common::podToHex(rsp.payload_data.top_id) << "; ";
       return false;
     }
 
