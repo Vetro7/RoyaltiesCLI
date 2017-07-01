@@ -22,6 +22,11 @@ void StreamLogger::attachToStream(std::ostream& stream) {
 }
 
 void StreamLogger::doLogString(const std::string& message) {
+  #ifdef DEBUG
+    //print log to console too
+    std::cout << message;
+  #endif
+	
   if (stream != nullptr && stream->good()) {
     std::lock_guard<std::mutex> lock(mutex);
     bool readingText = true;

@@ -41,7 +41,7 @@
 #include "Serialization/BinaryOutputStreamSerializer.h"
 #include "Serialization/SerializationOverloads.h"
 
-#include "Common/StringTools.h"
+//#include "Common/StringTools.h"
 
 using namespace Common;
 using namespace Logging;
@@ -564,10 +564,9 @@ namespace CryptoNote
     COMMAND_HANDSHAKE::response rsp;
     get_local_node_data(arg.node_data);
     m_payload_handler.get_payload_sync_data(arg.payload_data);
-
-    if (!proto.invoke(COMMAND_HANDSHAKE::ID, arg, rsp)) {
-      logger(Logging::ERROR) << context << "Failed to invoke COMMAND_HANDSHAKE, closing connection.";
-	  logger(Logging::INFO) << "DETAILS " << 
+	/*
+	auto logArgAndResp = [this,arg,rsp]() {
+		logger(Logging::TRACE) << "HANDSHAKE COMM DETAILS " << 
 			"arg.node_data.local_time=" << arg.node_data.local_time << ", " <<
 			"arg.node_data.my_port=" << arg.node_data.my_port << ", " <<
 			"arg.node_data.network_id=" << arg.node_data.network_id << ", " <<
@@ -582,8 +581,17 @@ namespace CryptoNote
 			"rsp.node_data.version=" << static_cast<uint32_t>(rsp.node_data.version) << "; " <<
 			"rsp.payload_data.current_height=" << rsp.payload_data.current_height << ", " <<
 			"rsp.payload_data.top_id=" << Common::podToHex(rsp.payload_data.top_id) << "; ";
+	};
+	*/ 
+	
+    if (!proto.invoke(COMMAND_HANDSHAKE::ID, arg, rsp)) {
+      logger(Logging::ERROR) << context << "Failed to invoke COMMAND_HANDSHAKE, closing connection.";	  
+	  //logArgAndResp();
       return false;
-    }
+    } 
+	//else {
+	//  logArgAndResp();
+	//}
 
     context.version = rsp.node_data.version;
 
@@ -755,18 +763,18 @@ namespace CryptoNote
         logger(DEBUGGING) << "Handshake timed out";
         return false;
       }
-
+	  
       if (just_take_peerlist) {
         logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << ctx << "CONNECTION HANDSHAKED OK AND CLOSED.";
         return true;
       }
-
+	  
       PeerlistEntry pe_local = boost::value_initialized<PeerlistEntry>();
       pe_local.adr = na;
       pe_local.id = ctx.peerId;
       pe_local.last_seen = time(nullptr);
       m_peerlist.append_with_peer_white(pe_local);
-
+	  
       if (m_stop) {
         throw System::InterruptedException();
       }
@@ -774,9 +782,9 @@ namespace CryptoNote
       auto iter = m_connections.emplace(ctx.m_connection_id, std::move(ctx)).first;
       const boost::uuids::uuid& connectionId = iter->first;
       P2pConnectionContext& connectionContext = iter->second;
-
+	  
       m_workingContextGroup.spawn(std::bind(&NodeServer::connectionHandler, this, std::cref(connectionId), std::ref(connectionContext)));
-
+	  
       return true;
     } catch (System::InterruptedException&) {
       logger(DEBUGGING) << "Connection process interrupted";
@@ -784,7 +792,7 @@ namespace CryptoNote
     } catch (const std::exception& e) {
       logger(DEBUGGING) << "Connection to " << na << " failed: " << e.what();
     }
-
+	
     return false;
   }
 
@@ -1377,7 +1385,7 @@ namespace CryptoNote
 
       try {
         on_connection_new(ctx);
-
+		
         LevinProtocol proto(ctx.connection);
         LevinProtocol::Command cmd;
 
@@ -1389,7 +1397,7 @@ namespace CryptoNote
             ctx.m_state = CryptoNoteConnectionContext::state_normal;
             m_payload_handler.requestMissingPoolTransactions(ctx);
           }
-
+		  
           if (!proto.readCommand(cmd)) {
             break;
           }
@@ -1404,10 +1412,10 @@ namespace CryptoNote
               retcode = static_cast<int32_t>(LevinError::ERROR_CONNECTION_HANDLER_NOT_DEFINED);
               response.clear();
             }
-
+			
             ctx.pushMessage(P2pMessage(P2pMessage::REPLY, cmd.command, std::move(response), retcode));
           }
-
+		  
           if (ctx.m_state == CryptoNoteConnectionContext::state_shutdown) {
             break;
           }
@@ -1417,7 +1425,7 @@ namespace CryptoNote
       } catch (std::exception& e) {
         logger(WARNING) << ctx << "Exception in connectionHandler: " << e.what();
       }
-
+	  
       ctx.interrupt();
       writeContext.interrupt();
       writeContext.get();
