@@ -17,8 +17,8 @@ Change to the directory where this file is located and run these commands:
 ```
 mkdir build
 cd build
-cmake ..
-cd ..
+cmake
+cd
 make
 ```
 
