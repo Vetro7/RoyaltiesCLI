@@ -1,0 +1,140 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/JsonValue.h
+cstddef
+-
+cstdint
+-
+map
+-
+string
+-
+vector
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/CommonLogger.cpp
+CommonLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/CommonLogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/CommonLogger.h
+set
+-
+ILogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ILogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ConsoleLogger.cpp
+ConsoleLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ConsoleLogger.h
+iostream
+-
+unordered_map
+-
+Common/ConsoleTools.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ConsoleLogger.h
+mutex
+-
+CommonLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/CommonLogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/FileLogger.cpp
+FileLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/FileLogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/FileLogger.h
+fstream
+-
+StreamLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/StreamLogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ILogger.cpp
+ILogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ILogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ILogger.h
+string
+-
+array
+-
+boost/date_time/posix_time/posix_time.hpp
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerGroup.cpp
+LoggerGroup.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerGroup.h
+algorithm
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerGroup.h
+vector
+-
+CommonLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/CommonLogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerManager.cpp
+LoggerManager.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerManager.h
+thread
+-
+ConsoleLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ConsoleLogger.h
+FileLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/FileLogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerManager.h
+list
+-
+memory
+-
+mutex
+-
+../Common/JsonValue.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/JsonValue.h
+LoggerGroup.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerGroup.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerMessage.cpp
+LoggerMessage.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerMessage.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerMessage.h
+iostream
+-
+ILogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ILogger.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerRef.cpp
+LoggerRef.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerRef.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerRef.h
+ILogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/ILogger.h
+LoggerMessage.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/LoggerMessage.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/StreamLogger.cpp
+StreamLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/StreamLogger.h
+iostream
+-
+sstream
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/StreamLogger.h
+mutex
+-
+CommonLogger.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Logging/CommonLogger.h
+
+src/Common/ConsoleTools.h
+cstdint
+-
+

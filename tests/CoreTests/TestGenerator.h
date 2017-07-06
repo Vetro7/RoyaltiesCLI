@@ -30,6 +30,7 @@ public:
     generator.constructBlock(genesisBlock, minerAccount, 1338224400);
     events.push_back(genesisBlock);
     lastBlock = genesisBlock;
+	height = 0;
   }
 
   const CryptoNote::Currency& currency() const { return generator.currency(); }
@@ -39,6 +40,7 @@ public:
     generator.constructBlock(block, lastBlock, minerAccount, txs);
     events.push_back(block);
     lastBlock = block;
+	++height;
   }
 
   void makeNextBlock(const CryptoNote::Transaction& tx) {
@@ -56,6 +58,7 @@ public:
       CryptoNote::Block next;
       generator.constructBlockManually(next, lastBlock, minerAccount, test_generator::bf_major_ver, majorVersion);
       lastBlock = next;
+	  ++height;
       events.push_back(next);
     }
   }
@@ -116,4 +119,6 @@ public:
   CryptoNote::Block lastBlock;
   CryptoNote::AccountBase minerAccount;
   std::vector<test_event_entry>& events;
+  
+  uint32_t height;
 };

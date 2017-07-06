@@ -306,7 +306,7 @@ protected:
   void unlockDeposit(uint32_t term);
   CryptoNote::DepositId makeDepositAndUnlock(uint64_t amount, uint32_t term, uint64_t fee, uint64_t mixin = 0);
   CryptoNote::TransactionId withdrawDeposits(const std::vector<CryptoNote::DepositId>& ids, uint64_t fee);
-  uint64_t calculateTotalDepositAmount(uint64_t amount, uint32_t term);
+  uint64_t calculateTotalDepositAmount(uint64_t amount, uint32_t term, uint32_t height);
 
   Logging::ConsoleLogger m_logger;
   CryptoNote::Currency m_currency;
@@ -482,7 +482,7 @@ CryptoNote::DepositId WalletLegacyApi::makeDeposit(uint64_t amount, uint32_t ter
 }
 
 void WalletLegacyApi::unlockDeposit(uint32_t term) {
-  generator.generateEmptyBlocks(term - 1); //subtract 1 becaause INodeTrivialRefreshStub->relayTransaction adds new block implicitly
+  generator.generateEmptyBlocks(term - 1); //subtract 1 because INodeTrivialRefreshStub->relayTransaction adds new block implicitly
   aliceNode->updateObservers();
   WaitWalletSync(aliceWalletObserver.get());
 }
@@ -502,8 +502,8 @@ CryptoNote::TransactionId WalletLegacyApi::withdrawDeposits(const std::vector<Cr
   return txId;
 }
 
-uint64_t WalletLegacyApi::calculateTotalDepositAmount(uint64_t amount, uint32_t term) {
-  return m_currency.calculateInterest(amount, term) + amount;
+uint64_t WalletLegacyApi::calculateTotalDepositAmount(uint64_t amount, uint32_t term, uint32_t height) {
+  return m_currency.calculateInterest(amount, term, height) + amount;
 }
 
 TEST_F(WalletLegacyApi, initAndSave) {
@@ -2166,7 +2166,7 @@ TEST_F(WalletLegacyApi, depositReturnsCorrectDeposit) {
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, deposit.spendingTransactionId);
   EXPECT_EQ(TERM, deposit.term);
   EXPECT_EQ(AMOUNT, deposit.amount);
-  EXPECT_EQ(m_currency.calculateInterest(deposit.amount, deposit.term), deposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(deposit.amount, deposit.term, 10), deposit.interest);
 
   alice->shutdown();
 }
@@ -2200,7 +2200,7 @@ TEST_F(WalletLegacyApi, depositWithMixinReturnsCorrectDeposit) {
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, deposit.spendingTransactionId);
   EXPECT_EQ(TERM, deposit.term);
   EXPECT_EQ(AMOUNT, deposit.amount);
-  EXPECT_EQ(m_currency.calculateInterest(deposit.amount, deposit.term), deposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(deposit.amount, deposit.term, 10), deposit.interest);
 
   alice->shutdown();
 }
@@ -2251,7 +2251,7 @@ TEST_F(WalletLegacyApi, depositsRestoredAfterSerialization) {
   EXPECT_EQ(TERM1, deposit1.term);
   EXPECT_EQ(firstTx, deposit1.creatingTransactionId);
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, deposit1.spendingTransactionId);
-  EXPECT_EQ(m_currency.calculateInterest(deposit1.amount, deposit1.term), deposit1.interest);
+  EXPECT_EQ(m_currency.calculateInterest(deposit1.amount, deposit1.term, 10), deposit1.interest);
 
   CryptoNote::Deposit deposit2;
   ASSERT_TRUE(bob->getDeposit(1, deposit2));
@@ -2259,7 +2259,7 @@ TEST_F(WalletLegacyApi, depositsRestoredAfterSerialization) {
   EXPECT_EQ(TERM2, deposit2.term);
   EXPECT_EQ(secondTx, deposit2.creatingTransactionId);
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, deposit2.spendingTransactionId);
-  EXPECT_EQ(m_currency.calculateInterest(deposit2.amount, deposit2.term), deposit2.interest);
+  EXPECT_EQ(m_currency.calculateInterest(deposit2.amount, deposit2.term, 10), deposit2.interest);
 
   bob->shutdown();
 }
@@ -2297,7 +2297,7 @@ TEST_F(WalletLegacyApi, depositsRestoredFromBlockchain) {
   bob->getDeposit(unlockedDepositId, unlockedDeposit);
   EXPECT_EQ(AMOUNT, unlockedDeposit.amount);
   EXPECT_EQ(TERM, unlockedDeposit.term);
-  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM), unlockedDeposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM, 10), unlockedDeposit.interest);
   EXPECT_EQ(unlockedDepositCreatingTransactionId, unlockedDeposit.creatingTransactionId);
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, unlockedDeposit.spendingTransactionId);
   EXPECT_FALSE(unlockedDeposit.locked);
@@ -2306,7 +2306,7 @@ TEST_F(WalletLegacyApi, depositsRestoredFromBlockchain) {
   bob->getDeposit(lockedDepositId, lockedDeposit);
   EXPECT_EQ(AMOUNT2, lockedDeposit.amount);
   EXPECT_EQ(TERM, lockedDeposit.term);
-  EXPECT_EQ(m_currency.calculateInterest(AMOUNT2, TERM), lockedDeposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(AMOUNT2, TERM, 10+TERM-1), lockedDeposit.interest);
   EXPECT_EQ(lockedDepositCreatingTransactionId, lockedDeposit.creatingTransactionId);
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, lockedDeposit.spendingTransactionId);
   EXPECT_TRUE(lockedDeposit.locked);
@@ -2318,7 +2318,7 @@ TEST_F(WalletLegacyApi, depositsUnlock) {
   alice->initAndGenerate("pass");
   WaitWalletSync(aliceWalletObserver.get());
 
-  GenerateOneBlockRewardAndUnlock();
+  GenerateOneBlockRewardAndUnlock(); //h=0+10
 
   auto walletActualBalance = alice->actualBalance();
 
@@ -2326,9 +2326,9 @@ TEST_F(WalletLegacyApi, depositsUnlock) {
   const uint32_t TERM = m_currency.depositMinTerm();
   const uint64_t FEE = m_currency.minimumFee();
 
-  auto depositId = makeDepositAndUnlock(AMOUNT, TERM, FEE);
+  auto depositId = makeDepositAndUnlock(AMOUNT, TERM, FEE); //h+=term-1
 
-  uint64_t expectedActualDepositBalance = calculateTotalDepositAmount(AMOUNT, TERM);
+  uint64_t expectedActualDepositBalance = calculateTotalDepositAmount(AMOUNT, TERM, 10); //h=10 @ deposit time
   EXPECT_EQ(expectedActualDepositBalance, alice->actualDepositBalance());
   EXPECT_EQ(0, alice->pendingDepositBalance());
 
@@ -2424,7 +2424,7 @@ TEST_F(WalletLegacyApi, depositsWithdraw) {
   auto id = makeDepositAndUnlock(AMOUNT, TERM, FEE);
 
   withdrawDeposits({id}, FEE2);
-  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM) - FEE2, alice->pendingBalance());
+  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM, 10) - FEE2, alice->pendingBalance());
 
   alice->shutdown();
 }
@@ -2520,7 +2520,7 @@ TEST_F(WalletLegacyApi, depositsWithdrawFeeGreaterThenAmount) {
   auto depositId = makeDeposit(AMOUNT, TERM, FEE);
   unlockDeposit(TERM);
 
-  ASSERT_ANY_THROW(withdrawDeposits({depositId}, calculateTotalDepositAmount(AMOUNT, TERM) + 1));
+  ASSERT_ANY_THROW(withdrawDeposits({depositId}, calculateTotalDepositAmount(AMOUNT, TERM, 10) + 1));
 
   alice->shutdown();
 }
@@ -2572,7 +2572,7 @@ TEST_F(WalletLegacyApi, depositsBalancesRightAfterMakingDeposit) {
 
   auto depositPending = depositPendingBalanceChanged.wait();
 
-  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM), depositPending);
+  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM, 10), depositPending);
   EXPECT_EQ(0, alice->actualDepositBalance());
 
   EXPECT_EQ(initialActualBalance - AMOUNT - FEE, alice->actualBalance() + alice->pendingBalance());
@@ -2602,7 +2602,7 @@ TEST_F(WalletLegacyApi, depositsBalancesAfterUnlockingDeposit) {
   auto depositPending = depositPendingBalanceChanged.wait();
   auto depositActual = depositActualBalanceChanged.wait();
 
-  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM), depositActual);
+  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM, 10), depositActual);
   EXPECT_EQ(0, depositPending);
   EXPECT_EQ(initialTotalBalance - AMOUNT - FEE,  alice->actualBalance() + alice->pendingBalance());
 
@@ -2634,7 +2634,7 @@ TEST_F(WalletLegacyApi, depositsBalancesAfterWithdrawDeposit) {
 
   EXPECT_EQ(0, depositActual);
   EXPECT_EQ(0, alice->pendingDepositBalance());
-  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM) - FEE2, pendingBalance);
+  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM, 10) - FEE2, pendingBalance);
   EXPECT_EQ(initialActualBalance - AMOUNT - FEE,  alice->actualBalance());
 
   alice->shutdown();
@@ -2766,7 +2766,7 @@ TEST_F(WalletLegacyApi, unlockedDepositsLockedAfterDetach) {
   auto depositPendingBalance = depositsPendingBalanceChanged.wait();
   auto depositsUpdated = depositsUpdatedCalled.wait();
 
-  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM), depositPendingBalance);
+  EXPECT_EQ(calculateTotalDepositAmount(AMOUNT, TERM, 10), depositPendingBalance);
   EXPECT_EQ(0, depositActualBalance);
 
   ASSERT_EQ(1, depositsUpdated.size());
@@ -2810,7 +2810,7 @@ TEST_F(WalletLegacyApi, serializeLockedDeposit) {
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, deposit.spendingTransactionId);
   EXPECT_EQ(TERM, deposit.term);
   EXPECT_EQ(AMOUNT, deposit.amount);
-  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM), deposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM, 10), deposit.interest);
   EXPECT_TRUE(deposit.locked);
 
   bob->shutdown();
@@ -2846,7 +2846,7 @@ TEST_F(WalletLegacyApi, serializeUnlockedDeposit) {
   EXPECT_EQ(CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID, deposit.spendingTransactionId);
   EXPECT_EQ(TERM, deposit.term);
   EXPECT_EQ(AMOUNT, deposit.amount);
-  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM), deposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM, 10), deposit.interest);
   EXPECT_FALSE(deposit.locked);
 
   bob->shutdown();
@@ -2884,7 +2884,7 @@ TEST_F(WalletLegacyApi, serializeSpentDeposit) {
   EXPECT_EQ(2, deposit.spendingTransactionId);
   EXPECT_EQ(TERM, deposit.term);
   EXPECT_EQ(AMOUNT, deposit.amount);
-  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM), deposit.interest);
+  EXPECT_EQ(m_currency.calculateInterest(AMOUNT, TERM, 10), deposit.interest);
   EXPECT_FALSE(deposit.locked);
 
   bob->shutdown();

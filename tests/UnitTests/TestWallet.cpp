@@ -2208,8 +2208,9 @@ TEST_F(WalletApi, donationTransactionHaveCorrectFee) {
 
   wallet.transfer(params);
 
+  uint32_t height = std::max(currency.minedMoneyUnlockWindow(), static_cast<size_t>(TRANSACTION_SOFTLOCK_TIME));
   ASSERT_TRUE(catchNode.caught);
-  ASSERT_EQ(FEE, currency.getTransactionAllInputsAmount(catchNode.transaction) - getOutputAmount(catchNode.transaction));
+  ASSERT_EQ(FEE, currency.getTransactionAllInputsAmount(catchNode.transaction, height) - getOutputAmount(catchNode.transaction));
 
   wallet.shutdown();
 }

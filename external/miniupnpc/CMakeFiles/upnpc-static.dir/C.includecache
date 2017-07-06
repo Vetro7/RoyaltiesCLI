@@ -1,0 +1,360 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/bsdqueue.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/codelength.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/connecthostport.c
+string.h
+-
+stdio.h
+-
+winsock2.h
+-
+ws2tcpip.h
+-
+io.h
+-
+unistd.h
+-
+sys/param.h
+-
+sys/select.h
+-
+errno.h
+-
+netdb.h
+-
+netinet/in.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+sys/select.h
+-
+connecthostport.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/connecthostport.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/connecthostport.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/declspec.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/igd_desc_parse.c
+igd_desc_parse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/igd_desc_parse.h
+stdio.h
+-
+string.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/igd_desc_parse.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minisoap.c
+stdio.h
+-
+string.h
+-
+io.h
+-
+winsock2.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+minisoap.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minisoap.h
+miniupnpcstrings.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpcstrings.h
+stdlib.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minisoap.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minissdpc.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+sys/types.h
+-
+winsock2.h
+-
+ws2tcpip.h
+-
+io.h
+-
+winsock.h
+-
+stdint.h
+-
+sys/socket.h
+-
+sys/socket.h
+-
+sys/un.h
+-
+minissdpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minissdpc.h
+miniupnpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.h
+codelength.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/codelength.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minissdpc.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+winsock2.h
+-
+ws2tcpip.h
+-
+io.h
+-
+iphlpapi.h
+-
+unistd.h
+-
+sys/select.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+sys/param.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+netdb.h
+-
+net/if.h
+-
+poll.h
+-
+strings.h
+-
+errno.h
+-
+sys/time.h
+-
+miniupnpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.h
+minissdpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minissdpc.h
+miniwget.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniwget.h
+minisoap.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minisoap.h
+minixml.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minixml.h
+upnpcommands.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpcommands.h
+connecthostport.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/connecthostport.h
+receivedata.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/receivedata.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.h
+declspec.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/declspec.h
+igd_desc_parse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/igd_desc_parse.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpctypes.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniwget.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+winsock2.h
+-
+ws2tcpip.h
+-
+io.h
+-
+unistd.h
+-
+sys/param.h
+-
+sys/select.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+net/if.h
+-
+netdb.h
+-
+miniupnpcstrings.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpcstrings.h
+miniwget.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniwget.h
+connecthostport.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/connecthostport.h
+receivedata.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/receivedata.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniwget.h
+declspec.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/declspec.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minixml.c
+string.h
+-
+minixml.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minixml.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minixml.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/portlistingparse.c
+string.h
+-
+stdlib.h
+-
+portlistingparse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/portlistingparse.h
+minixml.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minixml.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/portlistingparse.h
+declspec.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/declspec.h
+miniupnpctypes.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpctypes.h
+bsdqueue.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/bsdqueue.h
+sys/queue.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/receivedata.c
+stdio.h
+-
+winsock2.h
+-
+ws2tcpip.h
+-
+unistd.h
+-
+sys/select.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+poll.h
+-
+errno.h
+-
+receivedata.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/receivedata.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/receivedata.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpc.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+winsock2.h
+-
+netinet/in.h
+-
+miniwget.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniwget.h
+miniupnpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.h
+upnpcommands.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpcommands.h
+upnperrors.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnperrors.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpcommands.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+upnpcommands.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpcommands.h
+miniupnpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.h
+portlistingparse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/portlistingparse.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpcommands.h
+upnpreplyparse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpreplyparse.h
+portlistingparse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/portlistingparse.h
+declspec.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/declspec.h
+miniupnpctypes.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpctypes.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnperrors.c
+string.h
+-
+upnperrors.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnperrors.h
+upnpcommands.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpcommands.h
+miniupnpc.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/miniupnpc.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnperrors.h
+declspec.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/declspec.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpreplyparse.c
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+upnpreplyparse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpreplyparse.h
+minixml.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/minixml.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/upnpreplyparse.h
+bsdqueue.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/external/miniupnpc/bsdqueue.h
+sys/queue.h
+-
+
+miniupnpcstrings.h
+

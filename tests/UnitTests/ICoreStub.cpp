@@ -331,7 +331,7 @@ std::unique_ptr<CryptoNote::IBlock> ICoreStub::getBlock(const Crypto::Hash& bloc
   return std::unique_ptr<CryptoNote::IBlock>(nullptr);
 }
 
-bool ICoreStub::handleIncomingTransaction(const CryptoNote::Transaction& tx, const Crypto::Hash& txHash, size_t blobSize, CryptoNote::tx_verification_context& tvc, bool keptByBlock) {
+bool ICoreStub::handleIncomingTransaction(const CryptoNote::Transaction& tx, const Crypto::Hash& txHash, size_t blobSize, CryptoNote::tx_verification_context& tvc, bool keptByBlock, uint32_t /*height*/) {
   auto result = transactionPool.emplace(std::make_pair(txHash, tx));
   tvc.m_verifivation_failed = !poolTxVerificationResult;
   tvc.m_added_to_pool = true;

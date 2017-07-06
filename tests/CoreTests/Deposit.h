@@ -90,11 +90,11 @@ struct DepositIndexTest : public DepositTestsBase {
   }
 
   bool interestOneMinimal(const Core& c, std::size_t ev_index, const Events& events) {
-    return c.fullDepositInterest() == m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm());
+    return c.fullDepositInterest() == m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm(), 0);
   }
 
   bool interestTwoMininmal(const Core& c, std::size_t ev_index, const Events& events) {
-    return c.fullDepositInterest() == 2 * m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm());
+    return c.fullDepositInterest() == 2 * m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm(), 0);
   }
 };
 
@@ -109,7 +109,7 @@ struct EmissionTest : public DepositTestsBase {
     if (emission_after == 0 || emission_before == 0) {
       return true;
     }
-    return emission_after == emission_before + CryptoNote::START_BLOCK_REWARD + m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm());
+    return emission_after == emission_before + CryptoNote::START_BLOCK_REWARD + m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm(), 0); //!
   }
 
   bool save_emission_before(CryptoNote::core& c, std::size_t /*ev_index*/,
@@ -133,7 +133,7 @@ struct EmissionTestRestore : public EmissionTest {
     if (emission_after == 0 || emission_before == 0) {
       return true;
     }
-    return emission_after == emission_before + CryptoNote::START_BLOCK_REWARD * 3 - m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm());
+    return emission_after == emission_before + CryptoNote::START_BLOCK_REWARD * 3 - m_currency.calculateInterest(m_currency.depositMinAmount(), m_currency.depositMinTerm(), 0); //!
   }
 };
 

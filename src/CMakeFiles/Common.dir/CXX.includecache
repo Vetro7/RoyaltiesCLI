@@ -1,0 +1,420 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Base58.cpp
+Base58.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Base58.h
+assert.h
+-
+string
+-
+vector
+-
+crypto/hash.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/crypto/hash.h
+int-util.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/int-util.h
+Varint.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Varint.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Base58.h
+cstdint
+-
+string
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/BlockingQueue.cpp
+BlockingQueue.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/BlockingQueue.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/BlockingQueue.h
+atomic
+-
+condition_variable
+-
+deque
+-
+mutex
+-
+thread
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/CommandLine.cpp
+CommandLine.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/CommandLine.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/CommandLine.h
+iostream
+-
+type_traits
+-
+boost/program_options/parsers.hpp
+-
+boost/program_options/options_description.hpp
+-
+boost/program_options/variables_map.hpp
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleHandler.cpp
+ConsoleHandler.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleHandler.h
+iostream
+-
+iomanip
+-
+sstream
+-
+Windows.h
+-
+unistd.h
+-
+stdio.h
+-
+boost/algorithm/string.hpp
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleHandler.h
+atomic
+-
+functional
+-
+map
+-
+string
+-
+thread
+-
+vector
+-
+BlockingQueue.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/BlockingQueue.h
+ConsoleTools.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleTools.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleTools.cpp
+ConsoleTools.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleTools.h
+stdio.h
+-
+Windows.h
+-
+io.h
+-
+iostream
+-
+unistd.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ConsoleTools.h
+cstdint
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.cpp
+IInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.h
+cstddef
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.cpp
+IOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.h
+cstddef
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/JsonValue.cpp
+JsonValue.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/JsonValue.h
+iomanip
+-
+sstream
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/JsonValue.h
+cstddef
+-
+cstdint
+-
+map
+-
+string
+-
+vector
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Math.cpp
+Math.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Math.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Math.h
+algorithm
+-
+vector
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/MemoryInputStream.cpp
+MemoryInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/MemoryInputStream.h
+algorithm
+-
+cassert
+-
+cstring
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/MemoryInputStream.h
+IInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/PathTools.cpp
+PathTools.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/PathTools.h
+algorithm
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/PathTools.h
+string
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ScopeExit.cpp
+ScopeExit.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ScopeExit.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/ScopeExit.h
+functional
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/SignalHandler.cpp
+SignalHandler.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/SignalHandler.h
+mutex
+-
+iostream
+-
+Windows.h
+-
+signal.h
+-
+cstring
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/SignalHandler.h
+functional
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StdInputStream.cpp
+StdInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StdInputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StdInputStream.h
+istream
+-
+IInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StdOutputStream.cpp
+StdOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StdOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StdOutputStream.h
+ostream
+-
+IOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StreamTools.cpp
+StreamTools.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StreamTools.h
+stdexcept
+-
+IInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.h
+IOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StreamTools.h
+cstdint
+-
+vector
+-
+string
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringInputStream.cpp
+StringInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringInputStream.h
+string.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringInputStream.h
+string
+-
+IInputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IInputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringOutputStream.cpp
+StringOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringOutputStream.h
+string
+-
+IOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringTools.cpp
+StringTools.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringTools.h
+fstream
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringTools.h
+cstdint
+-
+sstream
+-
+stdexcept
+-
+vector
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringView.cpp
+StringView.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringView.h
+limits
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/StringView.h
+cassert
+-
+string
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Util.cpp
+Util.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Util.h
+cstdio
+-
+boost/filesystem.hpp
+-
+CryptoNoteConfig.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/CryptoNoteConfig.h
+windows.h
+-
+shlobj.h
+-
+strsafe.h
+-
+sys/utsname.h
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Util.h
+string
+-
+system_error
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/Varint.h
+limits
+-
+sstream
+-
+string
+-
+type_traits
+-
+utility
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/VectorOutputStream.cpp
+VectorOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/VectorOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/VectorOutputStream.h
+cstdint
+-
+vector
+-
+IOutputStream.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/IOutputStream.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/Common/int-util.h
+assert.h
+-
+stdbool.h
+-
+stdint.h
+-
+string.h
+-
+sys/param.h
+-
+stdlib.h
+-
+
+include/CryptoTypes.h
+cstdint
+-
+
+src/Common/int-util.h
+assert.h
+-
+stdbool.h
+-
+stdint.h
+-
+string.h
+-
+sys/param.h
+-
+stdlib.h
+-
+
+src/Common/static_assert.h
+
+src/CryptoNoteConfig.h
+cstdint
+-
+initializer_list
+-
+
+src/crypto/generic-ops.h
+cstddef
+-
+cstring
+-
+functional
+-
+
+src/crypto/hash-ops.h
+assert.h
+-
+stdbool.h
+-
+stddef.h
+-
+stdint.h
+-
+../Common/static_assert.h
+src/Common/static_assert.h
+Common/int-util.h
+src/crypto/Common/int-util.h
+
+src/crypto/hash.h
+stddef.h
+-
+CryptoTypes.h
+-
+generic-ops.h
+src/crypto/generic-ops.h
+hash-ops.h
+src/crypto/hash-ops.h
+

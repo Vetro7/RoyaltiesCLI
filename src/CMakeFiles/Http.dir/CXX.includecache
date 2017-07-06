@@ -1,0 +1,64 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParser.cpp
+HttpParser.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParser.h
+algorithm
+-
+HttpParserErrorCodes.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParserErrorCodes.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParser.h
+iostream
+-
+map
+-
+string
+-
+HttpRequest.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpRequest.h
+HttpResponse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpResponse.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParserErrorCodes.cpp
+HttpParserErrorCodes.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParserErrorCodes.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpParserErrorCodes.h
+string
+-
+system_error
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpRequest.cpp
+HttpRequest.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpRequest.h
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpRequest.h
+iostream
+-
+map
+-
+string
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpResponse.cpp
+HttpResponse.h
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpResponse.h
+stdexcept
+-
+
+/home/jamey/Documents/Coding for 3rd parties/SamSmith-EricVesprini/vetro7/Royalties/src/HTTP/HttpResponse.h
+ostream
+-
+string
+-
+map
+-
+

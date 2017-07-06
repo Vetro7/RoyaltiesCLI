@@ -1,0 +1,3984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="external">
+        <df name="gtest">
+          <df name="src">
+            <in>gtest-all.cc</in>
+            <in>gtest_main.cc</in>
+          </df>
+        </df>
+        <df name="miniupnpc">
+          <in>connecthostport.c</in>
+          <in>igd_desc_parse.c</in>
+          <in>minisoap.c</in>
+          <in>minissdpc.c</in>
+          <in>miniupnpc.c</in>
+          <in>miniwget.c</in>
+          <in>minixml.c</in>
+          <in>portlistingparse.c</in>
+          <in>receivedata.c</in>
+          <in>upnpc.c</in>
+          <in>upnpcommands.c</in>
+          <in>upnperrors.c</in>
+          <in>upnpreplyparse.c</in>
+        </df>
+      </df>
+      <df name="src">
+        <df name="BlockchainExplorer">
+          <in>BlockchainExplorer.cpp</in>
+          <in>BlockchainExplorerDataBuilder.cpp</in>
+          <in>BlockchainExplorerErrors.cpp</in>
+        </df>
+        <df name="Common">
+          <in>Base58.cpp</in>
+          <in>BlockingQueue.cpp</in>
+          <in>CommandLine.cpp</in>
+          <in>ConsoleHandler.cpp</in>
+          <in>ConsoleTools.cpp</in>
+          <in>IInputStream.cpp</in>
+          <in>IOutputStream.cpp</in>
+          <in>JsonValue.cpp</in>
+          <in>Math.cpp</in>
+          <in>MemoryInputStream.cpp</in>
+          <in>PathTools.cpp</in>
+          <in>ScopeExit.cpp</in>
+          <in>SignalHandler.cpp</in>
+          <in>StdInputStream.cpp</in>
+          <in>StdOutputStream.cpp</in>
+          <in>StreamTools.cpp</in>
+          <in>StringInputStream.cpp</in>
+          <in>StringOutputStream.cpp</in>
+          <in>StringTools.cpp</in>
+          <in>StringView.cpp</in>
+          <in>Util.cpp</in>
+          <in>VectorOutputStream.cpp</in>
+        </df>
+        <df name="ConnectivityTool">
+          <in>ConnectivityTool.cpp</in>
+        </df>
+        <df name="crypto">
+          <in>blake256.c</in>
+          <in>chacha.c</in>
+          <in>crypto-ops-data.c</in>
+          <in>crypto-ops.c</in>
+          <in>crypto.cpp</in>
+          <in>groestl.c</in>
+          <in>hash-extra-blake.c</in>
+          <in>hash-extra-groestl.c</in>
+          <in>hash-extra-jh.c</in>
+          <in>hash-extra-skein.c</in>
+          <in>hash.c</in>
+          <in>jh.c</in>
+          <in>keccak.c</in>
+          <in>oaes_lib.c</in>
+          <in>random.c</in>
+          <in>skein.c</in>
+          <in>slow-hash.c</in>
+          <in>slow-hash.cpp</in>
+          <in>tree-hash.c</in>
+        </df>
+        <df name="CryptoNoteCore">
+          <in>Account.cpp</in>
+          <in>BlockIndex.cpp</in>
+          <in>Blockchain.cpp</in>
+          <in>BlockchainIndices.cpp</in>
+          <in>BlockchainMessages.cpp</in>
+          <in>Checkpoints.cpp</in>
+          <in>Core.cpp</in>
+          <in>CoreConfig.cpp</in>
+          <in>CryptoNoteBasic.cpp</in>
+          <in>CryptoNoteBasicImpl.cpp</in>
+          <in>CryptoNoteFormatUtils.cpp</in>
+          <in>CryptoNoteSerialization.cpp</in>
+          <in>CryptoNoteTools.cpp</in>
+          <in>Currency.cpp</in>
+          <in>DepositIndex.cpp</in>
+          <in>Difficulty.cpp</in>
+          <in>IBlock.cpp</in>
+          <in>ITimeProvider.cpp</in>
+          <in>Miner.cpp</in>
+          <in>MinerConfig.cpp</in>
+          <in>SwappedMap.cpp</in>
+          <in>SwappedVector.cpp</in>
+          <in>Transaction.cpp</in>
+          <in>TransactionExtra.cpp</in>
+          <in>TransactionPool.cpp</in>
+          <in>TransactionPrefixImpl.cpp</in>
+          <in>TransactionUtils.cpp</in>
+          <in>UpgradeDetector.cpp</in>
+        </df>
+        <df name="CryptoNoteProtocol">
+          <in>CryptoNoteProtocolHandler.cpp</in>
+        </df>
+        <df name="Daemon">
+          <in>Daemon.cpp</in>
+          <in>DaemonCommandsHandler.cpp</in>
+        </df>
+        <df name="HTTP">
+          <in>HttpParser.cpp</in>
+          <in>HttpParserErrorCodes.cpp</in>
+          <in>HttpRequest.cpp</in>
+          <in>HttpResponse.cpp</in>
+        </df>
+        <df name="InProcessNode">
+          <in>InProcessNode.cpp</in>
+          <in>InProcessNodeErrors.cpp</in>
+        </df>
+        <df name="JsonRpcServer">
+          <in>JsonRpcServer.cpp</in>
+        </df>
+        <df name="Logging">
+          <in>CommonLogger.cpp</in>
+          <in>ConsoleLogger.cpp</in>
+          <in>FileLogger.cpp</in>
+          <in>ILogger.cpp</in>
+          <in>LoggerGroup.cpp</in>
+          <in>LoggerManager.cpp</in>
+          <in>LoggerMessage.cpp</in>
+          <in>LoggerRef.cpp</in>
+          <in>StreamLogger.cpp</in>
+        </df>
+        <df name="Miner">
+          <in>BlockchainMonitor.cpp</in>
+          <in>Miner.cpp</in>
+          <in>MinerManager.cpp</in>
+          <in>MiningConfig.cpp</in>
+          <in>main.cpp</in>
+        </df>
+        <df name="NodeRpcProxy">
+          <in>NodeErrors.cpp</in>
+          <in>NodeRpcProxy.cpp</in>
+        </df>
+        <df name="P2p">
+          <in>IP2pNodeInternal.cpp</in>
+          <in>LevinProtocol.cpp</in>
+          <in>NetNode.cpp</in>
+          <in>NetNodeConfig.cpp</in>
+          <in>P2pConnectionProxy.cpp</in>
+          <in>P2pContext.cpp</in>
+          <in>P2pContextOwner.cpp</in>
+          <in>P2pInterfaces.cpp</in>
+          <in>P2pNode.cpp</in>
+          <in>P2pNodeConfig.cpp</in>
+          <in>PeerListManager.cpp</in>
+        </df>
+        <df name="PaymentGate">
+          <in>NodeFactory.cpp</in>
+          <in>PaymentServiceJsonRpcMessages.cpp</in>
+          <in>PaymentServiceJsonRpcServer.cpp</in>
+          <in>WalletFactory.cpp</in>
+          <in>WalletService.cpp</in>
+          <in>WalletServiceErrorCategory.cpp</in>
+        </df>
+        <df name="PaymentGateService">
+          <in>ConfigurationManager.cpp</in>
+          <in>PaymentGateService.cpp</in>
+          <in>PaymentServiceConfiguration.cpp</in>
+          <in>RpcNodeConfiguration.cpp</in>
+          <in>main.cpp</in>
+        </df>
+        <df name="Platform">
+          <df name="Linux">
+            <df name="System">
+              <in>Dispatcher.cpp</in>
+              <in>ErrorMessage.cpp</in>
+              <in>Ipv4Resolver.cpp</in>
+              <in>TcpConnection.cpp</in>
+              <in>TcpConnector.cpp</in>
+              <in>TcpListener.cpp</in>
+              <in>Timer.cpp</in>
+            </df>
+          </df>
+        </df>
+        <df name="Rpc">
+          <in>HttpClient.cpp</in>
+          <in>HttpServer.cpp</in>
+          <in>JsonRpc.cpp</in>
+          <in>RpcServer.cpp</in>
+          <in>RpcServerConfig.cpp</in>
+        </df>
+        <df name="Serialization">
+          <in>BinaryInputStreamSerializer.cpp</in>
+          <in>BinaryOutputStreamSerializer.cpp</in>
+          <in>JsonInputStreamSerializer.cpp</in>
+          <in>JsonInputValueSerializer.cpp</in>
+          <in>JsonOutputStreamSerializer.cpp</in>
+          <in>KVBinaryInputStreamSerializer.cpp</in>
+          <in>KVBinaryOutputStreamSerializer.cpp</in>
+          <in>MemoryStream.cpp</in>
+          <in>SerializationOverloads.cpp</in>
+        </df>
+        <df name="SimpleWallet">
+          <in>PasswordContainer.cpp</in>
+          <in>SimpleWallet.cpp</in>
+        </df>
+        <df name="System">
+          <in>ContextGroup.cpp</in>
+          <in>ContextGroupTimeout.cpp</in>
+          <in>Event.cpp</in>
+          <in>EventLock.cpp</in>
+          <in>InterruptedException.cpp</in>
+          <in>Ipv4Address.cpp</in>
+          <in>RemoteEventLock.cpp</in>
+          <in>TcpStream.cpp</in>
+        </df>
+        <df name="Transfers">
+          <in>BlockchainSynchronizer.cpp</in>
+          <in>SynchronizationState.cpp</in>
+          <in>TransfersConsumer.cpp</in>
+          <in>TransfersContainer.cpp</in>
+          <in>TransfersSubscription.cpp</in>
+          <in>TransfersSynchronizer.cpp</in>
+        </df>
+        <df name="Wallet">
+          <in>LegacyKeysImporter.cpp</in>
+          <in>WalletAsyncContextCounter.cpp</in>
+          <in>WalletErrors.cpp</in>
+          <in>WalletGreen.cpp</in>
+          <in>WalletRpcServer.cpp</in>
+          <in>WalletSerialization.cpp</in>
+          <in>WalletUtils.cpp</in>
+        </df>
+        <df name="WalletLegacy">
+          <in>KeysStorage.cpp</in>
+          <in>WalletHelper.cpp</in>
+          <in>WalletLegacy.cpp</in>
+          <in>WalletLegacySerialization.cpp</in>
+          <in>WalletLegacySerializer.cpp</in>
+          <in>WalletTransactionSender.cpp</in>
+          <in>WalletUnconfirmedTransactions.cpp</in>
+          <in>WalletUserTransactionsCache.cpp</in>
+        </df>
+      </df>
+      <df name="tests">
+        <df name="CoreTests">
+          <in>Deposit.cpp</in>
+          <in>IntegerOverflow.cpp</in>
+        </df>
+        <df name="crypto">
+          <in>crypto-ops-data.c</in>
+          <in>crypto-ops.c</in>
+          <in>crypto.cpp</in>
+          <in>hash.c</in>
+          <in>main.cpp</in>
+          <in>random.c</in>
+        </df>
+        <df name="Difficulty">
+          <in>Difficulty.cpp</in>
+        </df>
+        <df name="Hash">
+          <in>main.cpp</in>
+        </df>
+        <df name="IntegrationTestLib">
+          <in>BaseFunctionalTests.cpp</in>
+          <in>InProcTestNode.cpp</in>
+          <in>Logger.cpp</in>
+          <in>Process.cpp</in>
+          <in>RPCTestNode.cpp</in>
+          <in>TestNetwork.cpp</in>
+          <in>TestWalletLegacy.cpp</in>
+        </df>
+        <df name="IntegrationTests">
+          <in>IntegrationTests.cpp</in>
+          <in>MultiVersion.cpp</in>
+          <in>Node.cpp</in>
+          <in>WalletLegacyTests.cpp</in>
+          <in>main.cpp</in>
+        </df>
+        <df name="NodeRpcProxyTests">
+          <in>NodeRpcProxyTests.cpp</in>
+        </df>
+        <df name="PerformanceTests">
+          <in>main.cpp</in>
+        </df>
+        <df name="System">
+          <in>ContextGroupTests.cpp</in>
+          <in>ContextGroupTimeoutTests.cpp</in>
+          <in>ContextTests.cpp</in>
+          <in>DispatcherTests.cpp</in>
+          <in>ErrorMessageTests.cpp</in>
+          <in>EventLockTests.cpp</in>
+          <in>EventTests.cpp</in>
+          <in>Ipv4AddressTests.cpp</in>
+          <in>Ipv4ResolverTests.cpp</in>
+          <in>OperationTimeoutTests.cpp</in>
+          <in>RemoteContextTests.cpp</in>
+          <in>TcpConnectionTests.cpp</in>
+          <in>TcpConnectorTests.cpp</in>
+          <in>TcpListenerTests.cpp</in>
+          <in>TimerTests.cpp</in>
+          <in>main.cpp</in>
+        </df>
+        <df name="TestGenerator">
+          <in>TestGenerator.cpp</in>
+        </df>
+        <df name="UnitTests">
+          <in>TestProtocolPack.cpp</in>
+          <in>TestWalletLegacy.cpp</in>
+          <in>TestWalletService.cpp</in>
+          <in>TestWalletUserTransactionsCache.cpp</in>
+          <in>main.cpp</in>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>build/Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>build/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0"
+                 commonFlags="-march=sandybridge -msse3 -mssse3 -mcx16 -mpclmul -mpopcnt -mavx -msse4.2 -msse4.1 -mxsave -mxsaveopt -mtune=sandybridge -maes -Og -std=c++11 -std=gnu++11 -fstack-protector-strong"/>
+        <element flagsID="1"
+                 commonFlags="-std=c++11 -Wvla -march=native -maes -O3 -Ofast -std=c++11 -Wvla -march=native -maes -std=gnu++11"/>
+        <element flagsID="2"
+                 commonFlags="-std=c++11 -Wvla -march=native -maes -O3 -Ofast -std=gnu++11"/>
+        <element flagsID="3" commonFlags="-std=c11 -march=native -maes -O3 -Ofast"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>make -j9</buildCommand>
+          <cleanCommand>rm build -rf &amp;&amp; mkdir build</cleanCommand>
+          <executablePath>build</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>include</pElem>
+              <pElem>src</pElem>
+              <pElem>external</pElem>
+              <pElem>build/release/version</pElem>
+              <pElem>src/Platform/Linux</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>NDEBUG</Elem>
+              <Elem>_DEFAULT_SOURCE</Elem>
+              <Elem>_GNU_SOURCE</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <preprocessorList>
+              <Elem>_DEFAULT_SOURCE</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>build</preBuildCommandWorkingDir>
+          <preBuildCommand>cmake ..</preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="external/gtest/src/gtest-all.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="external/gtest/src/gtest_main.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="external/miniupnpc/connecthostport.c"
+            ex="false"
+            tool="0"
+            flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/igd_desc_parse.c"
+            ex="false"
+            tool="0"
+            flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/minisoap.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/minissdpc.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/miniupnpc.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/miniwget.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/minixml.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/portlistingparse.c"
+            ex="false"
+            tool="0"
+            flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/receivedata.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/upnpc.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/upnpcommands.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/upnperrors.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="external/miniupnpc/upnpreplyparse.c"
+            ex="false"
+            tool="0"
+            flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <folder path="0/external">
+        <cTool>
+          <incDir>
+            <pElem>build/release</pElem>
+            <pElem>build/release/external/miniupnpc</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>MINIUPNPC_SET_SOCKET_TIMEOUT</Elem>
+            <Elem>_BSD_SOURCE</Elem>
+            <Elem>_POSIX_C_SOURCE=1</Elem>
+          </preprocessorList>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>build/release/external/gtest</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>GTEST_HAS_PTHREAD=1</Elem>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src">
+        <cTool>
+          <incDir>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>STATICLIB</Elem>
+          </preprocessorList>
+        </cTool>
+        <ccTool>
+          <preprocessorList>
+            <Elem>STATICLIB</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/BlockchainExplorer">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Common">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/ConnectivityTool">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>src/ConnectivityTool</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>src/System</pElem>
+            <pElem>src/P2p</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/HTTP</pElem>
+            <pElem>/usr/include/boost/optional</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/uuid</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/uuid/detail</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>version</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>STATICLIB=1</Elem>
+            <Elem>_DEFAULT_SOURCE=1</Elem>
+            <Elem>_FORTIFY_SOURCE=2</Elem>
+            <Elem>_REENTRANT=1</Elem>
+            <Elem>__AES__=1</Elem>
+            <Elem>__AVX__=1</Elem>
+            <Elem>__BIGGEST_ALIGNMENT__=32</Elem>
+            <Elem>__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16=1</Elem>
+            <Elem>__GNUC_STDC_INLINE__=1</Elem>
+            <Elem>__GXX_EXPERIMENTAL_CXX0X__=1</Elem>
+            <Elem>__OPTIMIZE__=1</Elem>
+            <Elem>__PCLMUL__=1</Elem>
+            <Elem>__POPCNT__=1</Elem>
+            <Elem>__REGISTER_PREFIX__=</Elem>
+            <Elem>__SSE3__=1</Elem>
+            <Elem>__SSE4_1__=1</Elem>
+            <Elem>__SSE4_2__=1</Elem>
+            <Elem>__SSSE3__=1</Elem>
+            <Elem>__STDC_UTF_16__=1</Elem>
+            <Elem>__STDC_UTF_32__=1</Elem>
+            <Elem>__USER_LABEL_PREFIX__=</Elem>
+            <Elem>__XSAVEOPT__=1</Elem>
+            <Elem>__XSAVE__=1</Elem>
+            <Elem>__corei7_avx=1</Elem>
+            <Elem>__corei7_avx__=1</Elem>
+            <Elem>__cplusplus=201103L</Elem>
+            <Elem>__cpp_alias_templates=200704</Elem>
+            <Elem>__cpp_attributes=200809</Elem>
+            <Elem>__cpp_constexpr=200704</Elem>
+            <Elem>__cpp_decltype=200707</Elem>
+            <Elem>__cpp_delegating_constructors=200604</Elem>
+            <Elem>__cpp_inheriting_constructors=200802</Elem>
+            <Elem>__cpp_initializer_lists=200806</Elem>
+            <Elem>__cpp_lambdas=200907</Elem>
+            <Elem>__cpp_nsdmi=200809</Elem>
+            <Elem>__cpp_range_based_for=200907</Elem>
+            <Elem>__cpp_raw_strings=200710</Elem>
+            <Elem>__cpp_ref_qualifiers=200710</Elem>
+            <Elem>__cpp_rvalue_reference=200610</Elem>
+            <Elem>__cpp_static_assert=200410</Elem>
+            <Elem>__cpp_unicode_characters=200704</Elem>
+            <Elem>__cpp_unicode_literals=200710</Elem>
+            <Elem>__cpp_user_defined_literals=200809</Elem>
+            <Elem>__cpp_variadic_templates=200704</Elem>
+            <Elem>__sandybridge=1</Elem>
+            <Elem>__sandybridge__=1</Elem>
+            <Elem>__tune_corei7_avx__=1</Elem>
+            <Elem>__tune_sandybridge__=1</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/CryptoNoteCore">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/CryptoNoteProtocol">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Daemon">
+        <ccTool>
+          <preprocessorList>
+            <Elem>STATICLIB=1</Elem>
+            <Elem>_DEFAULT_SOURCE=1</Elem>
+            <Elem>_FORTIFY_SOURCE=2</Elem>
+            <Elem>_REENTRANT=1</Elem>
+            <Elem>__AES__=1</Elem>
+            <Elem>__AVX__=1</Elem>
+            <Elem>__BIGGEST_ALIGNMENT__=32</Elem>
+            <Elem>__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16=1</Elem>
+            <Elem>__GNUC_STDC_INLINE__=1</Elem>
+            <Elem>__GXX_EXPERIMENTAL_CXX0X__=1</Elem>
+            <Elem>__OPTIMIZE__=1</Elem>
+            <Elem>__PCLMUL__=1</Elem>
+            <Elem>__POPCNT__=1</Elem>
+            <Elem>__REGISTER_PREFIX__=</Elem>
+            <Elem>__SSE3__=1</Elem>
+            <Elem>__SSE4_1__=1</Elem>
+            <Elem>__SSE4_2__=1</Elem>
+            <Elem>__SSSE3__=1</Elem>
+            <Elem>__STDC_UTF_16__=1</Elem>
+            <Elem>__STDC_UTF_32__=1</Elem>
+            <Elem>__USER_LABEL_PREFIX__=</Elem>
+            <Elem>__XSAVEOPT__=1</Elem>
+            <Elem>__XSAVE__=1</Elem>
+            <Elem>__corei7_avx=1</Elem>
+            <Elem>__corei7_avx__=1</Elem>
+            <Elem>__cplusplus=201103L</Elem>
+            <Elem>__cpp_alias_templates=200704</Elem>
+            <Elem>__cpp_attributes=200809</Elem>
+            <Elem>__cpp_constexpr=200704</Elem>
+            <Elem>__cpp_decltype=200707</Elem>
+            <Elem>__cpp_delegating_constructors=200604</Elem>
+            <Elem>__cpp_inheriting_constructors=200802</Elem>
+            <Elem>__cpp_initializer_lists=200806</Elem>
+            <Elem>__cpp_lambdas=200907</Elem>
+            <Elem>__cpp_nsdmi=200809</Elem>
+            <Elem>__cpp_range_based_for=200907</Elem>
+            <Elem>__cpp_raw_strings=200710</Elem>
+            <Elem>__cpp_ref_qualifiers=200710</Elem>
+            <Elem>__cpp_rvalue_reference=200610</Elem>
+            <Elem>__cpp_static_assert=200410</Elem>
+            <Elem>__cpp_unicode_characters=200704</Elem>
+            <Elem>__cpp_unicode_literals=200710</Elem>
+            <Elem>__cpp_user_defined_literals=200809</Elem>
+            <Elem>__cpp_variadic_templates=200704</Elem>
+            <Elem>__sandybridge=1</Elem>
+            <Elem>__sandybridge__=1</Elem>
+            <Elem>__tune_corei7_avx__=1</Elem>
+            <Elem>__tune_sandybridge__=1</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/HTTP">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/InProcessNode">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/JsonRpcServer">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Logging">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Miner">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/NodeRpcProxy">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/P2p">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/PaymentGate">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/PaymentGateService">
+        <ccTool>
+          <preprocessorList>
+            <Elem>STATICLIB=1</Elem>
+            <Elem>_DEFAULT_SOURCE=1</Elem>
+            <Elem>_FORTIFY_SOURCE=2</Elem>
+            <Elem>_REENTRANT=1</Elem>
+            <Elem>__AES__=1</Elem>
+            <Elem>__AVX__=1</Elem>
+            <Elem>__BIGGEST_ALIGNMENT__=32</Elem>
+            <Elem>__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16=1</Elem>
+            <Elem>__GNUC_STDC_INLINE__=1</Elem>
+            <Elem>__GXX_EXPERIMENTAL_CXX0X__=1</Elem>
+            <Elem>__OPTIMIZE__=1</Elem>
+            <Elem>__PCLMUL__=1</Elem>
+            <Elem>__POPCNT__=1</Elem>
+            <Elem>__REGISTER_PREFIX__=</Elem>
+            <Elem>__SSE3__=1</Elem>
+            <Elem>__SSE4_1__=1</Elem>
+            <Elem>__SSE4_2__=1</Elem>
+            <Elem>__SSSE3__=1</Elem>
+            <Elem>__STDC_UTF_16__=1</Elem>
+            <Elem>__STDC_UTF_32__=1</Elem>
+            <Elem>__USER_LABEL_PREFIX__=</Elem>
+            <Elem>__XSAVEOPT__=1</Elem>
+            <Elem>__XSAVE__=1</Elem>
+            <Elem>__corei7_avx=1</Elem>
+            <Elem>__corei7_avx__=1</Elem>
+            <Elem>__cplusplus=201103L</Elem>
+            <Elem>__cpp_alias_templates=200704</Elem>
+            <Elem>__cpp_attributes=200809</Elem>
+            <Elem>__cpp_constexpr=200704</Elem>
+            <Elem>__cpp_decltype=200707</Elem>
+            <Elem>__cpp_delegating_constructors=200604</Elem>
+            <Elem>__cpp_inheriting_constructors=200802</Elem>
+            <Elem>__cpp_initializer_lists=200806</Elem>
+            <Elem>__cpp_lambdas=200907</Elem>
+            <Elem>__cpp_nsdmi=200809</Elem>
+            <Elem>__cpp_range_based_for=200907</Elem>
+            <Elem>__cpp_raw_strings=200710</Elem>
+            <Elem>__cpp_ref_qualifiers=200710</Elem>
+            <Elem>__cpp_rvalue_reference=200610</Elem>
+            <Elem>__cpp_static_assert=200410</Elem>
+            <Elem>__cpp_unicode_characters=200704</Elem>
+            <Elem>__cpp_unicode_literals=200710</Elem>
+            <Elem>__cpp_user_defined_literals=200809</Elem>
+            <Elem>__cpp_variadic_templates=200704</Elem>
+            <Elem>__sandybridge=1</Elem>
+            <Elem>__sandybridge__=1</Elem>
+            <Elem>__tune_corei7_avx__=1</Elem>
+            <Elem>__tune_sandybridge__=1</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Platform">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Rpc">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Serialization">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/SimpleWallet">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/System">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Transfers">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/Wallet">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/WalletLegacy">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/src/crypto">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>build/release/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests">
+        <cTool>
+          <incDir>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>STATICLIB</Elem>
+          </preprocessorList>
+        </cTool>
+        <ccTool>
+          <preprocessorList>
+            <Elem>STATICLIB</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/CoreTests">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/Difficulty">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/Hash">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/IntegrationTestLib">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/IntegrationTests">
+        <ccTool>
+          <preprocessorList>
+            <Elem>STATICLIB=1</Elem>
+            <Elem>_DEFAULT_SOURCE=1</Elem>
+            <Elem>_FORTIFY_SOURCE=2</Elem>
+            <Elem>_REENTRANT=1</Elem>
+            <Elem>__AES__=1</Elem>
+            <Elem>__AVX__=1</Elem>
+            <Elem>__BIGGEST_ALIGNMENT__=32</Elem>
+            <Elem>__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16=1</Elem>
+            <Elem>__GNUC_STDC_INLINE__=1</Elem>
+            <Elem>__GXX_EXPERIMENTAL_CXX0X__=1</Elem>
+            <Elem>__OPTIMIZE__=1</Elem>
+            <Elem>__PCLMUL__=1</Elem>
+            <Elem>__POPCNT__=1</Elem>
+            <Elem>__REGISTER_PREFIX__=</Elem>
+            <Elem>__SSE3__=1</Elem>
+            <Elem>__SSE4_1__=1</Elem>
+            <Elem>__SSE4_2__=1</Elem>
+            <Elem>__SSSE3__=1</Elem>
+            <Elem>__STDC_UTF_16__=1</Elem>
+            <Elem>__STDC_UTF_32__=1</Elem>
+            <Elem>__USER_LABEL_PREFIX__=</Elem>
+            <Elem>__XSAVEOPT__=1</Elem>
+            <Elem>__XSAVE__=1</Elem>
+            <Elem>__corei7_avx=1</Elem>
+            <Elem>__corei7_avx__=1</Elem>
+            <Elem>__cplusplus=201103L</Elem>
+            <Elem>__cpp_alias_templates=200704</Elem>
+            <Elem>__cpp_attributes=200809</Elem>
+            <Elem>__cpp_constexpr=200704</Elem>
+            <Elem>__cpp_decltype=200707</Elem>
+            <Elem>__cpp_delegating_constructors=200604</Elem>
+            <Elem>__cpp_inheriting_constructors=200802</Elem>
+            <Elem>__cpp_initializer_lists=200806</Elem>
+            <Elem>__cpp_lambdas=200907</Elem>
+            <Elem>__cpp_nsdmi=200809</Elem>
+            <Elem>__cpp_range_based_for=200907</Elem>
+            <Elem>__cpp_raw_strings=200710</Elem>
+            <Elem>__cpp_ref_qualifiers=200710</Elem>
+            <Elem>__cpp_rvalue_reference=200610</Elem>
+            <Elem>__cpp_static_assert=200410</Elem>
+            <Elem>__cpp_unicode_characters=200704</Elem>
+            <Elem>__cpp_unicode_literals=200710</Elem>
+            <Elem>__cpp_user_defined_literals=200809</Elem>
+            <Elem>__cpp_variadic_templates=200704</Elem>
+            <Elem>__sandybridge=1</Elem>
+            <Elem>__sandybridge__=1</Elem>
+            <Elem>__tune_corei7_avx__=1</Elem>
+            <Elem>__tune_sandybridge__=1</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/NodeRpcProxyTests">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/PerformanceTests">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/System">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/TestGenerator">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/UnitTests">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/tests/crypto">
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+            <pElem>external</pElem>
+            <pElem>build/release/version</pElem>
+            <pElem>src/Platform/Linux</pElem>
+            <pElem>external/gtest/include</pElem>
+            <pElem>external/gtest</pElem>
+            <pElem>version</pElem>
+            <pElem>build/release/tests</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <item path="src/BlockchainExplorer/BlockchainExplorer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/BlockchainExplorer/BlockchainExplorerDataBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/BlockchainExplorer/BlockchainExplorerErrors.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/Base58.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/BlockingQueue.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/CommandLine.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/ConsoleHandler.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/ConsoleTools.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/IInputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/IOutputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/JsonValue.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/Math.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/MemoryInputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/PathTools.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/ScopeExit.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/SignalHandler.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StdInputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StdOutputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StreamTools.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StringInputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StringOutputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StringTools.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/StringView.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/Util.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Common/VectorOutputStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/ConnectivityTool/ConnectivityTool.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Account.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/BlockIndex.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Blockchain.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/BlockchainIndices.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/BlockchainMessages.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Checkpoints.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Core.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/CoreConfig.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/CryptoNoteBasic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/CryptoNoteBasicImpl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/CryptoNoteFormatUtils.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/CryptoNoteSerialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/CryptoNoteTools.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Currency.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/DepositIndex.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Difficulty.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/IBlock.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/ITimeProvider.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Miner.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/MinerConfig.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/SwappedMap.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/SwappedVector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/Transaction.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/TransactionExtra.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/TransactionPool.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/TransactionPrefixImpl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/TransactionUtils.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteCore/UpgradeDetector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/CryptoNoteProtocol/CryptoNoteProtocolHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Daemon/Daemon.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/system</pElem>
+            <pElem>src/Daemon</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>include</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>src/P2p</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>/usr/include/boost/filesystem</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/multi_index</pElem>
+            <pElem>/usr/include/boost/multi_index/detail</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/uuid</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/archive</pElem>
+            <pElem>/usr/include/boost/serialization</pElem>
+            <pElem>/usr/include/boost/tuple/detail</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>src</pElem>
+            <pElem>src/HTTP</pElem>
+            <pElem>external/google/sparsehash</pElem>
+            <pElem>external/google</pElem>
+            <pElem>src/System</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>version</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/io/detail</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>/usr/include/boost/uuid/detail</pElem>
+            <pElem>/usr/include/boost/mpl/set</pElem>
+            <pElem>/usr/include/boost/mpl/set/aux_</pElem>
+            <pElem>/usr/include/boost/archive/detail</pElem>
+            <pElem>/usr/include/boost/tuple</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/Daemon/DaemonCommandsHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>src/Daemon</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>include</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>/usr/include/boost/multi_index/detail</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>/usr/include/boost/multi_index</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/uuid</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/archive</pElem>
+            <pElem>/usr/include/boost/serialization</pElem>
+            <pElem>/usr/include/boost/tuple/detail</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>src/P2p</pElem>
+            <pElem>src</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>external/google/sparsehash</pElem>
+            <pElem>external/google</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>src/System</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>/usr/include/boost/uuid/detail</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/mpl/set</pElem>
+            <pElem>/usr/include/boost/mpl/set/aux_</pElem>
+            <pElem>/usr/include/boost/archive/detail</pElem>
+            <pElem>/usr/include/boost/tuple</pElem>
+            <pElem>version</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/HTTP/HttpParser.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/HTTP/HttpParserErrorCodes.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/HTTP/HttpRequest.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/HTTP/HttpResponse.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/InProcessNode/InProcessNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/InProcessNode/InProcessNodeErrors.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/JsonRpcServer/JsonRpcServer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/CommonLogger.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/ConsoleLogger.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/FileLogger.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/ILogger.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/LoggerGroup.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/LoggerManager.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/LoggerMessage.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/LoggerRef.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Logging/StreamLogger.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Miner/BlockchainMonitor.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Miner/Miner.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Miner/MinerManager.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Miner/MiningConfig.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Miner/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/NodeRpcProxy/NodeErrors.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/NodeRpcProxy/NodeRpcProxy.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/IP2pNodeInternal.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/LevinProtocol.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/NetNode.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/NetNodeConfig.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/P2pConnectionProxy.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/P2pContext.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/P2pContextOwner.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/P2pInterfaces.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/P2pNode.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/P2pNodeConfig.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/P2p/PeerListManager.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGate/NodeFactory.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGate/PaymentServiceJsonRpcMessages.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGate/PaymentServiceJsonRpcServer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGate/WalletFactory.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGate/WalletService.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGate/WalletServiceErrorCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/PaymentGateService/ConfigurationManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>src/PaymentGateService</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/uuid</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>src/P2p</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/uuid/detail</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/PaymentGateService/PaymentGateService.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/include/boost/system</pElem>
+            <pElem>/usr/include/boost/asio/impl</pElem>
+            <pElem>/usr/include/boost/asio/detail</pElem>
+            <pElem>/usr/include/boost/asio</pElem>
+            <pElem>src/PaymentGateService</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>include</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>src/System</pElem>
+            <pElem>src/PaymentGate</pElem>
+            <pElem>src/P2p</pElem>
+            <pElem>/usr/include/boost/multi_index</pElem>
+            <pElem>/usr/include/boost/multi_index/detail</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>src/JsonRpcServer</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/uuid</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/archive</pElem>
+            <pElem>/usr/include/boost/serialization</pElem>
+            <pElem>/usr/include/boost/tuple/detail</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>/usr/include/boost/asio/detail/impl</pElem>
+            <pElem>/usr/include/boost/asio/generic/detail</pElem>
+            <pElem>/usr/include/boost/asio/ip</pElem>
+            <pElem>/usr/include/boost/asio/ip/detail</pElem>
+            <pElem>/usr/include/boost/asio/local/detail</pElem>
+            <pElem>/usr/include/boost/asio/posix</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/regex/v4</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src</pElem>
+            <pElem>src/HTTP</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>external/google/sparsehash</pElem>
+            <pElem>external/google</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/uuid/detail</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>/usr/include/boost/mpl/set</pElem>
+            <pElem>/usr/include/boost/mpl/set/aux_</pElem>
+            <pElem>/usr/include/boost/archive/detail</pElem>
+            <pElem>/usr/include/boost/tuple</pElem>
+            <pElem>src/InProcessNode</pElem>
+            <pElem>src/BlockchainExplorer</pElem>
+            <pElem>/usr/include/boost/asio/generic</pElem>
+            <pElem>/usr/include/boost/asio/generic/detail/impl</pElem>
+            <pElem>/usr/include/boost/asio/ip/impl</pElem>
+            <pElem>/usr/include/boost/asio/ip/detail/impl</pElem>
+            <pElem>/usr/include/boost/asio/local</pElem>
+            <pElem>/usr/include/boost/asio/local/detail/impl</pElem>
+            <pElem>/usr/include/boost/regex</pElem>
+            <pElem>/usr/include/boost/regex/config</pElem>
+            <pElem>/usr/include/boost/asio/windows</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/PaymentGateService/PaymentServiceConfiguration.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>src/PaymentGateService</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/PaymentGateService/RpcNodeConfiguration.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>src/PaymentGateService</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/PaymentGateService/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>src/PaymentGateService</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>include</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/PaymentGate</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/uuid</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/multi_index</pElem>
+            <pElem>/usr/include/boost/multi_index/detail</pElem>
+            <pElem>/usr/include/boost/archive</pElem>
+            <pElem>/usr/include/boost/serialization</pElem>
+            <pElem>/usr/include/boost/tuple/detail</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>src/P2p</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>src/System</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/uuid/detail</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>/usr/include/boost/mpl/set</pElem>
+            <pElem>/usr/include/boost/mpl/set/aux_</pElem>
+            <pElem>/usr/include/boost/archive/detail</pElem>
+            <pElem>/usr/include/boost/tuple</pElem>
+            <pElem>version</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/Dispatcher.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/ErrorMessage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/Ipv4Resolver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/TcpConnection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/TcpConnector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/TcpListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Platform/Linux/System/Timer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Rpc/HttpClient.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Rpc/HttpServer.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Rpc/JsonRpc.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Rpc/RpcServer.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Rpc/RpcServerConfig.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/BinaryInputStreamSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/BinaryOutputStreamSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/JsonInputStreamSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/JsonInputValueSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/JsonOutputStreamSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/KVBinaryInputStreamSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/KVBinaryOutputStreamSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/MemoryStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Serialization/SerializationOverloads.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/SimpleWallet/PasswordContainer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/SimpleWallet/SimpleWallet.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/ContextGroup.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/ContextGroupTimeout.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/Event.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/EventLock.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/InterruptedException.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/Ipv4Address.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/RemoteEventLock.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/System/TcpStream.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Transfers/BlockchainSynchronizer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Transfers/SynchronizationState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Transfers/TransfersConsumer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Transfers/TransfersContainer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Transfers/TransfersSubscription.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Transfers/TransfersSynchronizer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/LegacyKeysImporter.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/WalletAsyncContextCounter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/WalletErrors.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/WalletGreen.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/WalletRpcServer.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/WalletSerialization.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/Wallet/WalletUtils.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/KeysStorage.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletHelper.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletLegacy.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletLegacySerialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletLegacySerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletTransactionSender.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletUnconfirmedTransactions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/WalletLegacy/WalletUserTransactionsCache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/crypto/blake256.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/chacha.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/crypto-ops-data.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/crypto-ops.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/crypto.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/crypto/groestl.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/hash-extra-blake.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/hash-extra-groestl.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/hash-extra-jh.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/hash-extra-skein.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/hash.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/jh.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/keccak.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/oaes_lib.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/random.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/skein.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/slow-hash.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="src/crypto/slow-hash.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="src/crypto/tree-hash.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="tests/CoreTests/Deposit.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/CoreTests/IntegerOverflow.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/Difficulty/Difficulty.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/Hash/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/BaseFunctionalTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/InProcTestNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/Logger.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/Process.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/RPCTestNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/TestNetwork.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTestLib/TestWalletLegacy.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTests/IntegrationTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/gtest/include/gtest</pElem>
+            <pElem>include</pElem>
+            <pElem>external/gtest/include/gtest/internal</pElem>
+            <pElem>tests/IntegrationTestLib</pElem>
+            <pElem>tests/IntegrationTests</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>/usr/include/boost/optional</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>src</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/Wallet</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>src/WalletLegacy</pElem>
+            <pElem>src/Transfers</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTests/MultiVersion.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>tests/IntegrationTests</pElem>
+            <pElem>tests/IntegrationTestLib</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>src</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTests/Node.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/gtest/include/gtest</pElem>
+            <pElem>include</pElem>
+            <pElem>external/gtest/include/gtest/internal</pElem>
+            <pElem>tests/IntegrationTestLib</pElem>
+            <pElem>tests/IntegrationTests</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>src</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/Wallet</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/multi_index</pElem>
+            <pElem>/usr/include/boost/multi_index/detail</pElem>
+            <pElem>/usr/include/boost/archive</pElem>
+            <pElem>/usr/include/boost/serialization</pElem>
+            <pElem>/usr/include/boost/tuple/detail</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>/usr/include/boost/optional</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>/usr/include/boost/mpl/set</pElem>
+            <pElem>/usr/include/boost/mpl/set/aux_</pElem>
+            <pElem>/usr/include/boost/archive/detail</pElem>
+            <pElem>/usr/include/boost/tuple</pElem>
+            <pElem>src/System</pElem>
+            <pElem>src/Transfers</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTests/WalletLegacyTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/gtest/include/gtest</pElem>
+            <pElem>include</pElem>
+            <pElem>external/gtest/include/gtest/internal</pElem>
+            <pElem>tests/IntegrationTests</pElem>
+            <pElem>tests/IntegrationTestLib</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/integer</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/functional/hash/detail</pElem>
+            <pElem>/usr/include/boost/optional</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>src</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/Wallet</pElem>
+            <pElem>src/WalletLegacy</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>src/Transfers</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="tests/IntegrationTests/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/gtest/include/gtest</pElem>
+            <pElem>/usr/include/boost/lexical_cast</pElem>
+            <pElem>/usr/include/boost</pElem>
+            <pElem>include</pElem>
+            <pElem>tests/IntegrationTests</pElem>
+            <pElem>external/gtest/include/gtest/internal</pElem>
+            <pElem>/usr/include/boost/program_options</pElem>
+            <pElem>/usr/include/boost/function</pElem>
+            <pElem>/usr/include/boost/exception</pElem>
+            <pElem>/usr/include/boost/program_options/detail</pElem>
+            <pElem>tests/IntegrationTestLib</pElem>
+            <pElem>/usr/include/boost/variant/detail</pElem>
+            <pElem>/usr/include/boost/variant</pElem>
+            <pElem>src/CryptoNoteCore</pElem>
+            <pElem>/usr/include/boost/smart_ptr/detail</pElem>
+            <pElem>src/Logging</pElem>
+            <pElem>/usr/include/boost/lexical_cast/detail</pElem>
+            <pElem>/usr/include/boost/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessed/gcc</pElem>
+            <pElem>/usr/include/boost/mpl</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_</pElem>
+            <pElem>/usr/include/boost/type_traits</pElem>
+            <pElem>/usr/include/boost/type_traits/detail</pElem>
+            <pElem>/usr/include/boost/detail</pElem>
+            <pElem>/usr/include/boost/smart_ptr</pElem>
+            <pElem>/usr/include/boost/iterator</pElem>
+            <pElem>/usr/include/boost/range</pElem>
+            <pElem>/usr/include/boost/range/detail</pElem>
+            <pElem>/usr/include/boost/concept/detail</pElem>
+            <pElem>/usr/include/boost/core</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail</pElem>
+            <pElem>/usr/include/boost/numeric/conversion</pElem>
+            <pElem>/usr/include/boost/container</pElem>
+            <pElem>/usr/include/boost/math/tools</pElem>
+            <pElem>/usr/include/boost/math/policies</pElem>
+            <pElem>/usr/include/boost/type_index</pElem>
+            <pElem>/usr/include/boost/move</pElem>
+            <pElem>/usr/include/boost/move/detail</pElem>
+            <pElem>/usr/include/boost/utility</pElem>
+            <pElem>/usr/include/boost/date_time</pElem>
+            <pElem>/usr/include/boost/date_time/gregorian</pElem>
+            <pElem>/usr/include/boost/date_time/posix_time</pElem>
+            <pElem>/usr/include/boost/algorithm/string</pElem>
+            <pElem>/usr/include/boost/algorithm/string/detail</pElem>
+            <pElem>src/crypto</pElem>
+            <pElem>src/Serialization</pElem>
+            <pElem>src</pElem>
+            <pElem>src/CryptoNoteProtocol</pElem>
+            <pElem>src/Rpc</pElem>
+            <pElem>src/Common</pElem>
+            <pElem>src/Platform/Linux/System</pElem>
+            <pElem>/usr/include/boost/config/compiler</pElem>
+            <pElem>/usr/include/boost/config/stdlib</pElem>
+            <pElem>/usr/include/boost/config/platform</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/config</pElem>
+            <pElem>/usr/include/boost/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/config</pElem>
+            <pElem>/usr/include/boost/mpl/aux_/preprocessor</pElem>
+            <pElem>/usr/include/boost/preprocessor/punctuation</pElem>
+            <pElem>/usr/include/boost/preprocessor/control</pElem>
+            <pElem>/usr/include/boost/preprocessor/logical</pElem>
+            <pElem>/usr/include/boost/preprocessor/facilities</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition</pElem>
+            <pElem>/usr/include/boost/preprocessor/debug</pElem>
+            <pElem>/usr/include/boost/preprocessor/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic</pElem>
+            <pElem>/usr/include/boost/mpl/limits</pElem>
+            <pElem>/usr/include/boost/preprocessor/list</pElem>
+            <pElem>/usr/include/boost/preprocessor/list/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/control/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/variadic</pElem>
+            <pElem>/usr/include/boost/preprocessor/tuple/detail</pElem>
+            <pElem>/usr/include/boost/iterator/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/array</pElem>
+            <pElem>/usr/include/boost/concept</pElem>
+            <pElem>/usr/include/boost/preprocessor/seq</pElem>
+            <pElem>/usr/include/boost/preprocessor/repetition/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/arithmetic/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/comparison</pElem>
+            <pElem>/usr/include/boost/range/algorithm</pElem>
+            <pElem>/usr/include/boost/config/no_tr1</pElem>
+            <pElem>/usr/include/boost/numeric/conversion/detail/preprocessed</pElem>
+            <pElem>/usr/include/boost/functional</pElem>
+            <pElem>/usr/include/boost/functional/hash</pElem>
+            <pElem>/usr/include/boost/container/detail</pElem>
+            <pElem>/usr/include/boost/math/special_functions</pElem>
+            <pElem>/usr/include/boost/math/special_functions/detail</pElem>
+            <pElem>/usr/include/boost/mpl/list</pElem>
+            <pElem>/usr/include/boost/mpl/list/aux_/preprocessed/plain</pElem>
+            <pElem>/usr/include/boost/mpl/vector</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_</pElem>
+            <pElem>/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based</pElem>
+            <pElem>/usr/include/boost/predef/detail</pElem>
+            <pElem>/usr/include/boost/predef/other</pElem>
+            <pElem>/usr/include/boost/predef</pElem>
+            <pElem>/usr/include/boost/predef/library/c</pElem>
+            <pElem>/usr/include/boost/predef/os</pElem>
+            <pElem>/usr/include/boost/predef/os/bsd</pElem>
+            <pElem>/usr/include/boost/function/detail</pElem>
+            <pElem>/usr/include/boost/bind</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot</pElem>
+            <pElem>/usr/include/boost/preprocessor/slot/detail</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/iter</pElem>
+            <pElem>/usr/include/boost/preprocessor/iteration/detail/bounds</pElem>
+            <pElem>/usr/include/boost/predef/language</pElem>
+            <pElem>/usr/include/boost/predef/architecture</pElem>
+            <pElem>/usr/include/boost/predef/architecture/x86</pElem>
+            <pElem>/usr/include/boost/predef/compiler</pElem>
+            <pElem>/usr/include/boost/predef/library</pElem>
+            <pElem>/usr/include/boost/predef/library/std</pElem>
+            <pElem>/usr/include/boost/predef/platform</pElem>
+            <pElem>/usr/include/boost/math</pElem>
+            <pElem>/usr/include/boost/io</pElem>
+            <pElem>/usr/include/boost/utility/detail</pElem>
+            <pElem>tests</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="tests/NodeRpcProxyTests/NodeRpcProxyTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/PerformanceTests/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/ContextGroupTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/ContextGroupTimeoutTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/ContextTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/DispatcherTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/ErrorMessageTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/EventLockTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/EventTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/Ipv4AddressTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/Ipv4ResolverTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/OperationTimeoutTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/RemoteContextTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/TcpConnectionTests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/TcpConnectorTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/TcpListenerTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/TimerTests.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/System/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/TestGenerator/TestGenerator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/UnitTests/TestProtocolPack.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/UnitTests/TestWalletLegacy.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/UnitTests/TestWalletService.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/UnitTests/TestWalletUserTransactionsCache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/UnitTests/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/crypto/crypto-ops-data.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="tests/crypto/crypto-ops.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="tests/crypto/crypto.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/crypto/hash.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+      <item path="tests/crypto/main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
+      </item>
+      <item path="tests/crypto/random.c" ex="false" tool="0" flavor2="10">
+        <cTool flags="3">
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

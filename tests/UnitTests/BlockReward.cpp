@@ -48,7 +48,7 @@ using CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 
     do_test(1);
     ASSERT_TRUE(m_block_not_too_big);
-    ASSERT_EQ(m_block_reward, START_BLOCK_REWARD);
+    ASSERT_EQ(m_block_reward, ICO_BLOCK_REWARD);
 
     do_test(REWARD_INCREASE_INTERVAL - 1);
     ASSERT_TRUE(m_block_not_too_big);
@@ -90,6 +90,14 @@ using CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
   class block_reward_and_current_block_size : public ::testing::Test
   {
   protected:
+	static const uint64_t already_generated_coins = 0;
+    static const uint32_t height = 1;
+
+    Logging::ConsoleLogger m_logger;
+    bool m_block_not_too_big;
+    uint64_t m_block_reward;
+    uint64_t m_standard_block_reward;
+    Currency m_currency;
 
     block_reward_and_current_block_size() :
       m_currency(CurrencyBuilder(m_logger).currency()) {}
@@ -109,15 +117,6 @@ using CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
       m_block_not_too_big = m_currency.getBlockReward(median_block_size, current_block_size, 
         already_generated_coins, 0, height, m_block_reward, emissionChange);
     }
-
-    static const uint64_t already_generated_coins = 0;
-    static const uint32_t height = 1;
-
-    Logging::ConsoleLogger m_logger;
-    bool m_block_not_too_big;
-    uint64_t m_block_reward;
-    uint64_t m_standard_block_reward;
-    Currency m_currency;
   };
 
   TEST_F(block_reward_and_current_block_size, handles_block_size_less_relevance_level)
@@ -182,7 +181,17 @@ using CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
   class block_reward_and_last_block_sizes : public ::testing::Test
   {
   protected:
+	static const uint64_t already_generated_coins = 0;
+    static const uint32_t height = 1;
 
+    Logging::ConsoleLogger m_logger;
+    std::vector<size_t> m_last_block_sizes;
+    uint64_t m_last_block_sizes_median;
+    bool m_block_not_too_big;
+    uint64_t m_block_reward;
+    uint64_t m_standard_block_reward;
+    Currency m_currency;
+	  
     block_reward_and_last_block_sizes() :
       m_currency(CurrencyBuilder(m_logger).currency()) {}
 
@@ -211,17 +220,6 @@ using CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
       m_block_not_too_big = m_currency.getBlockReward(Common::medianValue(m_last_block_sizes), current_block_size,
         already_generated_coins, 0, height, m_block_reward, emissionChange);
     }
-
-    static const uint64_t already_generated_coins = 0;
-    static const uint32_t height = 1;
-
-    Logging::ConsoleLogger m_logger;
-    std::vector<size_t> m_last_block_sizes;
-    uint64_t m_last_block_sizes_median;
-    bool m_block_not_too_big;
-    uint64_t m_block_reward;
-    uint64_t m_standard_block_reward;
-    Currency m_currency;
   };
 
   TEST_F(block_reward_and_last_block_sizes, handles_block_size_less_median)
