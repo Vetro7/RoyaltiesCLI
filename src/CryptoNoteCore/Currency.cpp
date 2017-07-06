@@ -251,7 +251,7 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t & fee, uint32_t
 
 uint64_t Currency::getTransactionFee(const Transaction& tx, uint32_t height) const {
   uint64_t r = 0;
-  if (!getTransactionFee(tx, r)) {
+  if (!getTransactionFee(tx, r, height)) {
     r = 0;
   }
   return r;
