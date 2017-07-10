@@ -142,7 +142,7 @@ bool test_generator::constructBlock(CryptoNote::Block& blk, uint32_t height, con
 bool test_generator::constructBlock(CryptoNote::Block& blk, const CryptoNote::AccountBase& minerAcc, uint64_t timestamp) {
   std::vector<size_t> blockSizes;
   std::list<CryptoNote::Transaction> txList;
-  return constructBlock(blk, 0, NULL_HASH, minerAcc, timestamp, 0, blockSizes, txList);
+  return constructBlock(blk, 0, NULL_HASH, minerAcc, timestamp, 0, blockSizes, txList); //only called to create genesis block so height is 0
 }
 
 bool test_generator::constructBlock(CryptoNote::Block& blk, const CryptoNote::Block& blkPrev,
