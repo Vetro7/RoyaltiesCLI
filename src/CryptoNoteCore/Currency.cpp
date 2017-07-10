@@ -227,10 +227,13 @@ uint64_t Currency::getTransactionAllInputsAmount(const Transaction& tx, uint32_t
   return amount;
 }
 
-bool Currency::getTransactionFee(const Transaction& tx, uint64_t & fee, uint32_t height) const {
+bool Currency::getTransactionFee(const Transaction& tx, uint64_t& fee, uint32_t height) const {
   uint64_t amount_in = 0;
   uint64_t amount_out = 0;
 
+  if (tx.inputs.size() == 0 || tx.outputs.size() == 0) 
+	  return false;
+  
   for (const auto& in : tx.inputs) {
     amount_in += getTransactionInputAmount(in, height);
   }
@@ -239,13 +242,10 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t & fee, uint32_t
     amount_out += o.amount;
   }
 
-  if (amount_in < amount_out) {
-    //return false;
-	fee = CryptoNote::parameters::MINIMUM_FEE;
-	return true;
-  }
-
-  fee = amount_in < amount_out ? CryptoNote::parameters::MINIMUM_FEE : amount_in - amount_out;
+  fee = amount_out > amount_in + parameters::MINIMUM_FEE //interest shows up in the output of the W/D transactions and W/Ds always have min fee
+	? CryptoNote::parameters::MINIMUM_FEE //correct for unknown block height in interest calculation for W/Ds (interest is only in W/Ds)
+	: amount_in - amount_out;
+  
   return true;
 }
 

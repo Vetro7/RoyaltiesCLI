@@ -200,6 +200,7 @@ TEST_F(CurrencyTest, getTransactionFeeOnlyInputs) {
   setupTransactionInputs(2);
   setupTransactionOutputs(0);
   for (auto h : heights){
+	//ASSERT_EQ(fixedCurrency.getTransactionFee(transaction, h), 0);
 	ASSERT_EQ(fixedCurrency.getTransactionFee(transaction, h), (fixedCurrency.calculateInterest(fixed_amount, fixed_term, h) + fixed_amount) * 2);
   }
 }
@@ -208,7 +209,8 @@ TEST_F(CurrencyTest, getTransactionFeeRefOnlyInputs) {
   setupTransactionInputs(2);
   setupTransactionOutputs(0);
   for (auto h : heights){
-	ASSERT_TRUE(fixedCurrency.getTransactionFee(transaction, fee, h));
+	//ASSERT_FALSE(fixedCurrency.getTransactionFee(transaction, fee, h));
+	  ASSERT_TRUE(fixedCurrency.getTransactionFee(transaction, fee, h));
 	ASSERT_EQ(fee, (fixedCurrency.calculateInterest(fixed_amount, fixed_term, h) + fixed_amount) * 2);
   }
 }

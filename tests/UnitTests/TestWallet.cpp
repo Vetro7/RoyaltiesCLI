@@ -222,7 +222,7 @@ protected:
   CryptoNote::WalletGreen alice;
   std::string aliceAddress;
 
-  const uint64_t SENT = 1122334455;
+  const uint64_t SENT = 4327;//1122334455;
   const uint64_t FEE;
   std::string RANDOM_ADDRESS;
   const uint64_t FUSION_THRESHOLD;
@@ -589,7 +589,7 @@ std::vector<CryptoNote::WalletTransfer> getTransfersFromTransaction(CryptoNote::
   return result;
 }
 
-static const uint64_t TEST_BLOCK_REWARD = 32000000000000;
+static const uint64_t TEST_BLOCK_REWARD = 100000;////32000000000000;
 
 TEST_F(WalletApi, emptyBalance) {
   ASSERT_EQ(0, alice.getActualBalance());
@@ -1116,7 +1116,11 @@ void WalletApi::testIWalletDataCompatibility(bool details, const std::string& ca
       EXPECT_EQ(txBalance, tx.totalAmount);
 
       if (inTx.totalAmountIn) {
-        EXPECT_EQ(inTx.totalAmountIn - inTx.totalAmountOut, tx.fee);
+        EXPECT_EQ( 
+			inTx.totalAmountIn < inTx.totalAmountOut + parameters::MINIMUM_FEE
+				? parameters::MINIMUM_FEE 
+				: inTx.totalAmountIn - inTx.totalAmountOut, 
+			tx.fee);
       } else {
         EXPECT_EQ(0, tx.fee);
       }

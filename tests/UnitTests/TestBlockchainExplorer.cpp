@@ -1027,13 +1027,13 @@ TEST_F(BlockchainExplorerTests, getBlocksByTimestampGenesis) {
 
   uint32_t totalBlocksNumber;
 
-  ASSERT_TRUE(blockchainExplorer.getBlocks(0, 0, 1, blocks, totalBlocksNumber));
+  ASSERT_TRUE(blockchainExplorer.getBlocks(GENESIS_TIMESTAMP, GENESIS_TIMESTAMP, 1, blocks, totalBlocksNumber));
   ASSERT_EQ(blocks.size(), 1);
   EXPECT_EQ(totalBlocksNumber, 1);
 
   Hash expectedHash = genesisHash;
   EXPECT_EQ(blocks.front().hash, expectedHash);
-  EXPECT_EQ(blocks.front().timestamp, 0);
+  EXPECT_EQ(blocks.front().timestamp, GENESIS_TIMESTAMP);
   EXPECT_FALSE(blocks.front().isOrphaned);
 }
 

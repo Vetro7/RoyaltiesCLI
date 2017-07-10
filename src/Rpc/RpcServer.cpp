@@ -621,7 +621,10 @@ bool RpcServer::f_on_block_json(const F_COMMAND_RPC_GET_BLOCK_DETAILS::request& 
     uint64_t amount_out = get_outs_money_amount(tx);
 
     transaction_short.hash = Common::podToHex(getObjectHash(tx));
-    transaction_short.fee = amount_in < amount_out ? CryptoNote::parameters::MINIMUM_FEE : amount_in - amount_out;
+    transaction_short.fee = 
+			amount_in < amount_out + parameters::MINIMUM_FEE //account for interest in output, it always has minimum fee
+			? parameters::MINIMUM_FEE 
+			: amount_in - amount_out;
     transaction_short.amount_out = amount_out;
     transaction_short.size = getObjectBinarySize(tx);
     res.block.transactions.push_back(transaction_short);
@@ -683,9 +686,14 @@ bool RpcServer::f_on_transaction_json(const F_COMMAND_RPC_GET_TRANSACTION_DETAIL
   uint64_t amount_out = get_outs_money_amount(res.tx);
 
   res.txDetails.hash = Common::podToHex(getObjectHash(res.tx));
-  res.txDetails.fee = amount_in < amount_out ? CryptoNote::parameters::MINIMUM_FEE : amount_in - amount_out;
   if (amount_in == 0)
     res.txDetails.fee = 0;
+  else {
+	res.txDetails.fee = 
+		amount_in < amount_out + parameters::MINIMUM_FEE //account for interest in output, it always has minimum fee
+		? parameters::MINIMUM_FEE 
+		: amount_in - amount_out;
+  }
   res.txDetails.amount_out = amount_out;
   res.txDetails.size = getObjectBinarySize(res.tx);
 
@@ -728,7 +736,10 @@ bool RpcServer::f_on_transactions_pool_json(const F_COMMAND_RPC_GET_POOL::reques
         uint64_t amount_out = getOutputAmount(tx);
 
         transaction_short.hash = Common::podToHex(getObjectHash(tx));
-        transaction_short.fee = amount_in < amount_out ? CryptoNote::parameters::MINIMUM_FEE : amount_in - amount_out;
+        transaction_short.fee = 
+			amount_in < amount_out + parameters::MINIMUM_FEE //account for interest in output, it always has minimum fee
+			? parameters::MINIMUM_FEE 
+			: amount_in - amount_out;
         transaction_short.amount_out = amount_out;
         transaction_short.size = getObjectBinarySize(tx);
         res.transactions.push_back(transaction_short);

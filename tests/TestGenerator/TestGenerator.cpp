@@ -86,7 +86,7 @@ bool test_generator::constructBlock(CryptoNote::Block& blk, uint32_t height, con
   size_t txsSize = 0;
   for (auto& tx : txList) {
     uint64_t fee = 0;
-    bool r = m_currency.getTransactionFee(tx, fee);
+    bool r = m_currency.getTransactionFee(tx, fee, height); //? is height right here
     CHECK_AND_ASSERT_MES(r, false, "wrong transaction passed to construct_block");
     totalFee += fee;
     txsSize += getObjectBinarySize(tx);
@@ -217,9 +217,10 @@ bool test_generator::constructMaxSizeBlock(CryptoNote::Block& blk, const CryptoN
   uint64_t totalFee = 0;
   size_t txsSize = 0;
   std::vector<Crypto::Hash> transactionHashes;
+  uint32_t height = get_block_height(blkPrev) + 1;
   for (auto& tx : txList) {
     uint64_t fee = 0;
-    bool r = m_currency.getTransactionFee(tx, fee);
+    bool r = m_currency.getTransactionFee(tx, fee, height); //? right height to use? because fee depends on creation height, not withdrawal height
     CHECK_AND_ASSERT_MES(r, false, "wrong transaction passed to construct_max_size_block");
     totalFee += fee;
     txsSize += getObjectBinarySize(tx);
@@ -227,7 +228,7 @@ bool test_generator::constructMaxSizeBlock(CryptoNote::Block& blk, const CryptoN
   }
 
   Transaction baseTransaction;
-  bool r = constructMinerTxBySize(m_currency, baseTransaction, get_block_height(blkPrev) + 1,
+  bool r = constructMinerTxBySize(m_currency, baseTransaction, height,
     getAlreadyGeneratedCoins(blkPrev), minerAccount.getAccountKeys().address, blockSizes,
     2 * median - txsSize, 2 * median, totalFee);
   if (!r) {
