@@ -119,13 +119,13 @@ TEST_F(CurrencyTest, calculateTotalTransactionInterestMixedInput) {
 
 TEST_F(CurrencyTest, getTransactionInputAmountInputToKey) {
 	for (auto h : heights){
-		ASSERT_EQ(defaultCurrency.getTransactionInputAmount(KeyInput{10, {}, {}}, h), 10); //?
+		ASSERT_EQ(defaultCurrency.getTransactionInputAmount(KeyInput{10, {}, {}}, h), 10);
 	}
 }
 
 TEST_F(CurrencyTest, getTransactionInputAmountMultisignature) {
 	for (auto h : heights){
-		ASSERT_EQ(defaultCurrency.getTransactionInputAmount(MultisignatureInput{10, 1, 2, 0}, h), 10); //?
+		ASSERT_EQ(defaultCurrency.getTransactionInputAmount(MultisignatureInput{10, 1, 2, 0}, h), 10);
 	}
 }
 

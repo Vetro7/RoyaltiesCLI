@@ -244,7 +244,7 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t& fee, uint32_t 
 
   if (amount_out > amount_in){
 	if (tx.inputs.size() > 0 && tx.outputs.size() > 0 && amount_out > amount_in + parameters::MINIMUM_FEE) //interest shows up in the output of the W/D transactions and W/Ds always have min fee
-	  fee = parameters::MINIMUM_FEE; //! need to update other spots with minimum fee to check counts
+	  fee = parameters::MINIMUM_FEE;
 	else
 	  return false;
   } else

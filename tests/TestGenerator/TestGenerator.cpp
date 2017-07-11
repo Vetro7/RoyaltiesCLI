@@ -86,7 +86,7 @@ bool test_generator::constructBlock(CryptoNote::Block& blk, uint32_t height, con
   size_t txsSize = 0;
   for (auto& tx : txList) {
     uint64_t fee = 0;
-    bool r = m_currency.getTransactionFee(tx, fee, height); //? is height right here
+    bool r = m_currency.getTransactionFee(tx, fee, height);
     CHECK_AND_ASSERT_MES(r, false, "wrong transaction passed to construct_block");
     totalFee += fee;
     txsSize += getObjectBinarySize(tx);
@@ -220,7 +220,7 @@ bool test_generator::constructMaxSizeBlock(CryptoNote::Block& blk, const CryptoN
   uint32_t height = get_block_height(blkPrev) + 1;
   for (auto& tx : txList) {
     uint64_t fee = 0;
-    bool r = m_currency.getTransactionFee(tx, fee, height); //? right height to use? because fee depends on creation height, not withdrawal height
+    bool r = m_currency.getTransactionFee(tx, fee, height);
     CHECK_AND_ASSERT_MES(r, false, "wrong transaction passed to construct_max_size_block");
     totalFee += fee;
     txsSize += getObjectBinarySize(tx);
