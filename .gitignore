@@ -8,3 +8,6 @@ Release
 Debug
 CMakeFiles
 *.a
+/version
+miniupnpcstrings.h
+compile_commands.json
