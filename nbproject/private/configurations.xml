@@ -53,8 +53,6 @@
             </df>
             <df name="CMakeTmp">
             </df>
-            <df name="Progress">
-            </df>
             <df name="version.dir">
             </df>
             <in>feature_tests.c</in>
@@ -414,9 +412,6 @@
             <in>sparseconfig_win.h</in>
             <in>sparsehashtable.h</in>
           </df>
-          <in>sparse_hash_map</in>
-          <in>sparse_hash_set</in>
-          <in>sparsetable</in>
           <in>type_traits.h</in>
         </df>
         <df name="gtest">
@@ -1498,7 +1493,6 @@
       <df name="version">
         <in>version.h</in>
       </df>
-      <in>Makefile</in>
       <in>miniupnpcstrings.h</in>
     </df>
   </logicalFolder>

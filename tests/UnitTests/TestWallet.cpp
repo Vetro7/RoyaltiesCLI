@@ -28,6 +28,8 @@
 
 #include "TransactionApiHelpers.h"
 
+#include <iostream> //temp
+
 using namespace Crypto;
 using namespace Common;
 using namespace CryptoNote;
@@ -222,7 +224,7 @@ protected:
   CryptoNote::WalletGreen alice;
   std::string aliceAddress;
 
-  const uint64_t SENT = 4327;//1122334455;
+  const uint64_t SENT = 12345;//1122334455;
   const uint64_t FEE;
   std::string RANDOM_ADDRESS;
   const uint64_t FUSION_THRESHOLD;
@@ -1411,28 +1413,23 @@ TEST_F(WalletApi, deleteAddresses) {
 
 TEST_F(WalletApi, incomingTxTransferWithChange) {
   generateAndUnlockMoney();
-
+  generateAndUnlockMoney(); //due to lower block reward compared to old genesis, must get two to have enough for second fee before change arrives
   CryptoNote::WalletGreen bob(dispatcher, currency, node, TRANSACTION_SOFTLOCK_TIME);
   bob.initialize("pass2");
   bob.createAddress();
   bob.createAddress();
-
   sendMoney(bob.getAddress(0), SENT, FEE);
   sendMoney(bob.getAddress(1), 2 * SENT, FEE);
   node.updateObservers();
   waitForTransactionCount(bob, 2);
-
   EXPECT_EQ(3, bob.getTransactionTransferCount(0)); //sent from alice + received on bob + alice change
   ASSERT_EQ(3, bob.getTransactionTransferCount(1));
-
   auto tr1 = bob.getTransactionTransfer(0, 0);
   EXPECT_EQ(tr1.address, bob.getAddress(0));
   EXPECT_EQ(tr1.amount, SENT);
-
   auto tr2 = bob.getTransactionTransfer(1, 0);
   EXPECT_EQ(tr2.address, bob.getAddress(1));
   EXPECT_EQ(tr2.amount, 2 * SENT);
-
   bob.shutdown();
   wait(100);
 }
@@ -2135,7 +2132,7 @@ size_t findDonationTransferId(const WalletGreen& wallet, size_t transactionId) {
 }
 
 TEST_F(WalletApi, donationTransferPresents) {
-  const uint64_t DONATION_THRESHOLD = 1000000;
+  const uint64_t DONATION_THRESHOLD = 10000;//1000000;
 
   generator.getSingleOutputTransaction(parseAddress(aliceAddress), SENT + FEE + DONATION_THRESHOLD);
   unlockMoney();

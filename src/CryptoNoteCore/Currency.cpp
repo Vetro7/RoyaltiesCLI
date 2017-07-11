@@ -182,7 +182,7 @@ uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t he
       interestLo = cLo;
   }
   
-  logger(INFO) << "calculateInterest (from " << caller << ") amount=" << amount << " height=" << height << " interest=" << (interestLo/1000000.0);
+  //logger(INFO) << "calculateInterest (from " << caller << ") amount=" << amount << " height=" << height << " interest=" << (interestLo/1000000.0);
 
   return interestLo;
 }
@@ -231,8 +231,8 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t& fee, uint32_t 
   uint64_t amount_in = 0;
   uint64_t amount_out = 0;
 
-  if (tx.inputs.size() == 0 || tx.outputs.size() == 0) 
-	  return false;
+  //if (tx.inputs.size() == 0)// || tx.outputs.size() == 0) //0 outputs needed in TestGenerator::constructBlock
+  //	  return false;
   
   for (const auto& in : tx.inputs) {
     amount_in += getTransactionInputAmount(in, height);
@@ -242,10 +242,14 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t& fee, uint32_t 
     amount_out += o.amount;
   }
 
-  fee = amount_out > amount_in + parameters::MINIMUM_FEE //interest shows up in the output of the W/D transactions and W/Ds always have min fee
-	? CryptoNote::parameters::MINIMUM_FEE //correct for unknown block height in interest calculation for W/Ds (interest is only in W/Ds)
-	: amount_in - amount_out;
-  
+  if (amount_out > amount_in){
+	if (tx.inputs.size() > 0 && tx.outputs.size() > 0 && amount_out > amount_in + parameters::MINIMUM_FEE) //interest shows up in the output of the W/D transactions and W/Ds always have min fee
+	  fee = parameters::MINIMUM_FEE; //! need to update other spots with minimum fee to check counts
+	else
+	  return false;
+  } else
+	fee = amount_in - amount_out;
+
   return true;
 }
 
