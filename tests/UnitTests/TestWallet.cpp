@@ -28,7 +28,7 @@
 
 #include "TransactionApiHelpers.h"
 
-#include <iostream> //temp
+#include <iostream>
 
 using namespace Crypto;
 using namespace Common;
