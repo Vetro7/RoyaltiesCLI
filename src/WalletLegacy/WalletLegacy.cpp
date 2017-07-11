@@ -79,7 +79,7 @@ private:
 uint64_t calculateDepositsAmount(const std::vector<CryptoNote::TransactionOutputInformation>& transfers, const CryptoNote::Currency& currency, const std::vector<uint32_t> heights) {
 	int index = 0;
   return std::accumulate(transfers.begin(), transfers.end(), static_cast<uint64_t>(0), [&currency, &index, heights] (uint64_t sum, const CryptoNote::TransactionOutputInformation& deposit) {
-    return sum + deposit.amount + currency.calculateInterest(deposit.amount, deposit.term, heights[index++], "calculateDepositsAmount");
+    return sum + deposit.amount + currency.calculateInterest(deposit.amount, deposit.term, heights[index++]);
   });
 }
 

@@ -157,7 +157,7 @@ bool Currency::getBlockReward(size_t medianSize, size_t currentBlockSize, uint64
   return true;
 }
 
-uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t height, std::string caller) const {
+uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t height) const {
   assert(m_depositMinTerm <= term && term <= m_depositMaxTerm);
   assert(static_cast<uint64_t>(term)* m_depositMaxTotalRate > m_depositMinTotalRateFactor);
 
@@ -181,8 +181,6 @@ uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t he
       interestHi = cHi;
       interestLo = cLo;
   }
-  
-  //logger(INFO) << "calculateInterest (from " << caller << ") amount=" << amount << " height=" << height << " interest=" << (interestLo/1000000.0);
 
   return interestLo;
 }
@@ -193,7 +191,7 @@ uint64_t Currency::calculateTotalTransactionInterest(const Transaction& tx, uint
     if (input.type() == typeid(MultisignatureInput)) {
       const MultisignatureInput& multisignatureInput = boost::get<MultisignatureInput>(input);
       if (multisignatureInput.term != 0) {
-        interest += calculateInterest(multisignatureInput.amount, multisignatureInput.term, height, "Currency::calculateTotalTransactionInterest");
+        interest += calculateInterest(multisignatureInput.amount, multisignatureInput.term, height);
       }
     }
   }
@@ -209,7 +207,7 @@ uint64_t Currency::getTransactionInputAmount(const TransactionInput& in, uint32_
     if (multisignatureInput.term == 0) {
       return multisignatureInput.amount;
     } else {
-      return multisignatureInput.amount + calculateInterest(multisignatureInput.amount, multisignatureInput.term, height, "Currency::getTransactionInputAmount");
+      return multisignatureInput.amount + calculateInterest(multisignatureInput.amount, multisignatureInput.term, height);
     }
   } else if (in.type() == typeid(BaseInput)) {
     return 0;

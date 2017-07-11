@@ -615,7 +615,7 @@ DepositId WalletUserTransactionsCache::insertNewDeposit(const TransactionOutputI
   deposit.creatingTransactionId = creatingTransactionId;
   deposit.term = depositOutput.term;
   deposit.spendingTransactionId = WALLET_LEGACY_INVALID_TRANSACTION_ID;
-  deposit.interest = currency.calculateInterest(deposit.amount, deposit.term, height, "WalletUserTransactionsCache::insertNewDeposit");
+  deposit.interest = currency.calculateInterest(deposit.amount, deposit.term, height);
   deposit.locked = true;
 
   return insertDeposit(deposit, depositOutput.outputInTransaction, depositOutput.transactionHash);
