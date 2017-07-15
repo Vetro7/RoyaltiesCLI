@@ -13,16 +13,19 @@ You may download them from:
 Alternatively, it may be possible to install them using a package manager.
 
 To build:
-Change to the directory where this file is located and run these commands:
+Run these commands:
 ```
+cd ~
+git clone https://github.com/Vetro7/RoyaltiesCLI RoyaltiesCLI
+cd RoyaltiesCLI
 mkdir build
 cd build
-cmake
-cd
+cmake ..
+cd ..
 make
 ```
 
-To build, change to a directory where this file is located, and run `make`. The resulting executables can be found in `build/release/src`.
+The resulting executables can be found in `RoyaltiesCLI/build/release/src`.
 
 #### Advanced options:
 
