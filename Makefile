@@ -19,6 +19,11 @@ cmake-release:
 build-release: cmake-release
 	cd build/release && $(MAKE)
 
+build-static: 
+	mkdir -p build/static
+	cd build/static && cmake -D CMAKE_BUILD_TYPE=Release ../..
+	cd build/static && $(MAKE) SHARED=0 CC='gcc -static'
+
 test-release: build-release
 	cd build/release && $(MAKE) test
 
