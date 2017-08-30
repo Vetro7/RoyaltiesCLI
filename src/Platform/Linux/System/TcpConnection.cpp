@@ -167,11 +167,7 @@ std::size_t TcpConnection::write(const uint8_t* data, size_t size) {
 
   ssize_t transferred = ::send(connection, (void *)data, size, MSG_NOSIGNAL);
   if (transferred == -1) {
-<<<<<<< HEAD
-    if (errno != EAGAIN  && errno != EWOULDBLOCK) {
-=======
     if (errno != EAGAIN){
->>>>>>> 9f8a67de9a9409ac549bed2dfe8c83818646118c
       message = "send failed, " + lastErrorMessage();
     } else {
       epoll_event connectionEvent;
