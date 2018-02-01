@@ -36,9 +36,9 @@ struct DepositTestsBase : public test_chain_unit_base {
   bool check_block_verification_context(const CryptoNote::block_verification_context& bvc, size_t eventIdx,
                                         const CryptoNote::Block& /*blk*/) {
     if (blockId == eventIdx) {
-      return bvc.m_verifivation_failed;
+      return bvc.m_verification_failed;
     } else {
-      return !bvc.m_verifivation_failed;
+      return !bvc.m_verification_failed;
     }
   }
 
@@ -264,7 +264,7 @@ struct TransactionWithDepositUpdatesInterestAfterDepositUnlockMultiple : public 
 };
 
 struct TransactionWithDepositUnrolesPartOfAmountAfterSwitchToAlternativeChain : public DepositIndexTest {
-  bool generate(std::vector<test_event_entry>& events); 
+  bool generate(std::vector<test_event_entry>& events);
 };
 
 }

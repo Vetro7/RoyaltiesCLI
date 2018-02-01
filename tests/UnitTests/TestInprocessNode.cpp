@@ -661,7 +661,7 @@ TEST_F(InProcessNodeTests, getLastLocalBlockTimestampError) {
 TEST_F(InProcessNodeTests, getPoolDiffereceNotInited) {
   CryptoNote::InProcessNode newNode(coreStub, protocolQueryStub);
 
-  std::vector<Crypto::Hash> knownPoolTxIds; 
+  std::vector<Crypto::Hash> knownPoolTxIds;
   Crypto::Hash knownBlockId = boost::value_initialized<Crypto::Hash>();
   bool isBcActual = false;
   std::vector<std::unique_ptr<ITransactionReader>> newTxs;
@@ -688,7 +688,7 @@ TEST_F(InProcessNodeTests, getPoolDiffereceActualBC) {
     bool keptByBlock = false;
     coreStub.handleIncomingTransaction(tx, CryptoNote::getObjectHash(tx), CryptoNote::getObjectBinarySize(tx), tvc, keptByBlock, 0);
     ASSERT_TRUE(tvc.m_added_to_pool);
-    ASSERT_FALSE(tvc.m_verifivation_failed);
+    ASSERT_FALSE(tvc.m_verification_failed);
   }
 
   ASSERT_EQ(transactionHashes.size(), POOL_TX_NUMBER);
@@ -727,7 +727,7 @@ TEST_F(InProcessNodeTests, getPoolDiffereceNotActualBC) {
     bool keptByBlock = false;
     coreStub.handleIncomingTransaction(tx, CryptoNote::getObjectHash(tx), CryptoNote::getObjectBinarySize(tx), tvc, keptByBlock, 0);
     ASSERT_TRUE(tvc.m_added_to_pool);
-    ASSERT_FALSE(tvc.m_verifivation_failed);
+    ASSERT_FALSE(tvc.m_verification_failed);
   }
 
   ASSERT_EQ(transactionHashes.size(), POOL_TX_NUMBER);

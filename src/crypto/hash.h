@@ -37,13 +37,13 @@ namespace Crypto {
 
     cn_context();
     ~cn_context();
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1800
     cn_context(const cn_context &) = delete;
     void operator=(const cn_context &) = delete;
 #endif
 
   private:
-
     void *data;
     friend inline void cn_slow_hash(cn_context &, const void *, size_t, Hash &);
   };

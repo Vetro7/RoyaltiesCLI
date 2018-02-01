@@ -93,17 +93,17 @@ DoubleSpendBase::DoubleSpendBase() :
 bool DoubleSpendBase::check_tx_verification_context(const CryptoNote::tx_verification_context& tvc, bool tx_added, size_t event_idx, const CryptoNote::Transaction& /*tx*/)
 {
   if (m_invalid_tx_index == event_idx)
-    return tvc.m_verifivation_failed;
+    return tvc.m_verification_failed;
   else
-    return !tvc.m_verifivation_failed && tx_added;
+    return !tvc.m_verification_failed && tx_added;
 }
 
 bool DoubleSpendBase::check_block_verification_context(const CryptoNote::block_verification_context& bvc, size_t event_idx, const CryptoNote::Block& /*block*/)
 {
   if (m_invalid_block_index == event_idx)
-    return bvc.m_verifivation_failed;
+    return bvc.m_verification_failed;
   else
-    return !bvc.m_verifivation_failed;
+    return !bvc.m_verification_failed;
 }
 
 bool DoubleSpendBase::mark_last_valid_block(CryptoNote::core& c, size_t /*ev_index*/, const std::vector<test_event_entry>& /*events*/)
@@ -146,12 +146,12 @@ TestGenerator DoubleSpendBase::prepare(std::vector<test_event_entry>& events) co
 
   TransactionBuilder::KeysVector kv;
   kv.push_back(m_bob_account.getAccountKeys());
-  
+
   builder.addMultisignatureOut(send_amount, kv, 1);
 
   // move money
   auto tx = builder.build();
-    
+
   generator.addEvent(tx);
   generator.makeNextBlock(tx);
 
@@ -192,7 +192,7 @@ TransactionBuilder DoubleSpendBase::createBobToAliceTx() const {
 // MultiSigTx_DoubleSpendInTx
 //======================================================================================================================
 
-MultiSigTx_DoubleSpendInTx::MultiSigTx_DoubleSpendInTx(bool txsKeepedByBlock) 
+MultiSigTx_DoubleSpendInTx::MultiSigTx_DoubleSpendInTx(bool txsKeepedByBlock)
   : m_txsKeepedByBlock(txsKeepedByBlock)
 {
   has_invalid_tx = true;
@@ -225,7 +225,7 @@ bool MultiSigTx_DoubleSpendInTx::generate(std::vector<test_event_entry>& events)
 //======================================================================================================================
 // MultiSigTx_DoubleSpendSameBlock
 //======================================================================================================================
-MultiSigTx_DoubleSpendSameBlock::MultiSigTx_DoubleSpendSameBlock(bool txsKeepedByBlock) 
+MultiSigTx_DoubleSpendSameBlock::MultiSigTx_DoubleSpendSameBlock(bool txsKeepedByBlock)
   : m_txsKeepedByBlock(txsKeepedByBlock) {
   has_invalid_tx = !txsKeepedByBlock;
 }
@@ -250,7 +250,7 @@ bool MultiSigTx_DoubleSpendSameBlock::generate(std::vector<test_event_entry>& ev
   }
 
   generator.addEvent(tx2);
-  
+
   txs.push_back(tx1);
   txs.push_back(tx2);
 
@@ -265,7 +265,7 @@ bool MultiSigTx_DoubleSpendSameBlock::generate(std::vector<test_event_entry>& ev
 // MultiSigTx_DoubleSpendDifferentBlocks
 //======================================================================================================================
 MultiSigTx_DoubleSpendDifferentBlocks::MultiSigTx_DoubleSpendDifferentBlocks(bool txsKeepedByBlock)
-  : m_txsKeepedByBlock(txsKeepedByBlock) { 
+  : m_txsKeepedByBlock(txsKeepedByBlock) {
   has_invalid_tx = !txsKeepedByBlock;
 }
 

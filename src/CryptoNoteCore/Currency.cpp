@@ -51,7 +51,7 @@ const std::vector<uint64_t> Currency::PRETTY_AMOUNTS = {
 };
 
 const std::vector<uint64_t> Currency::POWERS_OF_TEN = {
-	1, 
+	1,
 	10,
 	100,
 	1000,
@@ -102,7 +102,7 @@ bool Currency::generateGenesisBlock() {
   // Hard code coinbase tx in genesis block, because "tru" generating tx use random, but genesis should be always the same
   std::string genesisCoinbaseTxHex = GENESIS_COINBASE_TX_HEX;
   BinaryArray minerTxBlob;
-  
+
   bool r =
     fromHex(genesisCoinbaseTxHex, minerTxBlob) &&
     fromBinaryArray(m_genesisBlock.baseTransaction, minerTxBlob);
@@ -116,24 +116,47 @@ bool Currency::generateGenesisBlock() {
   m_genesisBlock.minorVersion = BLOCK_MINOR_VERSION_0;
   m_genesisBlock.timestamp = GENESIS_TIMESTAMP;
   m_genesisBlock.nonce = GENESIS_NONCE;
+
   if (m_testnet) {
     ++m_genesisBlock.nonce;
   }
-  //miner::find_nonce_for_given_block(bl, 1, 0);
 
+  //miner::find_nonce_for_given_block(bl, 1, 0);
   return true;
 }
 
+size_t Currency::difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const {
+  if (blockMajorVersion >= BLOCK_MAJOR_VERSION_2) {
+    return m_difficultyWindow;
+  } else if (blockMajorVersion == BLOCK_MAJOR_VERSION_1) {
+    return parameters::DIFFICULTY_WINDOW_V2;
+  } else {
+    return parameters::DIFFICULTY_WINDOW_V1;
+  }
+}
+
+size_t Currency::difficultyCutByBlockVersion(uint8_t blockMajorVersion) const {
+  if (blockMajorVersion >= BLOCK_MAJOR_VERSION_2) {
+    return m_difficultyCut;
+  } else if (blockMajorVersion == BLOCK_MAJOR_VERSION_1) {
+    return parameters::DIFFICULTY_CUT_V2;
+  } else {
+    return parameters::DIFFICULTY_CUT_V1;
+  }
+}
+
 uint64_t Currency::baseRewardFunction(uint64_t alreadyGeneratedCoins, uint32_t height) const {
-  if (height == 1) return ICO_BLOCK_REWARD;
-  
+  if (height == 1) {
+    return ICO_BLOCK_REWARD;
+  }
+
   uint64_t incrIntervals = static_cast<uint64_t>(height) / REWARD_INCREASE_INTERVAL;
   assert(incrIntervals < POWERS_OF_TEN.size());
-  
-  uint64_t base_reward = START_BLOCK_REWARD * POWERS_OF_TEN[incrIntervals];	
+
+  uint64_t base_reward = START_BLOCK_REWARD * POWERS_OF_TEN[incrIntervals];
   base_reward = (std::min)(base_reward, MAX_BLOCK_REWARD);
   base_reward = (std::min)(base_reward, m_moneySupply - alreadyGeneratedCoins);
-  
+
   return base_reward;
 }
 
@@ -171,7 +194,7 @@ uint64_t Currency::calculateInterest(uint64_t amount, uint32_t term, uint32_t he
   div128_32(bHi, bLo, static_cast<uint32_t>(100 * m_depositMaxTerm), &cHi, &cLo);
   assert(cHi == 0);
 
-  //early depositor multiplier
+  // early depositor multiplier
   uint64_t interestHi;
   uint64_t interestLo;
   if (height <= CryptoNote::parameters::END_MULTIPLIER_BLOCK){
@@ -222,6 +245,7 @@ uint64_t Currency::getTransactionAllInputsAmount(const Transaction& tx, uint32_t
   for (const auto& in : tx.inputs) {
     amount += getTransactionInputAmount(in, height);
   }
+
   return amount;
 }
 
@@ -231,7 +255,7 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t& fee, uint32_t 
 
   //if (tx.inputs.size() == 0)// || tx.outputs.size() == 0) //0 outputs needed in TestGenerator::constructBlock
   //	  return false;
-  
+
   for (const auto& in : tx.inputs) {
     amount_in += getTransactionInputAmount(in, height);
   }
@@ -241,12 +265,15 @@ bool Currency::getTransactionFee(const Transaction& tx, uint64_t& fee, uint32_t 
   }
 
   if (amount_out > amount_in){
-	if (tx.inputs.size() > 0 && tx.outputs.size() > 0 && amount_out > amount_in + parameters::MINIMUM_FEE) //interest shows up in the output of the W/D transactions and W/Ds always have min fee
-	  fee = parameters::MINIMUM_FEE;
-	else
-	  return false;
-  } else
-	fee = amount_in - amount_out;
+    // interest shows up in the output of the W/D transactions and W/Ds always have min fee
+    if (tx.inputs.size() > 0 && tx.outputs.size() > 0 && amount_out > amount_in + parameters::MINIMUM_FEE) {
+      fee = parameters::MINIMUM_FEE;
+    } else {
+      return false;
+    }
+  } else {
+	   fee = amount_in - amount_out;
+  }
 
   return true;
 }
@@ -256,6 +283,7 @@ uint64_t Currency::getTransactionFee(const Transaction& tx, uint32_t height) con
   if (!getTransactionFee(tx, r, height)) {
     r = 0;
   }
+
   return r;
 }
 
@@ -263,6 +291,7 @@ size_t Currency::maxBlockCumulativeSize(uint64_t height) const {
   assert(height <= std::numeric_limits<uint64_t>::max() / m_maxBlockSizeGrowthSpeedNumerator);
   size_t maxSize = static_cast<size_t>(m_maxBlockSizeInitial +
     (height * m_maxBlockSizeGrowthSpeedNumerator) / m_maxBlockSizeGrowthSpeedDenominator);
+
   assert(maxSize >= m_maxBlockSizeInitial);
   return maxSize;
 }
@@ -297,7 +326,11 @@ bool Currency::constructMinerTx(uint32_t height, size_t medianSize, uint64_t alr
     [&outAmounts](uint64_t a_chunk) { outAmounts.push_back(a_chunk); },
     [&outAmounts](uint64_t a_dust) { outAmounts.push_back(a_dust); });
 
-  if (!(1 <= maxOuts)) { logger(ERROR, BRIGHT_RED) << "max_out must be non-zero"; return false; }
+  if (!(1 <= maxOuts)) {
+    logger(ERROR, BRIGHT_RED) << "max_out must be non-zero";
+    return false;
+  }
+
   while (maxOuts < outAmounts.size()) {
     outAmounts[outAmounts.size() - 2] += outAmounts.back();
     outAmounts.resize(outAmounts.size() - 1);
@@ -314,6 +347,7 @@ bool Currency::constructMinerTx(uint32_t height, size_t medianSize, uint64_t alr
       logger(ERROR, BRIGHT_RED)
         << "while creating outs: failed to generate_key_derivation("
         << minerAddress.viewPublicKey << ", " << txkey.secretKey << ")";
+
       return false;
     }
 
@@ -324,6 +358,7 @@ bool Currency::constructMinerTx(uint32_t height, size_t medianSize, uint64_t alr
         << "while creating outs: failed to derive_public_key("
         << derivation << ", " << no << ", "
         << minerAddress.spendPublicKey << ")";
+
       return false;
     }
 
@@ -342,7 +377,7 @@ bool Currency::constructMinerTx(uint32_t height, size_t medianSize, uint64_t alr
   }
 
   tx.version = TRANSACTION_VERSION_1;
-  //lock
+  // lock
   tx.unlockTime = height + m_minedMoneyUnlockWindow;
   tx.inputs.push_back(in);
   return true;
@@ -411,7 +446,7 @@ bool Currency::isAmountApplicableInFusionTransactionInput(uint64_t amount, uint6
   auto it = std::lower_bound(PRETTY_AMOUNTS.begin(), PRETTY_AMOUNTS.end(), amount);
   if (it == PRETTY_AMOUNTS.end() || amount != *it) {
     return false;
-  } 
+  }
 
   amountPowerOfTen = static_cast<uint8_t>(std::distance(PRETTY_AMOUNTS.begin(), it) / 9);
   return true;
@@ -444,6 +479,7 @@ std::string Currency::formatAmount(uint64_t amount) const {
   if (s.size() < m_numberOfDecimalPlaces + 1) {
     s.insert(0, m_numberOfDecimalPlaces + 1 - s.size(), '0');
   }
+
   s.insert(s.size() - m_numberOfDecimalPlaces, ".");
   return s;
 }
@@ -464,15 +500,18 @@ bool Currency::parseAmount(const std::string& str, uint64_t& amount) const {
 
   size_t pointIndex = strAmount.find_first_of('.');
   size_t fractionSize;
+
   if (std::string::npos != pointIndex) {
     fractionSize = strAmount.size() - pointIndex - 1;
     while (m_numberOfDecimalPlaces < fractionSize && '0' == strAmount.back()) {
       strAmount.erase(strAmount.size() - 1, 1);
       --fractionSize;
     }
+
     if (m_numberOfDecimalPlaces < fractionSize) {
       return false;
     }
+
     strAmount.erase(pointIndex, 1);
   } else {
     fractionSize = 0;
@@ -520,6 +559,7 @@ difficulty_type Currency::nextDifficulty(std::vector<uint64_t> timestamps,
     cutBegin = (length - (m_difficultyWindow - 2 * m_difficultyCut) + 1) / 2;
     cutEnd = cutBegin + (m_difficultyWindow - 2 * m_difficultyCut);
   }
+
   assert(/*cut_begin >= 0 &&*/ cutBegin + 2 <= cutEnd && cutEnd <= length);
   uint64_t timeSpan = timestamps[cutEnd - 1] - timestamps[cutBegin];
   if (timeSpan == 0) {
@@ -538,23 +578,153 @@ difficulty_type Currency::nextDifficulty(std::vector<uint64_t> timestamps,
   return (low + timeSpan - 1) / timeSpan;
 }
 
-bool Currency::checkProofOfWork(Crypto::cn_context& context, const Block& block, difficulty_type currentDiffic,
+difficulty_type Currency::nextDifficulty(uint8_t version, uint32_t blockIndex, std::vector<uint64_t> timestamps,
+  std::vector<difficulty_type> cumulativeDifficulties) const {
+
+  std::vector<uint64_t> timestamps_o(timestamps);
+  std::vector<uint64_t> cumulativeDifficulties_o(cumulativeDifficulties);
+  size_t c_difficultyWindow = difficultyWindowByBlockVersion(version);
+  size_t c_difficultyCut = difficultyCutByBlockVersion(version);
+
+  assert(c_difficultyWindow >= 2);
+
+  if (timestamps.size() > c_difficultyWindow) {
+    timestamps.resize(c_difficultyWindow);
+    cumulativeDifficulties.resize(c_difficultyWindow);
+  }
+
+  size_t length = timestamps.size();
+  assert(length == cumulativeDifficulties.size());
+  assert(length <= c_difficultyWindow);
+  if (length <= 1) {
+    return 1;
+  }
+
+  sort(timestamps.begin(), timestamps.end());
+
+  size_t cutBegin, cutEnd;
+  assert(2 * c_difficultyCut <= c_difficultyWindow - 2);
+  if (length <= c_difficultyWindow - 2 * c_difficultyCut) {
+    cutBegin = 0;
+    cutEnd = length;
+  } else {
+    cutBegin = (length - (c_difficultyWindow - 2 * c_difficultyCut) + 1) / 2;
+    cutEnd = cutBegin + (c_difficultyWindow - 2 * c_difficultyCut);
+  }
+
+  assert(/*cut_begin >= 0 &&*/ cutBegin + 2 <= cutEnd && cutEnd <= length);
+  uint64_t timeSpan = timestamps[cutEnd - 1] - timestamps[cutBegin];
+  if (timeSpan == 0) {
+    timeSpan = 1;
+  }
+
+  difficulty_type totalWork = cumulativeDifficulties[cutEnd - 1] - cumulativeDifficulties[cutBegin];
+  assert(totalWork > 0);
+
+  uint64_t low, high;
+  low = mul128(totalWork, m_difficultyTarget, &high);
+  if (high != 0 || std::numeric_limits<uint64_t>::max() - low < (timeSpan - 1)) {
+    return 0;
+  }
+
+  uint8_t c_zawyDifficultyBlockVersion = m_zawyDifficultyBlockVersion;
+  if (m_zawyDifficultyV2) {
+    c_zawyDifficultyBlockVersion = 2;
+  }
+
+  if (version >= c_zawyDifficultyBlockVersion && c_zawyDifficultyBlockVersion) {
+    if (high != 0) {
+      return 0;
+    }
+    uint64_t nextDiffZ = low / timeSpan;
+
+    return nextDiffZ;
+  }
+
+  if (m_zawyDifficultyBlockIndex && m_zawyDifficultyBlockIndex <= blockIndex) {
+    if (high != 0) {
+      return 0;
+    }
+
+    /*
+      Recalculating 'low' and 'timespan' with hardcoded values:
+      DIFFICULTY_CUT=0
+      DIFFICULTY_LAG=0
+      DIFFICULTY_WINDOW=17
+    */
+    c_difficultyWindow = 17;
+    c_difficultyCut = 0;
+
+    assert(c_difficultyWindow >= 2);
+
+    size_t t_difficultyWindow = c_difficultyWindow;
+    if (c_difficultyWindow > timestamps.size()) {
+      t_difficultyWindow = timestamps.size();
+    }
+
+    std::vector<uint64_t> timestamps_tmp(timestamps_o.end() - t_difficultyWindow, timestamps_o.end());
+    std::vector<uint64_t> cumulativeDifficulties_tmp(cumulativeDifficulties_o.end() - t_difficultyWindow, cumulativeDifficulties_o.end());
+
+    length = timestamps_tmp.size();
+    assert(length == cumulativeDifficulties_tmp.size());
+    assert(length <= c_difficultyWindow);
+    if (length <= 1) {
+      return 1;
+    }
+
+    sort(timestamps_tmp.begin(), timestamps_tmp.end());
+
+    assert(2 * c_difficultyCut <= c_difficultyWindow - 2);
+    if (length <= c_difficultyWindow - 2 * c_difficultyCut) {
+      cutBegin = 0;
+      cutEnd = length;
+    } else {
+      cutBegin = (length - (c_difficultyWindow - 2 * c_difficultyCut) + 1) / 2;
+      cutEnd = cutBegin + (c_difficultyWindow - 2 * c_difficultyCut);
+    }
+
+    assert(/*cut_begin >= 0 &&*/ cutBegin + 2 <= cutEnd && cutEnd <= length);
+    timeSpan = timestamps_tmp[cutEnd - 1] - timestamps_tmp[cutBegin];
+    if (timeSpan == 0) {
+      timeSpan = 1;
+    }
+
+    totalWork = cumulativeDifficulties_tmp[cutEnd - 1] - cumulativeDifficulties_tmp[cutBegin];
+    assert(totalWork > 0);
+
+    low = mul128(totalWork, m_difficultyTarget, &high);
+    if (high != 0 || std::numeric_limits<uint64_t>::max() - low < (timeSpan - 1)) {
+      return 0;
+    }
+
+    uint64_t nextDiffZ = low / timeSpan;
+    if (nextDiffZ <= 100) {
+      nextDiffZ = 100;
+    }
+
+    return nextDiffZ;
+  }
+
+  return (low + timeSpan - 1) / timeSpan;
+}
+
+bool Currency::checkProofOfWork(Crypto::cn_context& context, const Block& block, difficulty_type currentDifficulty,
   Crypto::Hash& proofOfWork) const {
 
   if (!get_block_longhash(context, block, proofOfWork)) {
     return false;
   }
 
-  return check_hash(proofOfWork, currentDiffic);
+  return check_hash(proofOfWork, currentDifficulty);
 }
 
 size_t Currency::getApproximateMaximumInputCount(size_t transactionSize, size_t outputCount, size_t mixinCount) const {
   const size_t KEY_IMAGE_SIZE = sizeof(Crypto::KeyImage);
   const size_t OUTPUT_KEY_SIZE = sizeof(decltype(KeyOutput::key));
-  const size_t AMOUNT_SIZE = sizeof(uint64_t) + 2; //varint
-  const size_t GLOBAL_INDEXES_VECTOR_SIZE_SIZE = sizeof(uint8_t);//varint
-  const size_t GLOBAL_INDEXES_INITIAL_VALUE_SIZE = sizeof(uint32_t);//varint
-  const size_t GLOBAL_INDEXES_DIFFERENCE_SIZE = sizeof(uint32_t);//varint
+  const size_t AMOUNT_SIZE = sizeof(uint64_t) + 2; // varint
+  const size_t GLOBAL_INDEXES_VECTOR_SIZE_SIZE = sizeof(uint8_t); // varint
+  const size_t GLOBAL_INDEXES_INITIAL_VALUE_SIZE = sizeof(uint32_t); // varint
+  const size_t GLOBAL_INDEXES_DIFFERENCE_SIZE = sizeof(uint32_t); // varint
   const size_t SIGNATURE_SIZE = sizeof(Crypto::Signature);
   const size_t EXTRA_TAG_SIZE = sizeof(uint8_t);
   const size_t INPUT_TAG_SIZE = sizeof(uint8_t);
@@ -565,8 +735,8 @@ size_t Currency::getApproximateMaximumInputCount(size_t transactionSize, size_t 
 
   const size_t outputsSize = outputCount * (OUTPUT_TAG_SIZE + OUTPUT_KEY_SIZE + AMOUNT_SIZE);
   const size_t headerSize = TRANSACTION_VERSION_SIZE + TRANSACTION_UNLOCK_TIME_SIZE + EXTRA_TAG_SIZE + PUBLIC_KEY_SIZE;
-  const size_t inputSize = INPUT_TAG_SIZE + AMOUNT_SIZE + KEY_IMAGE_SIZE + SIGNATURE_SIZE + GLOBAL_INDEXES_VECTOR_SIZE_SIZE + GLOBAL_INDEXES_INITIAL_VALUE_SIZE +
-                            mixinCount * (GLOBAL_INDEXES_DIFFERENCE_SIZE + SIGNATURE_SIZE);
+  const size_t inputSize = INPUT_TAG_SIZE + AMOUNT_SIZE + KEY_IMAGE_SIZE + SIGNATURE_SIZE + GLOBAL_INDEXES_VECTOR_SIZE_SIZE +
+    GLOBAL_INDEXES_INITIAL_VALUE_SIZE + mixinCount * (GLOBAL_INDEXES_DIFFERENCE_SIZE + SIGNATURE_SIZE);
 
   return (transactionSize - headerSize - outputsSize) / inputSize;
 }
@@ -582,9 +752,14 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   blockFutureTimeLimit(parameters::CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT);
 
   moneySupply(parameters::MONEY_SUPPLY);
-//  genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
+  //genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
 
   rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
+
+  zawyDifficultyBlockIndex(parameters::ZAWY_DIFFICULTY_BLOCK_INDEX);
+  zawyDifficultyV2(parameters::ZAWY_DIFFICULTY_V2);
+  zawyDifficultyBlockVersion(parameters::ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION);
+
   blockGrantedFullRewardZone(parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
   minerTxBlobReservedSize(parameters::CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE);
 
@@ -620,6 +795,7 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
   upgradeVotingWindow(parameters::UPGRADE_VOTING_WINDOW);
   upgradeWindow(parameters::UPGRADE_WINDOW);
 
+  transactionMaxSize(parameters::CRYPTONOTE_MAX_TX_SIZE_LIMIT);
   fusionTxMaxSize(parameters::FUSION_TX_MAX_SIZE);
   fusionTxMinInputCount(parameters::FUSION_TX_MIN_INPUT_COUNT);
   fusionTxMinInOutCountRatio(parameters::FUSION_TX_MIN_IN_OUT_COUNT_RATIO);
@@ -643,7 +819,7 @@ Transaction CurrencyBuilder::generateGenesisTransaction() {
 
 // Transaction CurrencyBuilder::generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets) {
 //     assert(!targets.empty());
-// 
+//
 //     CryptoNote::Transaction tx;
 //     tx.inputs.clear();
 //     tx.outputs.clear();
@@ -692,6 +868,7 @@ CurrencyBuilder& CurrencyBuilder::difficultyWindow(size_t val) {
   if (val < 2) {
     throw std::invalid_argument("val at difficultyWindow()");
   }
+
   m_currency.m_difficultyWindow = val;
   return *this;
 }
@@ -700,7 +877,7 @@ CurrencyBuilder& CurrencyBuilder::upgradeVotingThreshold(unsigned int val) {
   if (val <= 0 || val > 100) {
     throw std::invalid_argument("val at upgradeVotingThreshold()");
   }
-  
+
   m_currency.m_upgradeVotingThreshold = val;
   return *this;
 }
@@ -709,7 +886,7 @@ CurrencyBuilder& CurrencyBuilder::upgradeWindow(size_t val) {
   if (val <= 0) {
     throw std::invalid_argument("val at upgradeWindow()");
   }
-  
+
   m_currency.m_upgradeWindow = val;
   return *this;
 }

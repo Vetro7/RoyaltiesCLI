@@ -3,7 +3,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#pragma once 
+#pragma once
 #include "Chaingen.h"
 
 struct get_tx_validation_base : public test_chain_unit_base
@@ -19,17 +19,17 @@ struct get_tx_validation_base : public test_chain_unit_base
   bool check_tx_verification_context(const CryptoNote::tx_verification_context& tvc, bool tx_added, size_t event_idx, const CryptoNote::Transaction& /*tx*/)
   {
     if (m_invalid_tx_index == event_idx)
-      return tvc.m_verifivation_failed;
+      return tvc.m_verification_failed;
     else
-      return !tvc.m_verifivation_failed && tx_added;
+      return !tvc.m_verification_failed && tx_added;
   }
 
   bool check_block_verification_context(const CryptoNote::block_verification_context& bvc, size_t event_idx, const CryptoNote::Block& /*block*/)
   {
     if (m_invalid_block_index == event_idx)
-      return bvc.m_verifivation_failed;
+      return bvc.m_verification_failed;
     else
-      return !bvc.m_verifivation_failed;
+      return !bvc.m_verification_failed;
   }
 
   bool mark_invalid_block(CryptoNote::core& /*c*/, size_t ev_index, const std::vector<test_event_entry>& /*events*/)
@@ -143,7 +143,7 @@ class TestGenerator;
 
 struct MultiSigTx_OutputSignatures : public get_tx_validation_base {
   MultiSigTx_OutputSignatures(size_t givenKeys, uint32_t requiredSignatures, bool shouldSucceed);
-  
+
   bool generate(std::vector<test_event_entry>& events) const;
   bool generate(TestGenerator& generator) const;
 

@@ -1,13 +1,21 @@
-.DS_Store
-/build
-/tags
-.idea
-.ycm_extra_conf.py
-.ycm_extra_conf.pyc
-Release
-Debug
-CMakeFiles
+# Build
+*.ycm_extra_conf.py
+*.ycm_extra_conf.pyc
+
+build/
+tags/
+Release/
+Debug/
+CMakeFiles/
+
+# Mac OS
+*.DS_Store
+
+# Other
+*.idea
 *.a
-/version
+
+version/
+
 miniupnpcstrings.h
 compile_commands.json
