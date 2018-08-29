@@ -33,14 +33,9 @@ public:
   uint64_t blockFutureTimeLimit() const { return m_blockFutureTimeLimit; }
 
   uint64_t moneySupply() const { return m_moneySupply; }
-  //uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
+//  uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
 
   size_t rewardBlocksWindow() const { return m_rewardBlocksWindow; }
-
-  uint32_t zawyDifficultyBlockIndex() const { return m_zawyDifficultyBlockIndex; }
-  size_t zawyDifficultyV2() const { return m_zawyDifficultyV2; }
-  uint8_t zawyDifficultyBlockVersion() const { return m_zawyDifficultyBlockVersion; }
-
   size_t blockGrantedFullRewardZone() const { return m_blockGrantedFullRewardZone; }
   size_t minerTxBlobReservedSize() const { return m_minerTxBlobReservedSize; }
 
@@ -52,10 +47,8 @@ public:
 
   uint64_t difficultyTarget() const { return m_difficultyTarget; }
   size_t difficultyWindow() const { return m_difficultyWindow; }
-  size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const;
   size_t difficultyLag() const { return m_difficultyLag; }
   size_t difficultyCut() const { return m_difficultyCut; }
-  size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion) const;
   size_t difficultyBlocksCount() const { return m_difficultyWindow + m_difficultyLag; }
 
   uint64_t depositMinAmount() const { return m_depositMinAmount; }
@@ -83,7 +76,6 @@ public:
   uint64_t maxUpgradeDistance() const { return static_cast<uint64_t>(m_upgradeWindow); }
   uint64_t calculateUpgradeHeight(uint64_t voteCompleteHeight) const { return voteCompleteHeight + m_upgradeWindow; }
 
-  size_t transactionMaxSize() const { return m_transactionMaxSize; }
   size_t fusionTxMaxSize() const { return m_fusionTxMaxSize; }
   size_t fusionTxMinInputCount() const { return m_fusionTxMinInputCount; }
   size_t fusionTxMinInOutCountRatio() const { return m_fusionTxMinInOutCountRatio; }
@@ -128,9 +120,7 @@ public:
   bool parseAmount(const std::string& str, uint64_t& amount) const;
 
   difficulty_type nextDifficulty(std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const;
-  difficulty_type nextDifficulty(uint8_t version, uint32_t blockIndex, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const;
-
-  bool checkProofOfWork(Crypto::cn_context& context, const Block& block, difficulty_type currentDifficulty, Crypto::Hash& proofOfWork) const;
+  bool checkProofOfWork(Crypto::cn_context& context, const Block& block, difficulty_type currentDiffic, Crypto::Hash& proofOfWork) const;
 
   size_t getApproximateMaximumInputCount(size_t transactionSize, size_t outputCount, size_t mixinCount) const;
 
@@ -154,14 +144,9 @@ private:
   uint64_t m_blockFutureTimeLimit;
 
   uint64_t m_moneySupply;
-  //uint64_t m_genesisBlockReward;
+//  uint64_t m_genesisBlockReward;
 
   size_t m_rewardBlocksWindow;
-
-  uint32_t m_zawyDifficultyBlockIndex;
-  size_t m_zawyDifficultyV2;
-  uint8_t m_zawyDifficultyBlockVersion;
-
   size_t m_blockGrantedFullRewardZone;
   size_t m_minerTxBlobReservedSize;
 
@@ -198,7 +183,6 @@ private:
   size_t m_upgradeVotingWindow;
   size_t m_upgradeWindow;
 
-  size_t m_transactionMaxSize;
   size_t m_fusionTxMaxSize;
   size_t m_fusionTxMinInputCount;
   size_t m_fusionTxMinInOutCountRatio;
@@ -235,7 +219,7 @@ public:
   }
 
   Transaction generateGenesisTransaction();
-  //Transaction generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets);
+ // Transaction generateGenesisTransaction(const std::vector<AccountPublicAddress>& targets);
 
   CurrencyBuilder& maxBlockNumber(uint64_t val) { m_currency.m_maxBlockHeight = val; return *this; }
   CurrencyBuilder& maxBlockBlobSize(size_t val) { m_currency.m_maxBlockBlobSize = val; return *this; }
@@ -247,14 +231,9 @@ public:
   CurrencyBuilder& blockFutureTimeLimit(uint64_t val) { m_currency.m_blockFutureTimeLimit = val; return *this; }
 
   CurrencyBuilder& moneySupply(uint64_t val) { m_currency.m_moneySupply = val; return *this; }
-  //CurrencyBuilder& genesisBlockReward(uint64_t val) { m_currency.m_genesisBlockReward = val; return *this; }
+//  CurrencyBuilder& genesisBlockReward(uint64_t val) { m_currency.m_genesisBlockReward = val; return *this; }
 
   CurrencyBuilder& rewardBlocksWindow(size_t val) { m_currency.m_rewardBlocksWindow = val; return *this; }
-
-  CurrencyBuilder& zawyDifficultyBlockIndex(uint32_t val) { m_currency.m_zawyDifficultyBlockIndex = val; return *this; }
-  CurrencyBuilder& zawyDifficultyV2(size_t val) { m_currency.m_zawyDifficultyV2 = val; return *this; }
-  CurrencyBuilder& zawyDifficultyBlockVersion(uint8_t val) { m_currency.m_zawyDifficultyBlockVersion = val; return *this; }
-
   CurrencyBuilder& blockGrantedFullRewardZone(size_t val) { m_currency.m_blockGrantedFullRewardZone = val; return *this; }
   CurrencyBuilder& minerTxBlobReservedSize(size_t val) { m_currency.m_minerTxBlobReservedSize = val; return *this; }
 
@@ -290,7 +269,6 @@ public:
   CurrencyBuilder& upgradeVotingWindow(size_t val) { m_currency.m_upgradeVotingWindow = val; return *this; }
   CurrencyBuilder& upgradeWindow(size_t val);
 
-  CurrencyBuilder& transactionMaxSize(size_t val) { m_currency.m_transactionMaxSize = val; return *this; }
   CurrencyBuilder& fusionTxMaxSize(size_t val) { m_currency.m_fusionTxMaxSize = val; return *this; }
   CurrencyBuilder& fusionTxMinInputCount(size_t val) { m_currency.m_fusionTxMinInputCount = val; return *this; }
   CurrencyBuilder& fusionTxMinInOutCountRatio(size_t val) { m_currency.m_fusionTxMinInOutCountRatio = val; return *this; }
@@ -300,7 +278,7 @@ public:
   CurrencyBuilder& blockIndexesFileName(const std::string& val) { m_currency.m_blockIndexesFileName = val; return *this; }
   CurrencyBuilder& txPoolFileName(const std::string& val) { m_currency.m_txPoolFileName = val; return *this; }
   CurrencyBuilder& blockchinIndicesFileName(const std::string& val) { m_currency.m_blockchinIndicesFileName = val; return *this; }
-
+  
   CurrencyBuilder& genesisCoinbaseTxHex(const std::string& val) { m_currency.m_genesisCoinbaseTxHex = val; return *this; }
   CurrencyBuilder& testnet(bool val) { m_currency.m_testnet = val; return *this; }
 

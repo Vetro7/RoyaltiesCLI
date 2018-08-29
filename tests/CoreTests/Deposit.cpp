@@ -42,9 +42,9 @@ TransactionBuilder::MultisignatureSource DepositTestsBase::createSource(uint32_t
 
 bool DepositTestsBase::check_tx_verification_context(const tx_verification_context& tvc, bool tx_added, std::size_t event_idx, const Transaction& /*tx*/) {
   if (blockId == event_idx)
-    return tvc.m_verification_failed;
+    return tvc.m_verifivation_failed;
   else
-    return !tvc.m_verification_failed && tx_added;
+    return !tvc.m_verifivation_failed && tx_added;
 }
 
 void DepositTestsBase::addDepositOutput(Transaction& transaction) {
@@ -62,7 +62,7 @@ Transaction DepositTestsBase::createDepositTransaction(std::vector<test_event_en
 
   TransactionBuilder::KeysVector kv;
   kv.push_back(to.getAccountKeys());
-
+  
   builder.addMultisignatureOut(1000, kv, 1);
   auto tx = builder.build();
   generator.addEvent(tx);
@@ -82,7 +82,7 @@ void DepositTestsBase::addDepositInput(Transaction& transaction) {
         i, reinterpret_cast<const PublicKey&>(to.getAccountKeys().m_account_address.m_viewPublicKey), 1,
         reinterpret_cast<const AccountKeys&>(to.getAccountKeys()));
   }
- */
+ */ 
 }
 
 bool BlocksOfFirstTypeCantHaveTransactionsOfTypeTwo::generate(std::vector<test_event_entry>& events) {
@@ -122,7 +122,7 @@ bool BlocksOfSecondTypeCanHaveTransactionsOfTypeTwo::generate(std::vector<test_e
 
   TransactionBuilder::KeysVector kv;
   kv.push_back(to.getAccountKeys());
-
+  
   builder.addMultisignatureOut(m_currency.depositMinAmount() + 1, kv, 1, m_currency.depositMinTerm() + 1);
   auto tx = builder.build();
   generator.addEvent(tx);
@@ -168,7 +168,7 @@ bool TransactionOfTypeOneWithDepositOutputIsRejected::generate(std::vector<test_
 
   TransactionBuilder::KeysVector kv;
   kv.push_back(to.getAccountKeys());
-
+  
   builder.addMultisignatureOut(1000, kv, 1, m_currency.depositMinTerm() + 1);
   builder.setVersion(TRANSACTION_VERSION_1);
   auto tx = builder.build();
@@ -378,9 +378,9 @@ bool TransactionWithDepositExtendsEmission::generate(std::vector<test_event_entr
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -393,7 +393,7 @@ bool TransactionWithDepositExtendsEmission::generate(std::vector<test_event_entr
     generator.addCallback("save_emission_after");
     generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
   }
-
+  
   return true;
 }
 
@@ -416,10 +416,10 @@ bool TransactionWithDepositRestorsEmissionOnAlternativeChain::generate(std::vect
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
   auto lastBlock = generator.lastBlock;
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -431,13 +431,13 @@ bool TransactionWithDepositRestorsEmissionOnAlternativeChain::generate(std::vect
     generator.addCallback("save_emission_before");
     generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
   }
-
-  // move to alternative chain
-  generator.lastBlock = lastBlock;
+  
+  // move to alternative chain 
+  generator.lastBlock = lastBlock; 
   generator.generateBlocks(4, BLOCK_MAJOR_VERSION_2);
   generator.addCallback("save_emission_after");
   generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
-
+  
   return true;
 }
 
@@ -460,9 +460,9 @@ bool TransactionWithOutputToSpentInputWillBeRejected::generate(std::vector<test_
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -472,7 +472,7 @@ bool TransactionWithOutputToSpentInputWillBeRejected::generate(std::vector<test_
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -482,7 +482,7 @@ bool TransactionWithOutputToSpentInputWillBeRejected::generate(std::vector<test_
     generator.addCallback("mark_invalid_tx");
     generator.addEvent(tx);
   }
-
+  
   return true;
 }
 
@@ -505,9 +505,9 @@ bool TransactionWithMultipleInputsThatSpendOneOutputWillBeRejected::generate(std
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -518,7 +518,7 @@ bool TransactionWithMultipleInputsThatSpendOneOutputWillBeRejected::generate(std
     generator.addCallback("mark_invalid_tx");
     generator.addEvent(tx);
   }
-
+  
   return true;
 }
 
@@ -541,9 +541,9 @@ bool TransactionWithInputWithAmountThatIsDoesntHaveOutputWithSameAmountWillBeRej
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -553,7 +553,7 @@ bool TransactionWithInputWithAmountThatIsDoesntHaveOutputWithSameAmountWillBeRej
     generator.addCallback("mark_invalid_tx");
     generator.addEvent(tx);
   }
-
+  
   return true;
 }
 
@@ -577,9 +577,9 @@ bool TransactionWithInputWithIndexLargerThanNumberOfOutputsWithThisSumWillBeReje
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -590,7 +590,7 @@ bool TransactionWithInputWithIndexLargerThanNumberOfOutputsWithThisSumWillBeReje
     generator.addCallback("mark_invalid_tx");
     generator.addEvent(tx);
   }
-
+  
   return true;
 }
 
@@ -612,9 +612,9 @@ bool TransactionWithInputThatPointsToTheOutputButHasAnotherTermWillBeRejected::g
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -624,7 +624,7 @@ bool TransactionWithInputThatPointsToTheOutputButHasAnotherTermWillBeRejected::g
     generator.addCallback("mark_invalid_tx");
     generator.addEvent(tx);
   }
-
+  
   return true;
 }
 
@@ -646,9 +646,9 @@ bool TransactionThatTriesToSpendOutputWhosTermHasntFinishedWillBeRejected::gener
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 2, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -657,7 +657,7 @@ bool TransactionThatTriesToSpendOutputWhosTermHasntFinishedWillBeRejected::gener
     generator.addCallback("mark_invalid_tx");
     generator.addEvent(tx);
   }
-
+  
   return true;
 }
 
@@ -679,9 +679,9 @@ bool TransactionWithAmountThatHasAlreadyFinishedWillBeAccepted::generate(std::ve
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
-
+  
   {
     TransactionBuilder builder(m_currency);
     auto src = createSource(m_currency.depositMinTerm(), key);
@@ -690,7 +690,7 @@ bool TransactionWithAmountThatHasAlreadyFinishedWillBeAccepted::generate(std::ve
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   return true;
 }
 
@@ -764,7 +764,7 @@ bool TransactionWithDepositIsClearedAfterInputSpend::generate(std::vector<test_e
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
 
   generator.addCallback("amountOneMinimal");
@@ -779,7 +779,7 @@ bool TransactionWithDepositIsClearedAfterInputSpend::generate(std::vector<test_e
   }
   generator.addCallback("amountZero");
   generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
-
+  
   return true;
 }
 
@@ -801,7 +801,7 @@ bool TransactionWithDepositUpdatesInterestAfterDepositUnlock::generate(std::vect
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
 
   generator.addCallback("interestZero");
@@ -816,7 +816,7 @@ bool TransactionWithDepositUpdatesInterestAfterDepositUnlock::generate(std::vect
     generator.addCallback("interestOneMinimal");
     generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
   }
-
+  
   return true;
 }
 
@@ -839,7 +839,7 @@ bool TransactionWithDepositUpdatesInterestAfterDepositUnlockMultiple::generate(s
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
 
   generator.addCallback("interestZero");
@@ -859,7 +859,7 @@ bool TransactionWithDepositUpdatesInterestAfterDepositUnlockMultiple::generate(s
     generator.addCallback("interestTwoMininmal");
     generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
   }
-
+  
   return true;
 }
 
@@ -881,7 +881,7 @@ bool TransactionWithDepositUnrolesInterestAfterSwitchToAlternativeChain::generat
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.generateBlocks(m_currency.depositMinTerm() - 1, BLOCK_MAJOR_VERSION_2);
   auto lastBlock = generator.lastBlock;
 
@@ -897,12 +897,12 @@ bool TransactionWithDepositUnrolesInterestAfterSwitchToAlternativeChain::generat
     generator.addCallback("interestOneMinimal");
     generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
   }
-
-  generator.lastBlock = lastBlock;
+  
+  generator.lastBlock = lastBlock; 
   generator.generateBlocks(4, BLOCK_MAJOR_VERSION_2);
   generator.addCallback("interestZero");
   generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
-
+  
   return true;
 }
 
@@ -925,16 +925,16 @@ bool TransactionWithDepositUnrolesAmountAfterSwitchToAlternativeChain::generate(
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   generator.addCallback("amountOneMinimal");
   generator.generateBlocks(m_currency.depositMinTerm(), BLOCK_MAJOR_VERSION_2);
 
   generator.addCallback("amountOneMinimal");
-  generator.lastBlock = lastBlock;
+  generator.lastBlock = lastBlock; 
   generator.generateBlocks(m_currency.depositMinTerm() + 4, BLOCK_MAJOR_VERSION_2);
   generator.addCallback("amountZero");
   generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
-
+  
   return true;
 }
 
@@ -956,7 +956,7 @@ bool TransactionWithDepositUnrolesPartOfAmountAfterSwitchToAlternativeChain::gen
     generator.addEvent(tx);
     generator.makeNextBlock(tx);
   }
-
+  
   auto lastBlock = generator.lastBlock;
   generator.addCallback("amountOneMinimal");
   generator.generateBlocks(m_currency.depositMinTerm(), BLOCK_MAJOR_VERSION_2);
@@ -976,12 +976,12 @@ bool TransactionWithDepositUnrolesPartOfAmountAfterSwitchToAlternativeChain::gen
     generator.makeNextBlock(tx);
     generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
   }
-
-  generator.lastBlock = lastBlock;
+  
+  generator.lastBlock = lastBlock; 
   generator.generateBlocks(m_currency.depositMinTerm() + 4, BLOCK_MAJOR_VERSION_2);
   generator.addCallback("amountOneMinimal");
   generator.generateBlocks(1, BLOCK_MAJOR_VERSION_2);
-
+  
   return true;
 }
 

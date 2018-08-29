@@ -28,6 +28,7 @@ typedef uint64_t uint64;
       #define DATA_ALIGN16(x) __declspec(align(16)) x
 #endif
 
+
 typedef struct {
 	int hashbitlen;	   	              /*the message digest size*/
 	unsigned long long databitlen;    /*the message size in bits*/

@@ -18,9 +18,8 @@ namespace
     for (size_t i = 0; i < block_count; ++i)
     {
       Block blk_i;
-      if (!generator.constructMaxSizeBlock(blk_i, blk, miner_account)) {
+      if (!generator.constructMaxSizeBlock(blk_i, blk, miner_account))
         return false;
-      }
 
       events.push_back(blk_i);
       blk = blk_i;
@@ -32,10 +31,8 @@ namespace
   uint64_t get_tx_out_amount(const Transaction& tx)
   {
     uint64_t amount = 0;
-    BOOST_FOREACH(auto& o, tx.outputs) {
+    BOOST_FOREACH(auto& o, tx.outputs)
       amount += o.amount;
-    }
-
     return amount;
   }
 }
@@ -101,9 +98,8 @@ bool gen_block_reward::generate(std::vector<test_event_entry>& events) const
   DO_CALLBACK(events, "mark_checked_block");
 
   Block blk_5r;
-  if (!rewind_blocks(events, generator, blk_5r, blk_5, miner_account, m_currency.minedMoneyUnlockWindow())) {
+  if (!rewind_blocks(events, generator, blk_5r, blk_5, miner_account, m_currency.minedMoneyUnlockWindow()))
     return false;
-  }
 
   // Test: fee increases block reward
   Transaction tx_0(construct_tx_with_fee(m_logger, events, blk_5, miner_account, bob_account, MK_COINS(1), 3 * m_currency.minimumFee()));
@@ -121,7 +117,7 @@ bool gen_block_reward::generate(std::vector<test_event_entry>& events) const
   {
     Transaction tx_1 = construct_tx_with_fee(m_logger, events, blk_5, miner_account, bob_account, MK_COINS(1), 11 * m_currency.minimumFee());
     Transaction tx_2 = construct_tx_with_fee(m_logger, events, blk_5, miner_account, bob_account, MK_COINS(1), 13 * m_currency.minimumFee());
-    size_t txs_1_size = getObjectBinarySize(tx_1) + getObjectBinarySize(tx_2);
+    size_t txs_1_size = getObjectBinarySize(tx_1) + getObjectBinarySize(tx_2);	
     uint64_t txs_fee = m_currency.getTransactionFee(tx_1, get_block_height(blk_5)) + m_currency.getTransactionFee(tx_2, get_block_height(blk_5));
 
     std::vector<size_t> block_sizes;
@@ -156,11 +152,11 @@ bool gen_block_reward::check_block_verification_context(const CryptoNote::block_
   if (m_invalid_block_index == event_idx)
   {
     m_invalid_block_index = 0;
-    return bvc.m_verification_failed;
+    return bvc.m_verifivation_failed;
   }
   else
   {
-    return !bvc.m_verification_failed;
+    return !bvc.m_verifivation_failed;
   }
 }
 

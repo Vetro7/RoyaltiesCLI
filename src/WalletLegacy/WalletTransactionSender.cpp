@@ -55,7 +55,6 @@ void createChangeDestinations(const AccountPublicAddress& address, uint64_t need
 
 void constructTx(const AccountKeys keys, const std::vector<TransactionSourceEntry>& sources, const std::vector<TransactionDestinationEntry>& splittedDests,
     const std::string& extra, uint64_t unlockTimestamp, uint64_t sizeLimit, Transaction& tx, const std::vector<tx_message_entry>& messages, uint64_t ttl) {
-
   std::vector<uint8_t> extraVec;
   extraVec.reserve(extra.size());
   std::for_each(extra.begin(), extra.end(), [&extraVec] (const char el) { extraVec.push_back(el);});
@@ -159,9 +158,8 @@ WalletTransactionSender::WalletTransactionSender(const Currency& currency, Walle
   m_isStoping(false),
   m_keys(keys),
   m_transferDetails(transfersContainer),
-  m_upperTransactionSizeLimit(m_currency.transactionMaxSize()),
-  m_node(node){
-  }
+  m_upperTransactionSizeLimit((m_currency.blockGrantedFullRewardZone() * 125) / 100 - m_currency.minerTxBlobReservedSize()),
+  m_node(node){}
 
 void WalletTransactionSender::stop() {
   m_isStoping = true;
@@ -226,7 +224,6 @@ std::unique_ptr<WalletRequest> WalletTransactionSender::makeDepositRequest(Trans
                                                                            uint64_t amount,
                                                                            uint64_t fee,
                                                                            uint64_t mixIn) {
-
   throwIf(term < m_currency.depositMinTerm(), error::DEPOSIT_TERM_TOO_SMALL);
   throwIf(term > m_currency.depositMaxTerm(), error::DEPOSIT_TERM_TOO_BIG);
   throwIf(amount < m_currency.depositMinAmount(), error::DEPOSIT_AMOUNT_TOO_SMALL);
@@ -255,7 +252,6 @@ std::unique_ptr<WalletRequest> WalletTransactionSender::makeWithdrawDepositReque
                                                                                    std::deque<std::unique_ptr<WalletLegacyEvent>>& events,
                                                                                    const std::vector<DepositId>& depositIds,
                                                                                    uint64_t fee) {
-
   std::shared_ptr<SendTransactionContext> context = std::make_shared<SendTransactionContext>();
   context->dustPolicy.dustThreshold = m_currency.defaultDustThreshold();
 
@@ -412,9 +408,9 @@ std::unique_ptr<WalletRequest> WalletTransactionSender::doSendMultisigTransactio
 	if (height == 4294967295){
 		height = m_node.getLastKnownBlockHeight();
 		if (!height) height = 4294967295;
-	}
+	}	
 	deposit.interest = m_currency.calculateInterest(deposit.amount, deposit.term, height);
-    deposit.locked = true;
+    deposit.locked = true;	
     DepositId depositId = m_transactionsCache.insertDeposit(deposit, depositIndex, transaction->getTransactionHash());
     transactionInfo.firstDepositId = depositId;
     transactionInfo.depositCount = 1;
